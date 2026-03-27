@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Kit Anderson (dot) com</title>
+<title>Kit Anderson 2014 thekitanderson.com</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
@@ -1023,16 +1023,17 @@
   <div class="hero-img-gradient"></div>
   <div class="hero-k" aria-hidden="true">K</div>
 
-  <div class="hero-eyebrow">Author, Artist, and Amateur Stuntman &nbsp;·&nbsp; Truckee, USA</div>
+  <div class="hero-eyebrow">Author, Artist, and Amateur Stuntman &nbsp;·&nbsp; Truckee, California</div>
   <h1 class="hero-name">
     Kit<span>Anderson</span>
   </h1>
   <div class="hero-rule"></div>
   <div class="hero-bottom">
     <p class="hero-desc">
-      <strong>Books. Movies. Art.</strong>
-      Kit Anderson is a North American artist operating a private media kitchen in Truckee, CA.
-      He does not have a Wikipedia page. This is better.
+      <strong>Books. Movies. Art.</strong> The full scope of Kit Anderson's work.
+      Author, Artist, and Amateur Stuntman. Operating a private media kitchen in Truckee, CA.
+      Kit Anderson Does Not Have a Wikipedia Page. This Is Better.
+      Nothing is real.
     </p>
     <div class="hero-categories">
       <a href="#books" class="hero-cat">Books</a>
@@ -1136,7 +1137,7 @@
     <span class="marquee-item"><span class="marquee-dot">·</span></span>
     <span class="marquee-item">Nothing Is Real</span>
     <span class="marquee-item"><span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Truckee, USA</span>
+    <span class="marquee-item">Truckee, CA</span>
     <span class="marquee-item"><span class="marquee-dot">·</span></span>
     <span class="marquee-item">Private Media Kitchen</span>
     <span class="marquee-item"><span class="marquee-dot">·</span></span>
@@ -1324,6 +1325,36 @@
     margin-top: 1rem;
   }
 
+  /* ── SHELF CARD TOOLTIP ── */
+  .shelf-card {
+    position: relative;
+  }
+
+  .shelf-card::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.97) 60%, transparent 100%);
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.68rem;
+    font-style: italic;
+    line-height: 1.45;
+    padding: 2rem 0.6rem 0.7rem;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .shelf-card:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   /* ── ABOUT HEADERS ── */
   .about-para-header {
     font-family: 'Bebas Neue', sans-serif;
@@ -1346,7 +1377,7 @@
   <div class="shelf-track-wrap">
     <div class="shelf-track">
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLTJW2B" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLTJW2B" target="_blank" data-description="A survivor's story spanning 1996–2001 about a young woman rebuilding her life after tragedy.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71uoOmFufmL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Never Cry Jack">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
@@ -1355,7 +1386,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLSY3QK" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLSY3QK" target="_blank" data-description="Three rural kids, a stolen car, and a coming-of-age friendship in 1990s America.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/81PlIeSvw1L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Georgia Lee">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
@@ -1364,7 +1395,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLRLXKS" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLRLXKS" target="_blank" data-description="A combat veteran finds uneasy peace on a remote jungle beach, until it doesn't hold.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/81C5ML7GyaL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="The Hard Sleep">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
@@ -1373,7 +1404,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/1798669269" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/dp/1798669269" target="_blank" data-description="A gang of jackass skiers decides to blow up a chairlift in the town of Rockwell.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/910YRxFiqlL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Hackenbush">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
@@ -1382,7 +1413,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/1096591537" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/dp/1096591537" target="_blank" data-description="A fifteen-year-old farm kid from Western Maryland sinks a yacht.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/91o1TZCb3RL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Kemper & The West Coast Club">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
@@ -1391,7 +1422,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B08F6Y3M1T" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/dp/B08F6Y3M1T" target="_blank" data-description="A retired gambler who rigged the Super Bowl just wants to live on his boat in Lake Tahoe.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/919H4H49l8L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Dirty Davenport">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
@@ -1400,7 +1431,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0GR29MHLP" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0GR29MHLP" target="_blank" data-description="100 fake album covers for bands that don't exist, names captured from real conversations.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71klnkNDl7L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Bandnamery">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-books">Art Book</div>
@@ -1409,10 +1440,10 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/stores/author/B00C0VR8CK" target="_blank">
+      <a class="shelf-card" href="https://www.amazon.com/stores/author/B00C0VR8CK" target="_blank" data-description="A visual survey of Kit Anderson's sketchbook work spanning over a decade.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71VFtwux1ZL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Select Works: Scans From My Sketchbooks">
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Art Book</div>
+          <div class="shelf-card-cat shelf-card-cat-books">Drawing Collection</div>
           <div class="shelf-card-title">Scans From My Sketchbooks</div>
           <div class="shelf-card-year">2025</div>
         </div>
@@ -1431,7 +1462,7 @@
   <div class="shelf-track-wrap">
     <div class="shelf-track">
 
-      <a class="shelf-card" href="https://www.imdb.com/title/tt12674290/" target="_blank">
+      <a class="shelf-card" href="https://www.imdb.com/title/tt12674290/" target="_blank" data-description="The Most Extreme Movie Ever Made. An action sports cult classic.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/M/MV5BMzgxMGFmNWYtMmJlYS00NjdkLTlmNzAtYWZiMjA4NjI2MmI2XkEyXkFqcGc@._V1_QL75_UY281_CR6,0,190,281_.jpg" alt="Gapers Gone Wild">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-movies">Director / Producer</div>
@@ -1440,7 +1471,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.imdb.com/title/tt1484081/" target="_blank">
+      <a class="shelf-card" href="https://www.imdb.com/title/tt1484081/" target="_blank" data-description="A punk rock documentary that won the Gold Medal at the Park City Film Music Festival.">
         <img class="shelf-card-img" src="https://m.media-amazon.com/images/M/MV5BMTM0MjQ0ODMxN15BMl5BanBnXkFtZTcwMzMzNzY5Mg@@._V1_QL75_UX190_CR0,0,190,281_.jpg" alt="Mathematician's Transdimensional Odyssey of Doom">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-movies">Producer / Cinematographer</div>
@@ -1455,7 +1486,7 @@
   <!-- YOUTUBE KICKER -->
   <div class="shelf-kicker">
     <div class="shelf-header" style="padding-top:2rem;">
-      <span class="shelf-title" style="font-size:1.2rem; color:var(--light-gray);">YouTube</span>
+      <span class="shelf-title" style="font-size:1.2rem; color:var(--light-gray);">Also on YouTube</span>
       <a class="shelf-link" href="https://www.youtube.com/@kitanderson" target="_blank">@KitAnderson &nbsp;·&nbsp; 23 videos ↗</a>
     </div>
     <div class="shelf-track-wrap">
@@ -1547,7 +1578,7 @@
   <div class="shelf-track-wrap">
     <div class="shelf-track">
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A graphite self-portrait — unflinching, direct, unadorned.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/033b1c18-d2aa-41a0-943e-aa19ee452f3c_rw_1920.jpg?h=e3c95facbabb0c91d3a6cd08e4a60c1f" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1556,7 +1587,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A candid view of the studio wall — skulls, drawings, and the archaeology of a working practice.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/e481a8e8-8964-4acd-940d-ea55dc5e53fc_rw_1920.jpg?h=da4aa72f448a199a1b09e2756df8fe7c" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1565,7 +1596,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A figure in motion, rendered in graphite with controlled economy.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/fa7028c8-6fb2-4752-847f-c1b9965bed01_rw_1920.jpg?h=17445c82b60573c2c9387360e272a889" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1574,7 +1605,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A portrait study in graphite — stark, luminous, quietly intense.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/6029bb41-d514-4b98-b964-e187a3ea241f_rw_1920.jpg?h=928807383ce9d26a2ea94d464cb6599d" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1583,7 +1614,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A horse skull rendered on dark ground, equal parts specimen and relic.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/ee5ee645-d1f4-42fb-a85e-258d00d07ef5_rw_1920.jpg?h=866101006e6f06958d4fb1eb7a4bbf2e" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1592,7 +1623,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="An ornate mixed-media shield in progress — obsessive surface, botanical and strange.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/960f2dad-8b68-4dca-9c1c-4dd196ed7ffa_rw_1920.jpg?h=1874d95b143cdb56f36578794cd1b6e9" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1601,7 +1632,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A monumental wing spreading across the canvas, gold light dissolving into field.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/7f1bac75-da85-4b0c-9bb1-711cbe809dea_rw_1920.jpg?h=6d444d0079c6d0228a27b5e16ce03563" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1610,7 +1641,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A standing figure, back turned, drawn with spare gestural confidence.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/338d4bb9-4b4f-43c7-ac48-6c77946e179d_rw_1920.jpg?h=2ffe7ea0e2496b6aa55c2a9a54a7d07a" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1619,7 +1650,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A frog on dark ground — patient, weighted, rendered with quiet precision.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/4368c879-ada4-40d9-b8dd-22db0dabb08c_rw_1920.jpg?h=a558e92f491861ec8ff98fae25411acc" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1628,7 +1659,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A reclining male figure in graphite, studied and still.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/a92e7966-7db9-4128-a3af-0a46ab361fcb_rw_1920.jpg?h=88aa04f0e9034784ef229b9bda42d316" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1637,7 +1668,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A preparatory study for Never Cry Jack — pencil on blue paper, spare and restless.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/2486f937-3d9f-4a2c-b4ff-494e3908453b_rw_1920.jpg?h=bb088a7f55f5c879a5a18edff5401e09" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
@@ -1646,7 +1677,7 @@
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank">
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A watercolor stain blooming across the page — color without argument.">
         <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/5f92ea5d-ae56-491b-8a90-2755987fd0f2_rw_1920.jpg?h=7de7ef389b12bf45157d5ba554322ae7" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
           <div class="shelf-card-cat shelf-card-cat-art">Art</div>
