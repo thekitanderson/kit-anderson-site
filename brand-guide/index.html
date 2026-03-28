@@ -591,6 +591,51 @@ footer {
   .css-row { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
 }
+
+/* HOUSE STYLE */
+.house-style {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule-s);
+  margin-bottom: 2rem;
+}
+
+.hs-row {
+  background: var(--off);
+  padding: 1.2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: start;
+  transition: background 0.2s;
+}
+
+.hs-row:hover { background: #151412; }
+
+.hs-label {
+  font-family: var(--pr);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  padding-top: 2px;
+  line-height: 1.5;
+}
+
+.hs-rule {
+  font-family: var(--se);
+  font-style: italic;
+  font-size: 0.72rem;
+  color: var(--mid);
+  line-height: 1.75;
+}
+
+.hs-rule strong {
+  color: var(--white);
+  font-style: normal;
+}
 </style>
 </head>
 <body>
@@ -612,15 +657,19 @@ footer {
 <div class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">Brand Identity Guide &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; 2026</div>
-    <div class="hero-name">KIT<br><span>ANDER</span><br>SON</div>
+    <div class="hero-name">KIT<br><span>ANDERSON</span></div>
     <div class="hero-rule"></div>
-    <p class="hero-desc"><strong>Author. Artist. Amateur Stuntman.</strong><br>Operating a private media kitchen in Truckee, California. Six sites. One brand. North star: own the search term, win the Wikipedia page. Nothing is real.</p>
+    <p class="hero-desc"><strong>Author, Artist, and Amateur Stuntman.</strong><br>Operating a private media kitchen in Truckee, California. Six sites. One brand. North star: own the search term, win the Wikipedia page. Nothing is real.</p>
   </div>
   <div class="hero-right">
     <div class="hero-logo"><img src="/Logo_Kit_Anderson_whiteground.png" alt="Kit Anderson logo"></div>
-    <div class="hero-stat"><span class="hero-stat-l">Primary descriptor</span><span class="hero-stat-v">Author, Artist, and Amateur Stuntman</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">Recurring mantra</span><span class="hero-stat-v">Nothing is real.</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">Operating model</span><span class="hero-stat-v">Private media kitchen · Truckee, CA</span></div>
+    <div class="hero-stat"><span class="hero-stat-l">Typefaces</span><span class="hero-stat-v">Abolition · Prohibition · Playfair Display · Space Mono</span></div>
+    <div class="hero-stat"><span class="hero-stat-l">Alignment</span><span class="hero-stat-v">Left only. Always. No exceptions.</span></div>
+    <div class="hero-stat"><span class="hero-stat-l">Case</span><span class="hero-stat-v">Abolition + Prohibition: full caps. Body: sentence case.</span></div>
+    <div class="hero-stat"><span class="hero-stat-l">Art / Artist</span><span class="hero-stat-v">Always capitalized. Non-negotiable.</span></div>
+    <div class="hero-stat"><span class="hero-stat-l">Anderson</span><span class="hero-stat-v">Never broken across a line. Ever.</span></div>
+    <div class="hero-stat"><span class="hero-stat-l">Film</span><span class="hero-stat-v">Not Kit's word. Movies. Videos. Motion pictures.</span></div>
+    <div class="hero-stat"><span class="hero-stat-l">Oxford comma</span><span class="hero-stat-v">Author, Artist, and Amateur Stuntman. Always.</span></div>
     <div class="hero-stat"><span class="hero-stat-l">North star</span><span class="hero-stat-v">Own the search term. Win the Wikipedia page.</span></div>
   </div>
 </div>
@@ -629,7 +678,7 @@ footer {
 <section id="identity">
   <div class="eyebrow">01 — Identity</div>
   <h2 class="sec-title">WHO IS<br>KIT ANDERSON</h2>
-  <p class="sec-intro">He's been writing on walls since 1979. Author of three novels and three crime novellas. Director of an action sports cult film. Gold Medal-winning producer. Phantogram's first roadie. Art Director for the Million Family March and the inaugural Napa Valley Film Festival. Visual artist working in graphite, paint, sculpture, and mixed media. Running for Mayor of Lake Tahoe on a platform of free Porsches. He treats all of it with equal regard.</p>
+  <p class="sec-intro">He's been writing on walls since 1979. Author of three novels and three crime novellas. Director of an action sports cult movie. Gold Medal-winning producer. Phantogram's first roadie. Art Director for the Million Family March and the inaugural Napa Valley Film Festival. Visual artist working in graphite, paint, sculpture, and mixed media. Running for Mayor of Lake Tahoe on a platform of free Porsches. He treats all of it with equal regard.</p>
 
   <div class="grid-2 fi">
     <div class="cell">
@@ -659,7 +708,7 @@ footer {
     </div>
     <div class="cell">
       <div class="cell-label">Core disciplines</div>
-      <div class="cell-value">Writing · Film · Visual Art</div>
+      <div class="cell-value">Writing · Movies &amp; Video · Visual Art</div>
       <div class="cell-note">Plus snowboarding, skating, Porsche driving — pursuits treated with equal artistic regard. The lifestyle is part of the work.</div>
     </div>
   </div>
@@ -667,11 +716,12 @@ footer {
   <div class="eyebrow" style="margin-top:3rem;">Core mantras</div>
   <div class="mantras fi">
     <div class="mantra-row"><span class="m-num">01</span><span class="m-text">"Nothing is real."</span><span class="m-src">thekitanderson.com</span></div>
-    <div class="mantra-row"><span class="m-num">02</span><span class="m-text">"Everything is real."</span><span class="m-src">kitanderson.art</span></div>
-    <div class="mantra-row"><span class="m-num">03</span><span class="m-text">"A Decorated Career Nobody Asked For."</span><span class="m-src">thekitanderson.com</span></div>
-    <div class="mantra-row"><span class="m-num">04</span><span class="m-text">"Kit Anderson Does Not Have a Wikipedia Page. This Is Better."</span><span class="m-src">thekitanderson.com</span></div>
-    <div class="mantra-row"><span class="m-num">05</span><span class="m-text">"Always under construction."</span><span class="m-src">kitanderson.dev</span></div>
-    <div class="mantra-row"><span class="m-num">06</span><span class="m-text">"He has been making Art since before he was born."</span><span class="m-src">thekitanderson.com</span></div>
+    <div class="mantra-row"><span class="m-num">02</span><span class="m-text">"A decorated career nobody asked for."</span><span class="m-src">thekitanderson.com</span></div>
+    <div class="mantra-row"><span class="m-num">03</span><span class="m-text">"Kit Anderson does not have a Wikipedia page. This is better."</span><span class="m-src">thekitanderson.com</span></div>
+    <div class="mantra-row"><span class="m-num">04</span><span class="m-text">"Always under construction."</span><span class="m-src">kitanderson.dev</span></div>
+    <div class="mantra-row"><span class="m-num">05</span><span class="m-text">"He has been making Art since before he was born."</span><span class="m-src">thekitanderson.com</span></div>
+    <div class="mantra-row"><span class="m-num">06</span><span class="m-text">"Relentless pursuit of awe and wonder."</span><span class="m-src">kitanderson.art</span></div>
+    <div class="mantra-row"><span class="m-num">07</span><span class="m-text">"Go fast. Take chances. Fuck safety."</span><span class="m-src">thekitanderson.com</span></div>
   </div>
 </section>
 
@@ -713,14 +763,14 @@ footer {
 <section id="color">
   <div class="eyebrow">03 — Color</div>
   <h2 class="sec-title">THE PALETTE</h2>
-  <p class="sec-intro">Pulled from the existing sites. Black, grain, and gold — the palette of a filmmaker's edit suite, a sketchbook at midnight, a cult film poster. Everything lives on near-black.</p>
+  <p class="sec-intro">Pulled from the existing sites. Black, grain, and gold — the palette of a filmmaker's edit suite, a sketchbook at midnight, a cult movie poster. Everything lives on near-black.</p>
 
   <div class="palette fi">
     <div class="pal-row"><div class="pal-swatch" style="background:#0a0a0a;"></div><div class="pal-info"><div class="pal-name">Deep Black</div><div class="pal-role">Primary background across all sites. The baseline everything lives on.</div></div><div class="pal-hex-col"><span class="pal-hex">#0A0A0A</span></div></div>
     <div class="pal-row"><div class="pal-swatch" style="background:#111110;"></div><div class="pal-info"><div class="pal-name">Off Black</div><div class="pal-role">Surface color for cards, panels, content containers.</div></div><div class="pal-hex-col"><span class="pal-hex">#111110</span></div></div>
     <div class="pal-row"><div class="pal-swatch" style="background:#f0ebe0;"></div><div class="pal-info"><div class="pal-name">Warm White</div><div class="pal-role">Primary text on dark. Not pure white — warm, paper-like, slightly aged.</div></div><div class="pal-hex-col"><span class="pal-hex">#F0EBE0</span></div></div>
     <div class="pal-row"><div class="pal-swatch" style="background:#b8962e;"></div><div class="pal-info"><div class="pal-name">Gold</div><div class="pal-role">Primary accent. Eyebrows, labels, rules, highlights. Use sparingly.</div></div><div class="pal-hex-col"><span class="pal-hex">#B8962E</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#c8341a;"></div><div class="pal-info"><div class="pal-name">Kit Red</div><div class="pal-role">Film and video contexts. Jerk Calhoun. Action. Use with intent.</div></div><div class="pal-hex-col"><span class="pal-hex">#C8341A</span></div></div>
+    <div class="pal-row"><div class="pal-swatch" style="background:#c8341a;"></div><div class="pal-info"><div class="pal-name">Kit Red</div><div class="pal-role">Movies and video contexts. Jerk Calhoun. Action. Use with intent.</div></div><div class="pal-hex-col"><span class="pal-hex">#C8341A</span></div></div>
     <div class="pal-row"><div class="pal-swatch" style="background:#6a8aaa;"></div><div class="pal-info"><div class="pal-name">Studio Steel</div><div class="pal-role">Art contexts. Drawings, paintings, fine art practice. Cool, contemplative.</div></div><div class="pal-hex-col"><span class="pal-hex">#6A8AAA</span></div></div>
     <div class="pal-row"><div class="pal-swatch" style="background:#7a7570;"></div><div class="pal-info"><div class="pal-name">Ash</div><div class="pal-role">Secondary text, metadata, supporting copy.</div></div><div class="pal-hex-col"><span class="pal-hex">#7A7570</span></div></div>
     <div class="pal-row"><div class="pal-swatch" style="background:#3a3835;"></div><div class="pal-info"><div class="pal-name">Charcoal</div><div class="pal-role">Rules, borders, dividers, grid lines.</div></div><div class="pal-hex-col"><span class="pal-hex">#3A3835</span></div></div>
@@ -728,7 +778,7 @@ footer {
 
   <div class="color-context fi">
     <div class="cc"><div class="cc-lbl">Books / Writing</div><div class="cc-text">Gold accent. Warm White text. The color of paper, manuscript, and late-night edits.</div></div>
-    <div class="cc"><div class="cc-lbl">Film / Video</div><div class="cc-text">Kit Red. High contrast. The color of a record light, a cult poster, Jerk Calhoun's badge.</div></div>
+    <div class="cc"><div class="cc-lbl">Movies / Video</div><div class="cc-text">Kit Red. High contrast. The color of a record light, a cult poster, Jerk Calhoun's badge.</div></div>
     <div class="cc"><div class="cc-lbl">Visual Art</div><div class="cc-text">Studio Steel. The color of graphite, a studio at dawn, a sketch on blue paper.</div></div>
   </div>
 </section>
@@ -823,7 +873,7 @@ footer {
     <div class="site-row">
       <div class="site-domain"><div class="site-name">KITANDERSON.ART</div><div class="site-status s-migrate">◐ Migrate · Squarespace</div></div>
       <div class="site-bar" style="background:var(--steel);"></div>
-      <div class="site-info"><div class="site-title">FINE ART PRACTICE</div><div class="site-desc">Drawings, paintings, sculpture, mixed media. Figurative work exploring awe and wonder. "Everything is real." — the deliberate inversion of the master mantra. Minimal, image-first.</div><div class="site-tone">Tone: Quiet · Serious · Contemplative</div></div>
+      <div class="site-info"><div class="site-title">FINE ART PRACTICE</div><div class="site-desc">Drawings, paintings, sculpture, mixed media. Figurative work exploring awe and wonder.  — the deliberate inversion of the master mantra. Minimal, image-first.</div><div class="site-tone">Tone: Quiet · Serious · Contemplative</div></div>
     </div>
     <div class="site-row">
       <div class="site-domain"><div class="site-name">READMOREKIT.COM</div><div class="site-status s-migrate">◐ Migrate · Squarespace</div></div>
@@ -833,7 +883,7 @@ footer {
     <div class="site-row">
       <div class="site-domain"><div class="site-name">KITANDERSON.TV</div><div class="site-status s-live">● Live · Vercel</div></div>
       <div class="site-bar" style="background:var(--red);"></div>
-      <div class="site-info"><div class="site-title">JERK CALHOUN — FILM &amp; VIDEO</div><div class="site-desc">Home of Jerk Calhoun: The Most Cop Ever in Babylon Bay. Satirical action comedy, written and directed by Kit. Also: Gapers Gone Wild, Mathematician's Transdimensional Odyssey, Porsche road trips on YouTube.</div><div class="site-tone">Tone: Absurdist · Cinematic · Deadpan comedy</div></div>
+      <div class="site-info"><div class="site-title">JERK CALHOUN — MOVIES &amp; VIDEO</div><div class="site-desc">Home of Jerk Calhoun: The Most Cop Ever in Babylon Bay. Satirical action comedy, written and directed by Kit. Also: Gapers Gone Wild, Mathematician's Transdimensional Odyssey. Porsche road trips and more on YouTube.</div><div class="site-tone">Tone: Absurdist · Cinematic · Deadpan comedy</div></div>
     </div>
     <div class="site-row">
       <div class="site-domain"><div class="site-name">KITANDERSON.DEV</div><div class="site-status s-live">● Live · Vercel</div></div>
@@ -860,7 +910,7 @@ footer {
       <span class="vc-sub">About the work, not himself</span>
       <div class="vc-trait"><span class="vc-trait-t">The art, the books, and the films are treated with genuine craft and complete earnestness</span></div>
       <div class="vc-trait"><span class="vc-trait-t">Never self-deprecating about quality — only about the premise</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">Credentials stated plainly: Gold Medal. Art Director. Cult film. No hedging.</span></div>
+      <div class="vc-trait"><span class="vc-trait-t">Credentials stated plainly: Gold Medal. Art Director. Cult movie. No hedging.</span></div>
     </div>
     <div class="vc">
       <div class="vc-title">DEADPAN</div>
@@ -881,8 +931,59 @@ footer {
       <span class="vc-sub">Many things at once, unapologetically</span>
       <div class="vc-trait"><span class="vc-trait-t">Does not choose between novelist, filmmaker, visual artist, skateboarder, Porsche driver</span></div>
       <div class="vc-trait"><span class="vc-trait-t">The plurality is the brand — "private media kitchen" holds it all</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">No hierarchy between disciplines. A novella and a Porsche road film get equal billing.</span></div>
+      <div class="vc-trait"><span class="vc-trait-t">No hierarchy between disciplines. A novella and a Porsche road video get equal billing.</span></div>
     </div>
+  </div>
+
+
+  <div class="eyebrow" style="margin-top:3rem;">House style</div>
+  <div class="house-style fi">
+
+    <div class="hs-row">
+      <div class="hs-label">Art / Artist</div>
+      <div class="hs-rule">Always capitalized. Art, Artist, Artwork. Not art, artist, artwork. This is intentional and non-negotiable — it signals that Kit treats making as a serious discipline, not a hobby.</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Movies vs. film</div>
+      <div class="hs-rule">Never "film." Always movies (for features), videos (for YouTube and short-form), or motion pictures (formal contexts). "Film" is not Kit's word.</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Oxford comma</div>
+      <div class="hs-rule">Always. "Author, Artist, and Amateur Stuntman" — that comma before "and" is load-bearing. Never omit it.</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Full name</div>
+      <div class="hs-rule">Always "Kit Anderson" in full in formal contexts. Never "Kit" alone, never "K. Anderson," never "Anderson." The full name is the brand.</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Sentence case</div>
+      <div class="hs-rule">Running copy is always sentence case — first word and proper nouns only. Not title case. "A decorated career nobody asked for." not "A Decorated Career Nobody Asked For."</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Pronouns</div>
+      <div class="hs-rule">He/him. Always. Not she, not they.</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Nothing is real.</div>
+      <div class="hs-rule">The period is part of it. "Nothing is real." — not "Nothing is real" without the full stop. The punctuation is intentional.</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Truckee, California</div>
+      <div class="hs-rule">Not "near Lake Tahoe." Not "the Sierra Nevada." Not "Northern California." Truckee, California. Always specific.</div>
+    </div>
+
+    <div class="hs-row">
+      <div class="hs-label">Anderson — never broken</div>
+      <div class="hs-rule">"Anderson" must always appear whole on a single line. "Kit" may stand alone on a line above, but "Anderson" never wraps, never breaks, never splits across a line end. In display type, headlines, captions, anywhere. If the layout forces a break on "Anderson," fix the layout.</div>
+    </div>
+
   </div>
 
   <div class="eyebrow" style="margin-top:3rem;">Voice in action</div>
@@ -902,6 +1003,10 @@ footer {
     <div class="copy-ex">
       <div class="copy-hdr"><span class="copy-ctx">Legal fine print — Jerk Calhoun / Mayor style</span><span class="copy-tag">Use this</span></div>
       <div class="copy-body">* Kit does not own a car dealership. Details TBD. Reno has not been consulted on this. Eagles are powerful and majestic. Like Kit.</div>
+    </div>
+    <div class="copy-ex">
+      <div class="copy-hdr"><span class="copy-ctx">Messaging — thekitanderson.com</span><span class="copy-tag">Use this</span></div>
+      <div class="copy-body">Advocate for God, guns, grass, and gasoline.</div>
     </div>
     <div class="copy-ex">
       <div class="copy-hdr"><span class="copy-ctx">What Kit Anderson does not sound like</span><span class="copy-tag copy-tag-r">Never this</span></div>
