@@ -352,7 +352,7 @@ section {
 .lc-white { background: #fff; }
 .lc-white .logo-cell-tag { color: #999; border-color: #ccc; }
 .lc-white .logo-cell-lbl { color: #999; }
-.lc-black { background: #000; }
+.lc-black { background: #000; box-shadow: inset 0 0 0 1px #000; }
 .lc-black .logo-cell-tag,
 .lc-dark .logo-cell-tag { color: var(--mid); border-color: var(--gray); }
 .lc-black .logo-cell-lbl,
@@ -637,6 +637,81 @@ footer {
   color: var(--white);
   font-style: normal;
 }
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  nav { display: none !important; }
+
+  .hero {
+    min-height: 0 !important;
+    grid-template-columns: 1fr 1fr;
+    page-break-after: always;
+    padding: 0;
+  }
+
+  .hero-left { padding: 2cm 1.2cm 1.2cm; }
+  .hero-right { padding: 2cm 1.2cm 1.2cm; }
+  .hero-name { font-size: 60pt !important; }
+  .hero-logo { width: 120px; height: 120px; }
+
+  section {
+    padding: 1cm 1.2cm !important;
+    page-break-inside: avoid;
+    border-bottom: none !important;
+  }
+
+  section + section { page-break-before: always; }
+
+  /* Kill all min-heights and viewport units */
+  *, *::before, *::after {
+    min-height: 0 !important;
+  }
+
+  /* No fade-in — everything visible */
+  .fi { opacity: 1 !important; transform: none !important; }
+
+  /* Tighter spacing on grids */
+  .grid-2, .grid-3, .logo-grid, .logo-rules,
+  .voice-grid, .align-rule, .color-context {
+    break-inside: avoid;
+  }
+
+  .mantras, .palette, .sites, .type-table,
+  .css-grid, .house-style { break-inside: avoid; }
+
+  /* Section titles */
+  .sec-title { font-size: 28pt !important; margin-bottom: 0.3cm !important; }
+  .sec-intro { margin-bottom: 0.5cm !important; font-size: 8pt !important; }
+  .eyebrow { margin-bottom: 0.2cm !important; }
+
+  /* Cell padding */
+  .cell { padding: 0.35cm !important; }
+  .mantra-row { padding: 0.25cm 0.4cm !important; }
+  .pal-row .pal-swatch { height: 40px !important; }
+  .pal-info { padding: 6px 12px !important; }
+  .lr { padding: 0.3cm !important; }
+  .vc { padding: 0.4cm !important; }
+  .copy-body { padding: 0.35cm !important; }
+  .hs-row { padding: 0.3cm 0.4cm !important; }
+  .css-row { padding: 0.25cm 0.4cm !important; }
+  .site-domain { padding: 0.3cm 0.4cm !important; }
+  .site-info { padding: 0.3cm 0.4cm !important; }
+
+  /* Footer */
+  footer { padding: 0.5cm 1.2cm !important; }
+
+  /* Wiki */
+  .wiki { padding: 0.5cm !important; }
+
+  /* Page breaks between major sections */
+  #logo { page-break-before: always; }
+  #color { page-break-before: always; }
+  #type { page-break-before: always; }
+  #voice { page-break-before: always; }
+  #sites { page-break-before: always; }
+  #wikipedia { page-break-before: always; }
+}
 </style>
 </head>
 <body>
@@ -663,7 +738,7 @@ footer {
     <p class="hero-desc"><strong>Author, Artist, and Amateur Stuntman.</strong><br>Operating a private media kitchen in Truckee, California. Six sites. One brand. North star: own the search term, win the Wikipedia page. Nothing is real.</p>
   </div>
   <div class="hero-right">
-    <div class="hero-logo"><img src="/Logo_Kit_Anderson_whiteground.png" alt="Kit Anderson logo"></div>
+    <div class="hero-logo"><img src="/Logo_Kit_Anderson_transparent.png" alt="Kit Anderson logo"></div>
     <div class="hero-stat"><span class="hero-stat-l">Typefaces</span><span class="hero-stat-v">Abolition · Prohibition · Playfair Display · Space Mono</span></div>
     <div class="hero-stat"><span class="hero-stat-l">Alignment</span><span class="hero-stat-v">Left only. Always. No exceptions.</span></div>
     <div class="hero-stat"><span class="hero-stat-l">Case</span><span class="hero-stat-v">Abolition + Prohibition: full caps. Body: sentence case.</span></div>
