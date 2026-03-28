@@ -565,6 +565,27 @@ footer {
 .ft-link { font-size: 0.46rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
 .ft-link:hover { color: var(--gold); }
 
+/* DOWNLOAD BUTTON */
+.dl-btn {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ab);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin-top: 1.5rem;
+  white-space: nowrap;
+}
+.dl-btn:hover { background: var(--cream); }
+.dl-btn::before { content: '↓'; font-family: var(--mo); font-size: 0.8rem; }
+
 /* FADE IN */
 .fi { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fi.vis { opacity: 1; transform: translateY(0); }
@@ -815,6 +836,7 @@ footer {
     <div class="hero-name">KIT<br><span>ANDERSON</span></div>
     <div class="hero-rule"></div>
     <p class="hero-desc"><strong>Author, Artist, and Amateur Stuntman.</strong><br>Operating a private media kitchen in Truckee, California. Six sites. One brand. North star: own the search term, win the Wikipedia page. Nothing is real.</p>
+    <a class="dl-btn" href="/brand-guide/Kit%20Anderson%20%E2%80%94%20Brand%20Guide.pdf" download>Download PDF</a>
   </div>
   <div class="hero-right">
 <div class="hero-stat"><span class="hero-stat-l">Typefaces</span><span class="hero-stat-v">Abolition · Prohibition · Playfair Display · Space Mono</span></div>
