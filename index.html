@@ -3,1285 +3,1840 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<title>Brand Guide — Kit Anderson</title>
-<meta name="description" content="The official Kit Anderson brand identity guide. Typography, color, voice, logo usage, and site network documentation.">
-<link rel="stylesheet" href="https://use.typekit.net/fjh1vfx.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<title>Kit Anderson 2014 thekitanderson.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --black:#0a0a0a;
-  --off:#111110;
-  --white:#f0ebe0;
-  --cream:#e8e0cc;
-  --gold:#b8962e;
-  --red:#c8341a;
-  --steel:#6a8aaa;
-  --crt:#39d353;
-  --mid:#898984;
-  --gray:#3a3835;
-  --rule:rgba(240,235,224,0.1);
-  --rule-s:rgba(240,235,224,0.2);
-  --ab:'abolition',sans-serif;
-  --pr:'prohibition',sans-serif;
-  --se:'Playfair Display',Georgia,serif;
-  --mo:'Space Mono',monospace;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--mo);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-/* NAV */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10,10,10,0.96);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--rule);
-  padding: 0 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 52px;
-}
-
-.nav-mark {
-  font-family: var(--ab);
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}
-
-.nav-mark::before {
-  content: '';
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-}
-
-.nav-links a {
-  display: block;
-  padding: 5px 11px;
-  font-size: 0.48rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--mid);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active { color: var(--gold); }
-
-/* HERO */
-.hero {
-  min-height: 90vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--rule);
-}
-
-.hero-left {
-  padding: 6rem 2.5rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border-right: 1px solid var(--rule);
-}
-
-.hero-right {
-  padding: 6rem 2.5rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1.2rem;
-}
-
-.hero-eyebrow {
-  font-size: 0.5rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--mid);
-  margin-bottom: 1.5rem;
-}
-
-.hero-name {
-  font-family: var(--ab);
-  font-size: clamp(4rem, 10vw, 9rem);
-  text-transform: uppercase;
-  line-height: 0.88;
-  letter-spacing: 0.01em;
-  color: var(--white);
-}
-
-.hero-name span { color: var(--gold); }
-
-.hero-rule {
-  width: 2.5rem;
-  height: 2px;
-  background: var(--gold);
-  margin: 2rem 0;
-}
-
-.hero-desc {
-  font-family: var(--se);
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: var(--cream);
-  max-width: 380px;
-}
-
-.hero-desc strong {
-  color: var(--white);
-  font-style: normal;
-}
-
-.hero-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 1rem 0;
-  border-top: 1px solid var(--rule);
-}
-
-.hero-stat-l {
-  font-size: 0.46rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--mid);
-}
-
-.hero-stat-v {
-  font-family: var(--pr);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--cream);
-  line-height: 1.4;
-}
-
-.hero-logo {
-  width: 180px;
-  height: 180px;
-  margin: 0 0 1.5rem;
-}
-
-.hero-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: invert(1);
-}
-
-/* SECTIONS */
-section {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 72px 2.5rem;
-  border-bottom: 1px solid var(--rule);
-}
-
-.eyebrow {
-  font-size: 0.5rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.eyebrow::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.2;
-}
-
-.sec-title {
-  font-family: var(--ab);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  text-transform: uppercase;
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  margin-bottom: 1rem;
-}
-
-.sec-intro {
-  font-family: var(--se);
-  font-style: italic;
-  font-size: 0.9rem;
-  line-height: 1.85;
-  color: var(--cream);
-  max-width: 560px;
-  margin-bottom: 3rem;
-}
-
-/* GRIDS */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-}
-
-.cell {
-  background: var(--off);
-  padding: 1.8rem;
-}
-
-.cell-label {
-  font-size: 0.46rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.6rem;
-}
-
-.cell-value {
-  font-family: var(--pr);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  margin-bottom: 0.4rem;
-  line-height: 1.4;
-}
-
-.cell-note {
-  font-family: var(--se);
-  font-style: italic;
-  font-size: 0.7rem;
-  color: var(--cream);
-  line-height: 1.7;
-}
-
-/* MANTRAS */
-.mantras {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-}
-
-.mantra-row {
-  background: var(--off);
-  padding: 1rem 1.5rem;
-  display: grid;
-  grid-template-columns: 36px 1fr 130px;
-  align-items: center;
-  gap: 1.5rem;
-  transition: background 0.2s;
-}
-
-.mantra-row:hover { background: #161412; }
-
-.m-num { font-size: 0.46rem; letter-spacing: 0.15em; color: var(--gray); }
-.m-text { font-family: var(--se); font-style: italic; font-size: 0.92rem; color: var(--white); }
-.m-src { font-size: 0.44rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); text-align: right; }
-
-/* LOGO */
-.logo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-  margin-bottom: 2.5rem;
-}
-
-.logo-cell {
-  padding: 3rem 2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.2rem;
-  position: relative;
-}
-
-.logo-cell img { width: 100px; height: 100px; object-fit: contain; }
-
-.logo-cell-tag {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 0.44rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border: 1px solid;
-}
-
-.logo-cell-lbl { font-size: 0.46rem; letter-spacing: 0.18em; text-transform: uppercase; }
-.lc-white { background: #fff; }
-.lc-white .logo-cell-tag { color: #999; border-color: #ccc; }
-.lc-white .logo-cell-lbl { color: #999; }
-.lc-black { background: #000; box-shadow: inset 0 0 0 1px #000; }
-.lc-black .logo-cell-tag,
-.lc-dark .logo-cell-tag { color: var(--mid); border-color: var(--gray); }
-.lc-black .logo-cell-lbl,
-.lc-dark .logo-cell-lbl { color: var(--mid); }
-.lc-dark { background: var(--off); }
-
-/* LOGO RULES */
-.logo-rules {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-}
-
-.lr { background: var(--off); padding: 1.4rem; }
-.lr-h { display: flex; align-items: center; gap: 7px; margin-bottom: 0.6rem; }
-.lr-dot { width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; }
-.do .lr-dot { background: rgba(76,175,80,0.18); color: #4caf50; }
-.dont .lr-dot { background: rgba(200,52,26,0.15); color: var(--red); }
-.lr-title { font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; }
-.do .lr-title { color: #4caf50; }
-.dont .lr-title { color: var(--red); }
-.lr-body { font-family: var(--se); font-style: italic; font-size: 0.7rem; color: var(--cream); line-height: 1.7; }
-
-/* COLOR */
-.palette {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-  margin-bottom: 2rem;
-}
-
-.pal-row { display: grid; grid-template-columns: 160px 1fr 70px; background: var(--off); }
-.pal-swatch { height: 72px; }
-.pal-info { padding: 12px 18px; border-left: 1px solid var(--rule); display: flex; flex-direction: column; justify-content: center; gap: 3px; }
-.pal-name { font-family: var(--ab); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); }
-.pal-role { font-family: var(--se); font-style: italic; font-size: 0.65rem; color: var(--cream); line-height: 1.5; }
-.pal-hex-col { border-left: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; }
-.pal-hex { font-size: 0.46rem; letter-spacing: 0.08em; color: var(--mid); writing-mode: vertical-rl; text-transform: uppercase; }
-
-.color-context {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-}
-
-.cc { background: var(--off); padding: 1.4rem; }
-.cc-lbl { font-size: 0.46rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-.cc-text { font-family: var(--se); font-style: italic; font-size: 0.68rem; color: var(--cream); line-height: 1.7; }
-
-/* TYPE */
-.type-table {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-  margin-bottom: 2.5rem;
-}
-
-.type-row-h {
-  background: rgba(240,235,224,0.03);
-  padding: 0.8rem 1.5rem;
-  display: grid;
-  grid-template-columns: 180px 80px 80px 1fr;
-  gap: 1.5rem;
-  border-bottom: 1px solid var(--rule);
-}
-
-.type-row-h span { font-size: 0.44rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
-
-.type-row {
-  background: var(--off);
-  padding: 1.4rem 1.5rem;
-  display: grid;
-  grid-template-columns: 180px 80px 80px 1fr;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.tr-name { font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
-.tr-meta { font-size: 0.5rem; letter-spacing: 0.1em; color: var(--mid); }
-.tr-role { font-family: var(--se); font-style: italic; font-size: 0.68rem; color: var(--cream); line-height: 1.6; margin-top: 0.4rem; }
-
-/* ALIGNMENT RULE */
-.align-rule {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-  margin-top: 2.5rem;
-}
-
-.ar-cell { background: var(--off); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; }
-.ar-label { font-size: 0.46rem; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 7px; }
-.ar-do { color: #4caf50; }
-.ar-dont { color: var(--red); }
-.ar-ind { width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; }
-.ar-do .ar-ind { background: rgba(76,175,80,0.18); }
-.ar-dont .ar-ind { background: rgba(200,52,26,0.15); }
-.ar-ex { font-family: var(--ab); font-size: 2.2rem; text-transform: uppercase; line-height: 1; letter-spacing: 0.02em; color: var(--white); }
-.ar-ex.bad { text-align: center; color: var(--gray); text-decoration: line-through; text-decoration-color: var(--red); }
-.ar-note { font-family: var(--se); font-style: italic; font-size: 0.68rem; color: var(--cream); line-height: 1.7; }
-
-/* CSS REF */
-.css-block { margin-top: 2.5rem; }
-.css-eyebrow { font-size: 0.5rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
-.css-grid { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule-s); }
-.css-row { background: var(--off); padding: 1.1rem 1.4rem; display: grid; grid-template-columns: 200px 1fr; gap: 2rem; align-items: start; }
-.css-role { font-size: 0.48rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); padding-top: 2px; line-height: 1.6; }
-.css-code { font-family: var(--mo); font-size: 0.58rem; color: var(--cream); line-height: 1.9; }
-.css-code .v { color: var(--white); }
-.css-code .k { color: var(--gold); }
-.css-code .c { color: var(--red); }
-.css-code .cm { color: var(--gray); }
-
-/* SITES */
-.sites {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-}
-
-.site-row {
-  background: var(--off);
-  display: grid;
-  grid-template-columns: 210px 6px 1fr;
-  align-items: stretch;
-  transition: background 0.2s;
-}
-
-.site-row:hover { background: #151412; }
-
-.site-domain {
-  padding: 1.4rem;
-  border-right: 1px solid var(--rule);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-}
-
-.site-name { font-family: var(--ab); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); }
-.site-status { font-size: 0.44rem; letter-spacing: 0.16em; text-transform: uppercase; }
-.s-live { color: #4caf50; }
-.s-migrate { color: var(--gold); }
-.site-bar { border-right: 1px solid var(--rule); }
-.site-info { padding: 1.4rem; }
-.site-title { font-family: var(--pr); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mid); margin-bottom: 0.4rem; }
-.site-desc { font-family: var(--se); font-style: italic; font-size: 0.68rem; color: var(--cream); line-height: 1.7; max-width: 520px; }
-.site-tone { font-size: 0.44rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-top: 6px; }
-
-/* VOICE */
-.voice-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-  margin-bottom: 2rem;
-}
-
-.vc { background: var(--off); padding: 1.8rem; }
-.vc-title { font-family: var(--ab); font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.3rem; }
-.vc-sub { font-size: 0.46rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1rem; }
-.vc-trait { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 0.6rem; }
-.vc-trait::before { content: '—'; color: var(--gold); flex-shrink: 0; font-size: 0.6rem; margin-top: 1px; }
-.vc-trait-t { font-family: var(--se); font-style: italic; font-size: 0.7rem; color: var(--cream); line-height: 1.65; }
-
-/* COPY */
-.copy-ex { border: 1px solid var(--rule-s); margin-bottom: 1px; }
-.copy-hdr { padding: 0.7rem 1.4rem; border-bottom: 1px solid var(--rule); background: rgba(240,235,224,0.02); display: flex; justify-content: space-between; align-items: center; }
-.copy-ctx { font-size: 0.46rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); }
-.copy-tag { font-size: 0.44rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border: 1px solid var(--gold); color: var(--gold); }
-.copy-tag-r { border-color: var(--red); color: var(--red); }
-.copy-body { padding: 1.4rem; background: var(--off); font-family: var(--se); font-style: italic; font-size: 0.92rem; color: var(--cream); line-height: 1.65; }
-.copy-body.bad { color: var(--gray); text-decoration: line-through; }
-
-/* WIKIPEDIA */
-.wiki { border: 1px solid var(--rule-s); background: var(--off); padding: 2.5rem; display: grid; grid-template-columns: 100px 1fr; gap: 2.5rem; align-items: start; }
-.wiki-n { font-family: var(--ab); font-size: 5rem; text-transform: uppercase; line-height: 1; color: var(--gold); opacity: 0.35; }
-.wiki-title { font-family: var(--ab); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.8rem; }
-.wiki-body { font-family: var(--se); font-style: italic; font-size: 0.75rem; color: var(--cream); line-height: 1.9; margin-bottom: 1rem; }
-.wiki-body strong { color: var(--white); font-style: normal; }
-.wiki-item { display: flex; gap: 10px; margin-bottom: 0.5rem; }
-.wiki-num { font-size: 0.46rem; letter-spacing: 0.14em; color: var(--gold); flex-shrink: 0; min-width: 22px; margin-top: 2px; }
-.wiki-item-t { font-family: var(--se); font-style: italic; font-size: 0.68rem; color: var(--cream); line-height: 1.7; }
-.wiki-item-t strong { color: var(--white); font-style: normal; }
-
-/* FOOTER */
-footer {
-  background: var(--black);
-  border-top: 1px solid var(--rule-s);
-  padding: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.ft-mark { font-family: var(--ab); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
-.ft-mantra { font-family: var(--se); font-style: italic; font-size: 0.8rem; color: var(--gray); }
-.ft-link { font-size: 0.46rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
-.ft-link:hover { color: var(--gold); }
-
-/* DOWNLOAD BUTTON */
-.dl-btn {
-  display: inline-flex;
-  align-self: flex-start;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--ab);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--black);
-  background: var(--gold);
-  padding: 10px 20px;
-  text-decoration: none;
-  transition: background 0.2s;
-  margin-top: 1.5rem;
-  white-space: nowrap;
-}
-.dl-btn:hover { background: var(--cream); }
-.dl-btn::before { content: '↓'; font-family: var(--mo); font-size: 0.8rem; }
-
-/* FADE IN */
-.fi { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fi.vis { opacity: 1; transform: translateY(0); }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  nav { padding: 0 1.2rem; }
-  .nav-links { display: none; }
-
-  /* HERO */
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 4rem 1.5rem 2.5rem; border-right: none; border-bottom: 1px solid var(--rule-s); }
-  .hero-right { padding: 2.5rem 1.5rem; }
-  .hero-logo { width: 100px; height: 100px; }
-  .hero-eyebrow { font-size: 0.6rem; }
-  .hero-stat-l { font-size: 0.55rem; }
-  .hero-stat-v { font-size: 1rem; color: var(--white); }
-
-  /* SECTIONS */
-  section { padding: 48px 1.5rem; }
-  .sec-intro { font-size: 1.1rem; color: var(--cream); max-width: 100%; }
-  .eyebrow { font-size: 0.6rem; }
-
-  /* GRIDS */
-  .grid-2, .logo-rules, .voice-grid, .align-rule { grid-template-columns: 1fr; }
-  .grid-3, .logo-grid, .color-context { grid-template-columns: 1fr; }
-
-  /* CELLS */
-  .cell-note { font-size: 0.95rem; color: var(--cream); line-height: 1.65; }
-  .cell-value { font-size: 1rem; }
-
-  /* TYPE */
-  .type-row-h { display: none; }
-  .type-row { grid-template-columns: 1fr; padding: 1.4rem; }
-  .tr-name { font-size: 0.6rem; margin-bottom: 0.4rem; }
-  .tr-meta { display: none; }
-  .tr-role { font-size: 0.95rem; color: var(--cream); margin-top: 0.5rem; }
-
-  /* MANTRAS */
-  .mantra-row { grid-template-columns: 24px 1fr; gap: 1rem; }
-  .m-src { display: none; }
-  .m-text { font-size: 1.05rem; line-height: 1.5; }
-  .m-num { font-size: 0.55rem; }
-
-  /* SITES */
-  .site-row { grid-template-columns: 1fr; }
-  .site-bar { display: none; }
-  .site-domain { border-right: none; border-bottom: 1px solid var(--rule-s); }
-  .site-name { font-size: 1rem; }
-  .site-desc { font-size: 0.95rem; color: var(--cream); max-width: 100%; line-height: 1.65; }
-  .site-tone { font-size: 0.55rem; color: var(--mid); }
-
-  /* VOICE */
-  .vc-trait-t { font-size: 0.95rem; color: var(--cream); line-height: 1.6; }
-  .vc-sub { font-size: 0.55rem; }
-
-  /* HOUSE STYLE */
-  .hs-row { grid-template-columns: 1fr !important; gap: 0.5rem; }
-  .hs-label { font-size: 0.8rem; }
-  .hs-rule { font-size: 0.95rem; color: var(--cream); line-height: 1.65; }
-
-  /* COPY */
-  .copy-body { font-size: 1.05rem; color: var(--white); line-height: 1.65; }
-  .copy-ctx { font-size: 0.55rem; }
-
-  /* PALETTE */
-  .pal-role { font-size: 0.9rem; color: var(--cream); }
-  .pal-name { font-size: 0.9rem; }
-
-  /* COLOR CONTEXT */
-  .color-context { grid-template-columns: 1fr; }
-  .cc-text { font-size: 0.95rem; color: var(--cream); }
-
-  /* WIKIPEDIA */
-  .wiki { grid-template-columns: 1fr; }
-  .wiki-n { font-size: 3rem; }
-  .wiki-body { font-size: 0.95rem; color: var(--cream); line-height: 1.75; }
-  .wiki-item-t { font-size: 0.95rem; color: var(--cream); line-height: 1.65; }
-
-  /* CSS REF */
-  .css-row { grid-template-columns: 1fr; }
-  .css-code { font-size: 0.65rem; line-height: 1.8; }
-
-  /* ALIGN RULE */
-  .ar-note { font-size: 0.95rem; color: var(--cream); line-height: 1.65; }
-  .ar-ex { font-size: 1.8rem; }
-
-  /* LOGO */
-  .lr-body { font-size: 0.95rem; color: var(--cream); line-height: 1.65; }
-
-  /* PALETTE */
-  .pal-row { grid-template-columns: 56px 1fr 36px; }
-  .pal-swatch { height: 56px; }
-  .pal-info { padding: 8px 12px; }
-  .pal-hex { font-size: 0.38rem; }
-
-  /* FOOTER */
-  footer { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
-}
-
-/* LIGHT MODE — force dark bg for legibility, never invert to white */
-@media (prefers-color-scheme: light) {
-  html { background: var(--black); color-scheme: dark; }
-  body { background: var(--black); color: var(--white); }
-  nav { background: rgba(10,10,10,0.98); }
-}
-
-/* HOUSE STYLE */
-.house-style {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule-s);
-  margin-bottom: 2rem;
-}
-
-.hs-row {
-  background: var(--off);
-  padding: 1.2rem 1.5rem;
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 2rem;
-  align-items: start;
-  transition: background 0.2s;
-}
-
-.hs-row:hover { background: #151412; }
-
-.hs-label {
-  font-family: var(--pr);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  padding-top: 2px;
-  line-height: 1.5;
-}
-
-.hs-rule {
-  font-family: var(--se);
-  font-style: italic;
-  font-size: 0.72rem;
-  color: var(--cream);
-  line-height: 1.75;
-}
-
-.hs-rule strong {
-  color: var(--white);
-  font-style: normal;
-}
-
-@media print {
-  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-
-  nav { display: none !important; }
-
+  :root {
+    --black: #0a0a0a;
+    --white: #f0ebe0;
+    --cream: #e8e0cc;
+    --red: #c8341a;
+    --gold: #b8962e;
+    --gray: #3a3835;
+    --light-gray: #7a7570;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Playfair Display', Georgia, serif;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    mix-blend-mode: normal;
+  }
+
+  nav::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.9) 0%, transparent 100%);
+    z-index: -1;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  /* ── HERO ── */
   .hero {
-    min-height: 0 !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 6rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--black);
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0.45;
+    filter: grayscale(30%) contrast(1.1);
+  }
+
+  .hero-img-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to top, var(--black) 0%, rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.2) 100%),
+      linear-gradient(to right, rgba(10,10,10,0.6) 0%, transparent 60%);
+    z-index: 1;
+  }
+
+  /* Large decorative K */
+  .hero-k {
+    position: absolute;
+    right: -0.05em;
+    top: 50%;
+    transform: translateY(-52%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20rem, 45vw, 55rem);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(240,235,224,0.04);
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 18vw, 18rem);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 0.9s 0.4s forwards;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-name span {
+    display: block;
+    color: var(--cream);
+  }
+
+  .hero-rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin: 2.5rem 0;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.6s forwards;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-desc {
+    max-width: 420px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--light-gray);
+    font-style: italic;
+  }
+
+  .hero-desc strong {
+    color: var(--white);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .hero-categories {
+    display: flex;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .hero-cat {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border: 1px solid var(--gray);
+    padding: 0.5rem 1rem;
+    color: var(--light-gray);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .hero-cat:hover {
+    border-color: var(--white);
+    color: var(--white);
+    background: rgba(240,235,224,0.05);
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray);
+  }
+
+  /* ── THREE PORTALS ── */
+  .portals {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100vh;
+    border-top: 1px solid var(--gray);
+  }
+
+  .portal {
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid var(--gray);
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    min-height: 85vh;
+    transition: flex 0.5s ease;
+  }
+
+  .portal:last-child { border-right: none; }
+
+  .portal-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s ease, opacity 0.4s ease;
+  }
+
+  .portal-books .portal-bg {
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(184,150,46,0.12) 0%, transparent 70%),
+      linear-gradient(170deg, #111009 0%, #0a0a0a 100%);
+  }
+
+  .portal-movies .portal-bg {
+    background:
+      radial-gradient(ellipse at 70% 40%, rgba(200,52,26,0.12) 0%, transparent 70%),
+      linear-gradient(170deg, #110a09 0%, #0a0a0a 100%);
+  }
+
+  .portal-art .portal-bg {
+    background:
+      radial-gradient(ellipse at 50% 70%, rgba(100,120,140,0.10) 0%, transparent 70%),
+      linear-gradient(170deg, #090a11 0%, #0a0a0a 100%);
+  }
+
+  .portal:hover .portal-bg {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  .portal-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 2.5rem;
+  }
+
+  .portal-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gray);
+    transition: color 0.3s;
+  }
+
+  .portal:hover .portal-number { color: var(--light-gray); }
+
+  .portal-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 0;
+  }
+
+  .portal-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+
+  .portal:hover .portal-icon { opacity: 0.8; }
+
+  .portal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .portal:hover .portal-title {
+    transform: translateX(6px);
+  }
+
+  .portal-books .portal-title { color: var(--cream); }
+  .portal-movies .portal-title { color: #f5ede8; }
+  .portal-art .portal-title { color: #e8ecf0; }
+
+  .portal-accent {
+    width: 2rem;
+    height: 3px;
+    margin: 1.5rem 0;
+    transition: width 0.4s ease;
+  }
+
+  .portal:hover .portal-accent { width: 4rem; }
+
+  .portal-books .portal-accent { background: var(--gold); }
+  .portal-movies .portal-accent { background: var(--red); }
+  .portal-art .portal-accent { background: #6a8aaa; }
+
+  .portal-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--light-gray);
+    font-style: italic;
+    max-width: 260px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s 0.1s, transform 0.4s 0.1s;
+  }
+
+  .portal:hover .portal-desc {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .portal-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .portal-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.3s 0.1s, transform 0.3s 0.1s, color 0.2s;
+  }
+
+  .portal:hover .portal-cta {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .portal-cta:hover { color: var(--white); }
+
+  .portal-arrow {
+    width: 2rem;
+    height: 1px;
+    background: var(--gray);
+    position: relative;
+    transition: width 0.3s, background 0.3s;
+  }
+
+  .portal-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -3px;
+    border: 3px solid transparent;
+    border-left: 5px solid var(--gray);
+    transition: border-color 0.3s;
+  }
+
+  .portal:hover .portal-arrow {
+    width: 3rem;
+    background: var(--white);
+  }
+
+  .portal:hover .portal-arrow::after {
+    border-left-color: var(--white);
+  }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    padding: 7rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: start;
+    border-top: 1px solid var(--gray);
+  }
+
+  .about-label-col { padding-top: 0.5rem; }
+
+  .about-tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.9;
+    color: var(--white);
+    margin-bottom: 3rem;
+  }
+
+  .about-tagline em {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.6em;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+  }
+
+  .about-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--light-gray);
+    margin-bottom: 2rem;
+  }
+
+  .about-body strong {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  .about-facts {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    page-break-after: always;
+    gap: 0.5rem 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--gray);
+  }
+
+  .about-fact {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(58,56,53,0.5);
+  }
+
+  .about-fact span {
+    display: block;
+    color: var(--light-gray);
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    overflow: hidden;
+    padding: 1.2rem 0;
+    background: var(--black);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 22s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    padding: 0 2.5rem;
+    color: var(--gray);
+    flex-shrink: 0;
+  }
+
+  .marquee-dot {
+    color: var(--gold);
+    padding: 0 0.5rem;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── SELECTED WORKS ── */
+  .works {
+    padding: 7rem 3rem;
+    border-top: 1px solid var(--gray);
+  }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray);
+    margin-top: 3rem;
+  }
+
+  .work-item {
+    background: var(--black);
     padding: 0;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
   }
 
-  .hero-left { padding: 2cm 1.2cm 1.2cm; }
-  .hero-right { padding: 2cm 1.2cm 1.2cm; }
-  .hero-name { font-size: 60pt !important; }
-  .hero-logo { width: 120px; height: 120px; }
-
-  section {
-    padding: 1cm 1.2cm !important;
-    page-break-inside: avoid;
-    border-bottom: none !important;
+  .work-item-body {
+    padding: 1.8rem 2.5rem 2.5rem;
   }
 
-  section + section { page-break-before: always; }
+  .work-item:hover { background: #111; }
 
-  /* Kill all min-heights and viewport units */
-  *, *::before, *::after {
-    min-height: 0 !important;
+  .work-cat {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
   }
 
-  /* No fade-in — everything visible */
-  .fi { opacity: 1 !important; transform: none !important; }
+  .work-cat-books { color: var(--gold); }
+  .work-cat-movies { color: var(--red); }
+  .work-cat-art { color: #6a8aaa; }
 
-  /* Tighter spacing on grids */
-  .grid-2, .grid-3, .logo-grid, .logo-rules,
-  .voice-grid, .align-rule, .color-context {
-    break-inside: avoid;
+  .work-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    transition: transform 0.3s;
   }
 
-  .mantras, .palette, .sites, .type-table,
-  .css-grid, .house-style { break-inside: avoid; }
+  .work-item:hover .work-title { transform: translateX(4px); }
 
-  /* Section titles */
-  .sec-title { font-size: 28pt !important; margin-bottom: 0.3cm !important; }
-  .sec-intro { margin-bottom: 0.5cm !important; font-size: 8pt !important; }
-  .eyebrow { margin-bottom: 0.2cm !important; }
+  .work-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gray);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+  }
 
-  /* Cell padding */
-  .cell { padding: 0.35cm !important; }
-  .mantra-row { padding: 0.25cm 0.4cm !important; }
-  .pal-row .pal-swatch { height: 40px !important; }
-  .pal-info { padding: 6px 12px !important; }
-  .lr { padding: 0.3cm !important; }
-  .vc { padding: 0.4cm !important; }
-  .copy-body { padding: 0.35cm !important; }
-  .hs-row { padding: 0.3cm 0.4cm !important; }
-  .css-row { padding: 0.25cm 0.4cm !important; }
-  .site-domain { padding: 0.3cm 0.4cm !important; }
-  .site-info { padding: 0.3cm 0.4cm !important; }
+  .work-blurb {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--light-gray);
+    font-style: italic;
+  }
 
-  /* Footer */
-  footer { padding: 0.5cm 1.2cm !important; }
+  .work-thumb-wrap {
+    padding: 1.5rem 1.5rem 0;
+  }
 
-  /* Wiki */
-  .wiki { padding: 0.5cm !important; }
+  .work-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: grayscale(15%);
+    transition: filter 0.4s;
+  }
 
-  /* Page breaks between major sections */
-  #logo { page-break-before: always; }
-  #color { page-break-before: always; }
-  #type { page-break-before: always; }
-  #voice { page-break-before: always; }
-  #sites { page-break-before: always; }
-  #wikipedia { page-break-before: always; }
-}
+  .work-item:hover .work-thumb {
+    filter: grayscale(0%);
+  }
+
+  .work-thumb-wide {
+    height: 140px;
+    object-position: center;
+  }
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    transition: width 0.4s ease;
+  }
+
+  .work-item:hover .work-rule { width: 100%; }
+
+  .work-cat-books ~ .work-rule,
+  .work-item:hover .work-rule-books { background: var(--gold); }
+
+  /* ── QUOTE BAND ── */
+  .quote-band {
+    padding: 5rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--gray);
+    background: linear-gradient(to bottom, transparent, rgba(184,150,46,0.03), transparent);
+  }
+
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 0.5;
+    color: var(--gold);
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.9rem);
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--white);
+    max-width: 780px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .quote-attr {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  /* ── LINKS FOOTER ── */
+  .links-bar {
+    border-top: 1px solid var(--gray);
+    display: flex;
+    align-items: stretch;
+  }
+
+  .link-block {
+    flex: 1;
+    border-right: 1px solid var(--gray);
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: background 0.3s;
+    color: inherit;
+  }
+
+  .link-block:last-child { border-right: none; }
+  .link-block:hover { background: #111; }
+
+  .link-block-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .link-block-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+
+  .link-block-arrow {
+    font-size: 1rem;
+    color: var(--gray);
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .link-block:hover .link-block-arrow {
+    transform: translate(4px, -4px);
+    color: var(--white);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--gray);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+  }
+
+  .footer-right {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── INTERSECTION OBSERVER REVEALS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s 1.5s forwards;
+  }
+
+  .scroll-hint-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .scroll-hint-line {
+    width: 1px;
+    height: 3rem;
+    background: linear-gradient(to bottom, var(--gray), transparent);
+    animation: scrollLine 1.8s 1.5s infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ── YOUTUBE SECTION ── */
+  .youtube {
+    padding: 7rem 3rem;
+    border-top: 1px solid var(--gray);
+  }
+
+  .youtube-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    gap: 2rem;
+  }
+
+  .youtube-meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .youtube-handle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+  }
+
+  .youtube-handle:hover { color: var(--red); }
+
+  .youtube-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray);
+  }
+
+  .yt-item {
+    background: var(--black);
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .yt-item:hover { background: #111; }
+
+  .yt-thumb-wrap {
+    position: relative;
+    overflow: hidden;
+    margin: 1.2rem 1.2rem 0;
+    background: #111;
+  }
+
+  .yt-thumb {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%) brightness(0.85);
+    transition: filter 0.4s;
+  }
+
+  .yt-item:hover .yt-thumb {
+    filter: grayscale(0%) brightness(1);
+  }
+
+  .yt-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background: rgba(10,10,10,0.3);
+  }
+
+  .yt-item:hover .yt-play { opacity: 1; }
+
+  .yt-play-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .yt-play-icon::after {
+    content: '';
+    border-style: solid;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent var(--white);
+    margin-left: 3px;
+  }
+
+  .yt-info {
+    padding: 1.2rem 1.5rem 1.8rem;
+  }
+
+  .yt-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    transition: color 0.2s;
+  }
+
+  .yt-item:hover .yt-title { color: var(--cream); }
+
+  .yt-duration {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+
+  .youtube-cta {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .youtube-cta a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-decoration: none;
+    border: 1px solid var(--gray);
+    padding: 1rem 2.5rem;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  .youtube-cta a:hover {
+    border-color: var(--white);
+    color: var(--white);
+    background: rgba(240,235,224,0.04);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .hero { padding: 5rem 1.5rem 3rem; }
+    .hero-name { font-size: clamp(4rem, 20vw, 8rem); }
+    .hero-bottom { flex-direction: column; align-items: flex-start; }
+    .portals { grid-template-columns: 1fr; }
+    .portal { min-height: 60vh; border-right: none; border-bottom: 1px solid var(--gray); }
+    .portal:last-child { border-bottom: none; }
+    .about-strip { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+    .works-grid { grid-template-columns: 1fr; }
+    .links-bar { flex-direction: column; }
+    .link-block { border-right: none; border-bottom: 1px solid var(--gray); }
+    .link-block:last-child { border-bottom: none; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .about-facts { grid-template-columns: 1fr; }
+    .youtube { padding: 4rem 1.5rem; }
+    .youtube-grid { grid-template-columns: 1fr; }
+    .youtube-header { flex-direction: column; align-items: flex-start; }
+    .youtube-meta { text-align: left; }
+    .works { padding: 4rem 1.5rem; }
+    .quote-band { padding: 3rem 1.5rem; }
+    .shelf-section { padding: 3rem 0 0; }
+    .shelf-header { padding: 0 1.5rem 1.2rem; }
+    .shelf-track { padding: 0 1.5rem 2rem; }
+  }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="https://thekitanderson.com" class="nav-mark">Kit Anderson</a>
+  <a href="#" class="nav-logo">Kit Anderson</a>
   <ul class="nav-links">
-    <li><a href="#identity">Identity</a></li>
-    <li><a href="#logo">Logo</a></li>
-    <li><a href="#color">Color</a></li>
-    <li><a href="#type">Type</a></li>
-    <li><a href="#voice">Voice</a></li>
-    <li><a href="#sites">Sites</a></li>
-    <li><a href="#wikipedia">Wikipedia</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#movies">Movies</a></li>
+    <li><a href="#art">Art</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Brand Identity Guide &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; 2026</div>
-    <div class="hero-name">KIT<br><span>ANDERSON</span></div>
-    <div class="hero-rule"></div>
-    <p class="hero-desc"><strong>Author, Artist, and Amateur Stuntman.</strong><br>Operating a private media kitchen in Truckee, California. Six sites. One brand. North star: own the search term, win the Wikipedia page. Nothing is real.</p>
-    <a class="dl-btn" href="/brand-guide/Kit%20Anderson%20%E2%80%94%20Brand%20Guide.pdf" download>Download PDF</a>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <img class="hero-img" src="https://images.squarespace-cdn.com/content/v1/623dae4e26da6109ddd0aa89/027b5787-0445-44a6-a230-f0ba9a54908c/Porsche+Trip+-+Day+1.00_00_00_00.Still001.jpg" alt="Kit Anderson with his Porsche">
+  <div class="hero-img-gradient"></div>
+  <div class="hero-k" aria-hidden="true">K</div>
+
+  <div class="hero-eyebrow">Author, Artist, and Amateur Stuntman &nbsp;·&nbsp; Truckee, California</div>
+  <h1 class="hero-name">
+    Kit<span>Anderson</span>
+  </h1>
+  <div class="hero-rule"></div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>Books. Movies. Art.</strong> The full scope of Kit Anderson's work.
+      Author, Artist, and Amateur Stuntman. Operating a private media kitchen in Truckee, CA.
+      Kit Anderson Does Not Have a Wikipedia Page. This Is Better.
+      Nothing is real.
+    </p>
+    <div class="hero-categories">
+      <a href="#books" class="hero-cat">Books</a>
+      <a href="#movies" class="hero-cat">Movies</a>
+      <a href="#art" class="hero-cat">Art</a>
+    </div>
   </div>
-  <div class="hero-right">
-<div class="hero-stat"><span class="hero-stat-l">Typefaces</span><span class="hero-stat-v">Abolition · Prohibition · Playfair Display · Space Mono</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">Alignment</span><span class="hero-stat-v">Left only. Always. No exceptions.</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">Case</span><span class="hero-stat-v">Abolition + Prohibition: full caps. Body: sentence case.</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">Art / Artist</span><span class="hero-stat-v">Always capitalized. Non-negotiable.</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">Anderson</span><span class="hero-stat-v">Never broken across a line. Ever.</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">Oxford comma</span><span class="hero-stat-v">Author, Artist, and Amateur Stuntman. Always.</span></div>
-    <div class="hero-stat"><span class="hero-stat-l">North star</span><span class="hero-stat-v">Own the search term. Win the Wikipedia page.</span></div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span class="scroll-hint-text">Scroll</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+<!-- THREE PORTALS -->
+<section id="portals">
+  <div class="portals">
+
+    <!-- BOOKS -->
+    <a class="portal portal-books" href="https://readmorekit.com" target="_blank">
+      <div class="portal-bg"></div>
+      <div class="portal-content">
+        <div class="portal-number">01</div>
+        <div class="portal-middle">
+          <div class="portal-icon">📖</div>
+          <span class="portal-title">Books</span>
+          <div class="portal-accent"></div>
+          <p class="portal-desc">Novels, novellas, and art books. Crime fiction, outsider humor, and 100 fake album covers. On sale everywhere books are sold.</p>
+        </div>
+        <div class="portal-bottom">
+          <span class="portal-cta">readmorekit.com ↗</span>
+          <div class="portal-arrow"></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- MOVIES -->
+    <a class="portal portal-movies" href="https://www.imdb.com/name/nm3556873/" target="_blank">
+      <div class="portal-bg"></div>
+      <div class="portal-content">
+        <div class="portal-number">02</div>
+        <div class="portal-middle">
+          <div class="portal-icon">🎬</div>
+          <span class="portal-title">Movies</span>
+          <div class="portal-accent"></div>
+          <p class="portal-desc">Director, producer, cinematographer. Action sports cult films and punk rock documentaries. Gold Medal winner, Park City Film Music Festival.</p>
+        </div>
+        <div class="portal-bottom">
+          <span class="portal-cta">IMDb ↗</span>
+          <div class="portal-arrow"></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- ART -->
+    <a class="portal portal-art" href="https://kitanderson.art" target="_blank">
+      <div class="portal-bg"></div>
+      <div class="portal-content">
+        <div class="portal-number">03</div>
+        <div class="portal-middle">
+          <div class="portal-icon">◼</div>
+          <span class="portal-title">Art</span>
+          <div class="portal-accent"></div>
+          <p class="portal-desc">Drawings, paintings, sculpture, and mixed media. Contemporary figurative work exploring awe and wonder. Nothing is real.</p>
+        </div>
+        <div class="portal-bottom">
+          <span class="portal-cta">kitanderson.art ↗</span>
+          <div class="portal-arrow"></div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Author</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Artist</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Amateur Stuntman</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Kit Anderson</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Nothing Is Real</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Truckee, CA</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Private Media Kitchen</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <!-- Set 2 (duplicate for seamless loop) -->
+    <span class="marquee-item">Author</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Artist</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Amateur Stuntman</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Kit Anderson</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Nothing Is Real</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Truckee, CA</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Private Media Kitchen</span>
+    <span class="marquee-item"><span class="marquee-dot">·</span></span>
   </div>
 </div>
 
-<!-- 01 IDENTITY -->
-<section id="identity">
-  <div class="eyebrow">01 — Identity</div>
-  <h2 class="sec-title">WHO IS<br>KIT ANDERSON</h2>
-  <p class="sec-intro">He's been writing on walls since 1979. Author of three novels and three crime novellas. Director of an action sports cult movie. Gold Medal-winning producer. Phantogram's first roadie. Art Director for the Million Family March and the inaugural Napa Valley Film Festival. Visual artist working in graphite, paint, sculpture, and mixed media. Running for Mayor of Lake Tahoe on a platform of free Porsches. He treats all of it with equal regard.</p>
+<!-- SHELF STYLES (injected inline before shelves) -->
+<style>
+  /* ── SHELF (Netflix-style) ── */
+  .shelf-section {
+    padding: 5rem 0 0;
+    border-top: 1px solid var(--gray);
+  }
 
-  <div class="grid-2 fi">
-    <div class="cell">
-      <div class="cell-label">Full name</div>
-      <div class="cell-value">Kit Anderson</div>
-      <div class="cell-note">Always "Kit Anderson" in full. Never "Kit" alone in formal contexts, never "K. Anderson." The full name is the brand.</div>
-    </div>
-    <div class="cell">
-      <div class="cell-label">Pronouns</div>
-      <div class="cell-value">He / Him</div>
-      <div class="cell-note">Refer to Kit as he/him. Not she. Not they. He.</div>
-    </div>
-    <div class="cell">
-      <div class="cell-label">Primary descriptor</div>
-      <div class="cell-value">Author, Artist, and Amateur Stuntman</div>
-      <div class="cell-note">Use in full. The Oxford comma is load-bearing. "Amateur Stuntman" is not a joke — it's a values statement.</div>
-    </div>
-    <div class="cell">
-      <div class="cell-label">Base of operations</div>
-      <div class="cell-value">Truckee, California</div>
-      <div class="cell-note">Not "near Lake Tahoe." Not "the Sierra Nevada." Truckee, California. Always specific.</div>
-    </div>
-    <div class="cell">
-      <div class="cell-label">Operating model</div>
-      <div class="cell-value">Private media kitchen</div>
-      <div class="cell-note">Signals independence, craft, plurality, and a refusal to be categorized. Use it.</div>
-    </div>
-    <div class="cell">
-      <div class="cell-label">Core disciplines</div>
-      <div class="cell-value">Writing · Movies &amp; Video · Visual Art</div>
-      <div class="cell-note">Plus snowboarding, skating, Porsche driving — pursuits treated with equal artistic regard. The lifestyle is part of the work.</div>
-    </div>
+  .shelf-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 3rem 1.5rem;
+  }
+
+  .shelf-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .shelf-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .shelf-link:hover { color: var(--white); }
+
+  .shelf-track-wrap {
+    position: relative;
+  }
+
+  .shelf-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 0 3rem 2.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .shelf-track::-webkit-scrollbar { display: none; }
+
+  /* fade edges */
+  .shelf-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 2.5rem;
+    width: 5rem;
+    background: linear-gradient(to right, transparent, var(--black));
+    pointer-events: none;
+  }
+
+  /* ── SHELF CARD ── */
+  .shelf-card {
+    flex-shrink: 0;
+    width: 140px;
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.25s;
+  }
+
+  .shelf-card:hover { transform: scale(1.05); }
+
+  .shelf-card-img {
+    width: 140px;
+    height: 210px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border: 1px solid #222;
+    filter: brightness(0.9);
+    transition: filter 0.3s, border-color 0.3s;
+  }
+
+  .shelf-card:hover .shelf-card-img {
+    filter: brightness(1.05);
+    border-color: var(--gold);
+  }
+
+  .shelf-card-img-wide {
+    height: 90px;
+    object-position: center center;
+  }
+
+  .shelf-card-body {
+    padding: 0.6rem 0 0;
+  }
+
+  .shelf-card-cat {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.48rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .shelf-card-cat-books { color: var(--gold); }
+  .shelf-card-cat-movies { color: var(--red); }
+  .shelf-card-cat-art { color: #6a8aaa; }
+  .shelf-card-cat-video { color: #888; }
+
+  .shelf-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: 0.15rem;
+  }
+
+  .shelf-card-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    color: var(--light-gray);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── VIDEO CARD (16:9) ── */
+  .shelf-card-video {
+    width: 220px;
+  }
+
+  .shelf-card-video .shelf-card-img {
+    width: 220px;
+    height: 124px;
+    object-position: center;
+    position: relative;
+  }
+
+  .shelf-card-video-wrap {
+    position: relative;
+  }
+
+  .shelf-card-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    background: rgba(10,10,10,0.35);
+  }
+
+  .shelf-card-video:hover .shelf-card-play { opacity: 1; }
+
+  .shelf-play-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shelf-play-btn::after {
+    content: '';
+    border-style: solid;
+    border-width: 6px 0 6px 12px;
+    border-color: transparent transparent transparent white;
+    margin-left: 2px;
+  }
+
+  /* ── SHELF KICKER ── */
+  .shelf-kicker {
+    border-top: 1px solid var(--gray);
+    margin-top: 1rem;
+  }
+
+  /* ── SHELF CARD TOOLTIP ── */
+  .shelf-card {
+    position: relative;
+  }
+
+  .shelf-card::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.97) 60%, transparent 100%);
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.68rem;
+    font-style: italic;
+    line-height: 1.45;
+    padding: 2rem 0.6rem 0.7rem;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .shelf-card:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── ABOUT HEADERS ── */
+  .about-para-header {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+    margin-top: 2.5rem;
+  }
+
+  .about-para-header:first-child { margin-top: 0; }
+</style>
+
+<!-- BOOKS SHELF -->
+<section class="shelf-section reveal" id="books">
+  <div class="shelf-header">
+    <span class="shelf-title">Books</span>
+    <a class="shelf-link" href="https://www.amazon.com/stores/author/B00C0VR8CK" target="_blank">All titles on Amazon ↗</a>
   </div>
+  <div class="shelf-track-wrap">
+    <div class="shelf-track">
 
-  <div class="eyebrow" style="margin-top:3rem;">Core mantras</div>
-  <div class="mantras fi">
-    <div class="mantra-row"><span class="m-num">01</span><span class="m-text">"Nothing is real."</span><span class="m-src">thekitanderson.com</span></div>
-    <div class="mantra-row"><span class="m-num">02</span><span class="m-text">"A decorated career nobody asked for."</span><span class="m-src">thekitanderson.com</span></div>
-    <div class="mantra-row"><span class="m-num">03</span><span class="m-text">"Kit Anderson does not have a Wikipedia page. This is better."</span><span class="m-src">thekitanderson.com</span></div>
-    <div class="mantra-row"><span class="m-num">04</span><span class="m-text">"Always under construction."</span><span class="m-src">kitanderson.dev</span></div>
-    <div class="mantra-row"><span class="m-num">05</span><span class="m-text">"He has been making Art since before he was born."</span><span class="m-src">thekitanderson.com</span></div>
-    <div class="mantra-row"><span class="m-num">06</span><span class="m-text">"Relentless pursuit of awe and wonder."</span><span class="m-src">kitanderson.art</span></div>
-    <div class="mantra-row"><span class="m-num">07</span><span class="m-text">"Go fast. Take chances. Fuck safety."</span><span class="m-src">thekitanderson.com</span></div>
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLTJW2B" target="_blank" data-description="A survivor's story spanning 1996–2001 about a young woman rebuilding her life after tragedy.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71uoOmFufmL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Never Cry Jack">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
+          <div class="shelf-card-title">Never Cry Jack</div>
+          <div class="shelf-card-year">2008</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLSY3QK" target="_blank" data-description="Three rural kids, a stolen car, and a coming-of-age friendship in 1990s America.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/81PlIeSvw1L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Georgia Lee">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
+          <div class="shelf-card-title">Georgia Lee</div>
+          <div class="shelf-card-year">2015</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLRLXKS" target="_blank" data-description="A combat veteran finds uneasy peace on a remote jungle beach, until it doesn't hold.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/81C5ML7GyaL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="The Hard Sleep">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
+          <div class="shelf-card-title">The Hard Sleep</div>
+          <div class="shelf-card-year">2016</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.amazon.com/dp/1798669269" target="_blank" data-description="A gang of jackass skiers decides to blow up a chairlift in the town of Rockwell.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/910YRxFiqlL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Hackenbush">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
+          <div class="shelf-card-title">Hackenbush</div>
+          <div class="shelf-card-year">2019</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.amazon.com/dp/1096591537" target="_blank" data-description="A fifteen-year-old farm kid from Western Maryland sinks a yacht.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/91o1TZCb3RL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Kemper & The West Coast Club">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
+          <div class="shelf-card-title">Kemper & The West Coast Club</div>
+          <div class="shelf-card-year">2019</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.amazon.com/dp/B08F6Y3M1T" target="_blank" data-description="A retired gambler who rigged the Super Bowl just wants to live on his boat in Lake Tahoe.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/919H4H49l8L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Dirty Davenport">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
+          <div class="shelf-card-title">Dirty Davenport</div>
+          <div class="shelf-card-year">2020</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.amazon.com/dp/B0GR29MHLP" target="_blank" data-description="100 fake album covers for bands that don't exist, names captured from real conversations.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71klnkNDl7L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Bandnamery">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Art Book</div>
+          <div class="shelf-card-title">Bandnamery</div>
+          <div class="shelf-card-year">2026</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.amazon.com/stores/author/B00C0VR8CK" target="_blank" data-description="A visual survey of Kit Anderson's sketchbook work spanning over a decade.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71VFtwux1ZL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Select Works: Scans From My Sketchbooks">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-books">Drawing Collection</div>
+          <div class="shelf-card-title">Scans From My Sketchbooks</div>
+          <div class="shelf-card-year">2025</div>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
-<!-- 02 LOGO -->
-<section id="logo">
-  <div class="eyebrow">02 — Logo</div>
-  <h2 class="sec-title">THE MARK</h2>
-  <p class="sec-intro">A hand-lettered signature with a heart integrated into the letterforms. Raw, personal, irreproducible. Three official variants. Always use the original artwork files — never attempt to recreate it digitally.</p>
+<!-- MOVIES SECTION -->
+<section class="shelf-section reveal" id="movies">
+  <div class="shelf-header">
+    <span class="shelf-title">Movies</span>
+    <a class="shelf-link" href="https://www.imdb.com/name/nm3556873/" target="_blank">IMDb ↗</a>
+  </div>
+  <div class="shelf-track-wrap">
+    <div class="shelf-track">
 
-  <div class="logo-grid fi">
-    <div class="logo-cell lc-white">
-      <span class="logo-cell-tag">Primary</span>
-      <img src="/Logo_Kit_Anderson_whiteground.png" alt="Kit Anderson logo on white">
-      <span class="logo-cell-lbl">On White / Light</span>
-    </div>
-    <div class="logo-cell lc-black">
-      <span class="logo-cell-tag">Reversed</span>
-      <img src="/Logo_Kit_Anderson_blackground.jpg" alt="Kit Anderson logo on black">
-      <span class="logo-cell-lbl">On Black</span>
-    </div>
-    <div class="logo-cell lc-dark">
-      <span class="logo-cell-tag">Editorial</span>
-      <img src="/Logo_Kit_Anderson.png" alt="Kit Anderson logo alternate" style="filter:invert(1) opacity(0.9);">
-      <span class="logo-cell-lbl">On Dark</span>
+      <a class="shelf-card" href="https://www.imdb.com/title/tt12674290/" target="_blank" data-description="The Most Extreme Movie Ever Made. An action sports cult classic.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/M/MV5BMzgxMGFmNWYtMmJlYS00NjdkLTlmNzAtYWZiMjA4NjI2MmI2XkEyXkFqcGc@._V1_QL75_UY281_CR6,0,190,281_.jpg" alt="Gapers Gone Wild">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-movies">Director / Producer</div>
+          <div class="shelf-card-title">Gapers Gone Wild</div>
+          <div class="shelf-card-year">2004</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://www.imdb.com/title/tt1484081/" target="_blank" data-description="A punk rock documentary that won the Gold Medal at the Park City Film Music Festival.">
+        <img class="shelf-card-img" src="https://m.media-amazon.com/images/M/MV5BMTM0MjQ0ODMxN15BMl5BanBnXkFtZTcwMzMzNzY5Mg@@._V1_QL75_UX190_CR0,0,190,281_.jpg" alt="Mathematician's Transdimensional Odyssey of Doom">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-movies">Producer / Cinematographer</div>
+          <div class="shelf-card-title">Mathematician's Transdimensional Odyssey of Doom</div>
+          <div class="shelf-card-year">2009</div>
+        </div>
+      </a>
+
     </div>
   </div>
 
-  <div class="logo-rules fi">
-    <div class="lr do"><div class="lr-h"><div class="lr-dot">✓</div><span class="lr-title">Do</span></div><p class="lr-body">Use the original artwork files only. The mark works at any scale as long as the file is used as-is.</p></div>
-    <div class="lr dont"><div class="lr-h"><div class="lr-dot">✕</div><span class="lr-title">Don't</span></div><p class="lr-body">Never stretch, skew, rotate, or attempt to recreate the mark digitally. The hand-lettered quality is the point.</p></div>
-    <div class="lr do"><div class="lr-h"><div class="lr-dot">✓</div><span class="lr-title">Do</span></div><p class="lr-body">Maintain clear space equal to the width of the "K" on all four sides.</p></div>
-    <div class="lr dont"><div class="lr-h"><div class="lr-dot">✕</div><span class="lr-title">Don't</span></div><p class="lr-body">Never place the mark on mid-tone, patterned, or busy backgrounds. High contrast only.</p></div>
-    <div class="lr do"><div class="lr-h"><div class="lr-dot">✓</div><span class="lr-title">Do</span></div><p class="lr-body">The heart is inseparable from the letterforms. Keep it intact in every use.</p></div>
-    <div class="lr dont"><div class="lr-h"><div class="lr-dot">✕</div><span class="lr-title">Don't</span></div><p class="lr-body">Never recolor the mark. Always black on light, white/light on dark. Never accent colors.</p></div>
-  </div>
-</section>
+  <!-- YOUTUBE KICKER -->
+  <div class="shelf-kicker">
+    <div class="shelf-header" style="padding-top:2rem;">
+      <span class="shelf-title" style="font-size:1.2rem; color:var(--light-gray);">Also on YouTube</span>
+      <a class="shelf-link" href="https://www.youtube.com/@kitanderson" target="_blank">@KitAnderson &nbsp;·&nbsp; 23 videos ↗</a>
+    </div>
+    <div class="shelf-track-wrap">
+      <div class="shelf-track">
 
-<!-- 03 COLOR -->
-<section id="color">
-  <div class="eyebrow">03 — Color</div>
-  <h2 class="sec-title">THE PALETTE</h2>
-  <p class="sec-intro">Pulled from the existing sites. Black, grain, and gold — the palette of a filmmaker's edit suite, a sketchbook at midnight, a cult movie poster. Everything lives on near-black.</p>
+        <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=Ozwj774AlJI" target="_blank">
+          <div class="shelf-card-video-wrap">
+            <img class="shelf-card-img" src="https://i.ytimg.com/vi/Ozwj774AlJI/hqdefault.jpg" alt="Rubicon Trail">
+            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          </div>
+          <div class="shelf-card-body">
+            <div class="shelf-card-cat shelf-card-cat-video">38:16</div>
+            <div class="shelf-card-title">Rubicon Trail, Down Big Sluice</div>
+            <div class="shelf-card-year">1.9K views</div>
+          </div>
+        </a>
 
-  <div class="palette fi">
-    <div class="pal-row"><div class="pal-swatch" style="background:#0a0a0a;"></div><div class="pal-info"><div class="pal-name">Deep Black</div><div class="pal-role">Primary background across all sites. The baseline everything lives on.</div></div><div class="pal-hex-col"><span class="pal-hex">#0A0A0A</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#111110;"></div><div class="pal-info"><div class="pal-name">Off Black</div><div class="pal-role">Surface color for cards, panels, content containers.</div></div><div class="pal-hex-col"><span class="pal-hex">#111110</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#f0ebe0;"></div><div class="pal-info"><div class="pal-name">Warm White</div><div class="pal-role">Primary text on dark. Not pure white — warm, paper-like, slightly aged.</div></div><div class="pal-hex-col"><span class="pal-hex">#F0EBE0</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#b8962e;"></div><div class="pal-info"><div class="pal-name">Gold</div><div class="pal-role">Primary accent. Eyebrows, labels, rules, highlights. Use sparingly.</div></div><div class="pal-hex-col"><span class="pal-hex">#B8962E</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#c8341a;"></div><div class="pal-info"><div class="pal-name">Kit Red</div><div class="pal-role">Movies and video contexts. Jerk Calhoun. Action. Use with intent.</div></div><div class="pal-hex-col"><span class="pal-hex">#C8341A</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#6a8aaa;"></div><div class="pal-info"><div class="pal-name">Studio Steel</div><div class="pal-role">Art contexts. Drawings, paintings, fine art practice. Cool, contemplative.</div></div><div class="pal-hex-col"><span class="pal-hex">#6A8AAA</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#39d353;"></div><div class="pal-info"><div class="pal-name">CRT Green</div><div class="pal-role">Dev contexts. kitanderson.dev. Terminal energy. The color of a phosphor screen at 2am.</div></div><div class="pal-hex-col"><span class="pal-hex">#39D353</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#898984;"></div><div class="pal-info"><div class="pal-name">Ash</div><div class="pal-role">Secondary text, metadata, supporting copy.</div></div><div class="pal-hex-col"><span class="pal-hex">#898984</span></div></div>
-    <div class="pal-row"><div class="pal-swatch" style="background:#3a3835;"></div><div class="pal-info"><div class="pal-name">Charcoal</div><div class="pal-role">Rules, borders, dividers, grid lines.</div></div><div class="pal-hex-col"><span class="pal-hex">#3A3835</span></div></div>
-  </div>
+        <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=UjReJ-lgMjg" target="_blank">
+          <div class="shelf-card-video-wrap">
+            <img class="shelf-card-img" src="https://i.ytimg.com/vi/UjReJ-lgMjg/hqdefault.jpg" alt="Phantogram First Show">
+            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          </div>
+          <div class="shelf-card-body">
+            <div class="shelf-card-cat shelf-card-cat-video">4:39</div>
+            <div class="shelf-card-title">Phantogram's First Show "Let Me Go"</div>
+            <div class="shelf-card-year">121 views</div>
+          </div>
+        </a>
 
-  <div class="color-context fi">
-    <div class="cc"><div class="cc-lbl">Books / Writing</div><div class="cc-text">Gold accent. Warm White text. The color of paper, manuscript, and late-night edits.</div></div>
-    <div class="cc"><div class="cc-lbl">Movies / Video</div><div class="cc-text">Kit Red. High contrast. The color of a record light, a cult poster, Jerk Calhoun's badge.</div></div>
-    <div class="cc"><div class="cc-lbl">Visual Art</div><div class="cc-text">Studio Steel. The color of graphite, a studio at dawn, a sketch on blue paper.</div></div>
-    <div class="cc"><div class="cc-lbl">Dev / kitanderson.dev</div><div class="cc-text">CRT Green. The color of a phosphor terminal. Code, craft, and things always under construction.</div></div>
-  </div>
+        <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=yrHdY9NfyH4" target="_blank">
+          <div class="shelf-card-video-wrap">
+            <img class="shelf-card-img" src="https://i.ytimg.com/vi/yrHdY9NfyH4/hqdefault.jpg" alt="Durango to Silverton">
+            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          </div>
+          <div class="shelf-card-body">
+            <div class="shelf-card-cat shelf-card-cat-video">26:02</div>
+            <div class="shelf-card-title">Durango to Silverton at Dawn — Porsche 987.1</div>
+            <div class="shelf-card-year">44 views</div>
+          </div>
+        </a>
 
-  <div class="eyebrow" style="margin-top:3rem;">Contrast</div>
-  <div class="house-style">
-    <div class="hs-row">
-      <div class="hs-label">Standard</div>
-      <div class="hs-rule">All text must meet WCAG 2.2 Level AA minimum. Normal text: 4.5:1 contrast ratio against its background. Large text (24px+ or 18.5px+ bold): 3:1 minimum.</div>
-    </div>
-    <div class="hs-row">
-      <div class="hs-label">Warm White &amp; Cream</div>
-      <div class="hs-rule">Primary text colors. Both clear AAA on Deep Black and Off Black — 15:1 and above. Always safe for body copy at any size.</div>
-    </div>
-    <div class="hs-row">
-      <div class="hs-label">Gold</div>
-      <div class="hs-rule">7.01:1 on Deep Black — AAA. Safe for body copy, labels, eyebrows. The primary accent color that earns its keep at every size.</div>
-    </div>
-    <div class="hs-row">
-      <div class="hs-label">Studio Steel</div>
-      <div class="hs-rule">5.50:1 on Deep Black — AA. Safe for body copy. Use confidently in Art contexts.</div>
-    </div>
-    <div class="hs-row">
-      <div class="hs-label">CRT Green</div>
-      <div class="hs-rule">10.01:1 on Deep Black — AAA. Safe at any size. Dev contexts only.</div>
-    </div>
-    <div class="hs-row">
-      <div class="hs-label">Ash</div>
-      <div class="hs-rule">4.14–4.34:1 — passes for large text only (24px+). Never use Ash for small body copy. Metadata, labels, and eyebrows at display sizes only.</div>
-    </div>
-    <div class="hs-row">
-      <div class="hs-label">Kit Red</div>
-      <div class="hs-rule">3.56–3.74:1 — passes for large text only (24px+). Never use Kit Red as a text color at small sizes. It is an accent and site bar color, not a copy color.</div>
-    </div>
-  </div>
+        <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=qYJjAz9QVWc" target="_blank">
+          <div class="shelf-card-video-wrap">
+            <img class="shelf-card-img" src="https://i.ytimg.com/vi/qYJjAz9QVWc/hqdefault.jpg" alt="Route 71 Colorado">
+            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          </div>
+          <div class="shelf-card-body">
+            <div class="shelf-card-cat shelf-card-cat-video">6:03</div>
+            <div class="shelf-card-title">Porsche 987.1 — Route 71, Colorado</div>
+            <div class="shelf-card-year">64 views</div>
+          </div>
+        </a>
 
-</section>
+        <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=R0OxD3h2_ic" target="_blank">
+          <div class="shelf-card-video-wrap">
+            <img class="shelf-card-img" src="https://i.ytimg.com/vi/R0OxD3h2_ic/hqdefault.jpg" alt="New Mexico Dashcam">
+            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          </div>
+          <div class="shelf-card-body">
+            <div class="shelf-card-cat shelf-card-cat-video">5:29</div>
+            <div class="shelf-card-title">Porsche 987.1 — New Mexico</div>
+            <div class="shelf-card-year">23 views</div>
+          </div>
+        </a>
 
-<!-- 04 TYPE -->
-<section id="type">
-  <div class="eyebrow">04 — Typography</div>
-  <h2 class="sec-title">TYPE SYSTEM</h2>
-  <p class="sec-intro">Four fonts. Served via Adobe Fonts / Typekit (kit ID: fjh1vfx). Abolition navigates. Prohibition acts. Playfair speaks. Space Mono organizes. One universal law: left-aligned, always, no exceptions.</p>
+        <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=Iu8D6ZgyThI" target="_blank">
+          <div class="shelf-card-video-wrap">
+            <img class="shelf-card-img" src="https://i.ytimg.com/vi/Iu8D6ZgyThI/hqdefault.jpg" alt="The Loneliest Highway">
+            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          </div>
+          <div class="shelf-card-body">
+            <div class="shelf-card-cat shelf-card-cat-video">17:51</div>
+            <div class="shelf-card-title">The Loneliest Highway in America</div>
+            <div class="shelf-card-year">28 views</div>
+          </div>
+        </a>
 
-  <div class="type-table fi">
-    <div class="type-row-h">
-      <span>Font</span><span>Case</span><span>Alignment</span><span>Role &amp; Sample</span>
-    </div>
-    <div class="type-row">
-      <span class="tr-name">Abolition</span>
-      <span class="tr-meta">Full caps</span>
-      <span class="tr-meta">Left only</span>
-      <div>
-        <div style="font-family:'abolition',sans-serif;font-size:2rem;text-transform:uppercase;letter-spacing:0.02em;color:#f0ebe0;line-height:1;margin-bottom:0.5rem;">KIT ANDERSON</div>
-        <div class="tr-role">Headlines · Display · Site titles · Section headers · Navigation</div>
       </div>
     </div>
-    <div class="type-row">
-      <span class="tr-name">Prohibition</span>
-      <span class="tr-meta">Full caps</span>
-      <span class="tr-meta">Left only</span>
-      <div>
-        <div style="font-family:'prohibition',sans-serif;font-size:1.6rem;text-transform:uppercase;letter-spacing:0.04em;color:#f0ebe0;line-height:1;margin-bottom:0.5rem;">NOTHING IS REAL</div>
-        <div class="tr-role">Pull quotes · Subheads · Button labels</div>
-      </div>
-    </div>
-    <div class="type-row">
-      <span class="tr-name">Playfair Display</span>
-      <span class="tr-meta">Mixed case</span>
-      <span class="tr-meta">Left only</span>
-      <div>
-        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:#e8e0cc;line-height:1.7;margin-bottom:0.5rem;">"A private media kitchen in Truckee, California."</div>
-        <div class="tr-role">Body text · Running copy · Artist statements · Descriptions</div>
-      </div>
-    </div>
-    <div class="type-row">
-      <span class="tr-name">Space Mono</span>
-      <span class="tr-meta">All caps</span>
-      <span class="tr-meta">Wide tracking</span>
-      <div>
-        <div style="font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:#898984;margin-bottom:0.5rem;">01 — BOOKS · NOVEL · 2008</div>
-        <div class="tr-role">Labels · Eyebrows · Metadata · Dates · Status tags</div>
-      </div>
-    </div>
   </div>
+</section>
 
-  <div class="align-rule fi">
-    <div class="ar-cell">
-      <div class="ar-label ar-do"><div class="ar-ind">✓</div>ALWAYS — LEFT ALIGNED</div>
-      <div class="ar-ex">KIT<br>ANDERSON</div>
-      <p class="ar-note">Every element on every site. Headlines, body, captions, nav, buttons, pull quotes, fine print. Left-aligned, ragged right. No exceptions, no special cases, no overrides for any of the six sites.</p>
-    </div>
-    <div class="ar-cell">
-      <div class="ar-label ar-dont"><div class="ar-ind">✕</div>NEVER — CENTER JUSTIFIED</div>
-      <div class="ar-ex bad">KIT<br>ANDERSON</div>
-      <p class="ar-note">Center justification is banned universally. Not for heroes, not for pull quotes, not for single words. Not on thekitanderson.com, not on kitanderson.art, not anywhere. Ever.</p>
-    </div>
+<!-- ART SHELF -->
+<section class="shelf-section reveal" id="art">
+  <div class="shelf-header">
+    <span class="shelf-title">Art</span>
+    <a class="shelf-link" href="https://kitanderson.art" target="_blank">kitanderson.art ↗</a>
   </div>
+  <div class="shelf-track-wrap">
+    <div class="shelf-track">
 
-  <div class="css-block fi">
-    <div class="css-eyebrow">CSS Reference</div>
-    <div class="css-grid">
-      <div class="css-row"><span class="css-role">Typekit embed</span><div class="css-code">&lt;link rel="stylesheet" href="<span class="k">https://use.typekit.net/fjh1vfx.css</span>"&gt;</div></div>
-      <div class="css-row"><span class="css-role">Abolition upright</span><div class="css-code">font-family: <span class="k">"abolition"</span>, sans-serif;<br>font-style: <span class="v">normal</span>; text-transform: <span class="v">uppercase</span>; text-align: <span class="v">left</span>;</div></div>
-      <div class="css-row"><span class="css-role">Abolition oblique</span><div class="css-code">font-family: <span class="k">"abolition"</span>, sans-serif;<br>font-style: <span class="v">italic</span>; text-transform: <span class="v">uppercase</span>; text-align: <span class="v">left</span>;</div></div>
-      <div class="css-row"><span class="css-role">Prohibition</span><div class="css-code">font-family: <span class="k">"prohibition"</span>, sans-serif;<br>font-style: <span class="v">normal</span>; text-transform: <span class="v">uppercase</span>; text-align: <span class="v">left</span>;</div></div>
-      <div class="css-row"><span class="css-role">Playfair body</span><div class="css-code">font-family: <span class="k">'Playfair Display'</span>, Georgia, serif;<br>font-style: <span class="v">italic</span>; font-weight: <span class="v">400</span>; text-align: <span class="v">left</span>;</div></div>
-      <div class="css-row"><span class="css-role">Space Mono label</span><div class="css-code">font-family: <span class="k">'Space Mono'</span>, monospace;<br>font-size: <span class="v">0.52rem</span>; letter-spacing: <span class="v">0.28em</span>; text-transform: <span class="v">uppercase</span>; text-align: <span class="v">left</span>;</div></div>
-      <div class="css-row"><span class="css-role">Universal rule</span><div class="css-code">text-align: <span class="v">left</span>; <span class="cm">/* always, everywhere, no exceptions */</span><br><span class="c">/* text-align: center — BANNED */</span></div></div>
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A graphite self-portrait — unflinching, direct, unadorned.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/033b1c18-d2aa-41a0-943e-aa19ee452f3c_rw_1920.jpg?h=e3c95facbabb0c91d3a6cd08e4a60c1f" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Self-portrait</div>
+          <div class="shelf-card-year">2014</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A candid view of the studio wall — skulls, drawings, and the archaeology of a working practice.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/e481a8e8-8964-4acd-940d-ea55dc5e53fc_rw_1920.jpg?h=da4aa72f448a199a1b09e2756df8fe7c" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Studio Wall (Candid)</div>
+          <div class="shelf-card-year">2023</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A figure in motion, rendered in graphite with controlled economy.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/fa7028c8-6fb2-4752-847f-c1b9965bed01_rw_1920.jpg?h=17445c82b60573c2c9387360e272a889" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Figure Study</div>
+          <div class="shelf-card-year">2020</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A portrait study in graphite — stark, luminous, quietly intense.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/6029bb41-d514-4b98-b964-e187a3ea241f_rw_1920.jpg?h=928807383ce9d26a2ea94d464cb6599d" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Portrait Study</div>
+          <div class="shelf-card-year">2017</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A horse skull rendered on dark ground, equal parts specimen and relic.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/ee5ee645-d1f4-42fb-a85e-258d00d07ef5_rw_1920.jpg?h=866101006e6f06958d4fb1eb7a4bbf2e" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Horse Skull Study</div>
+          <div class="shelf-card-year">2020</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="An ornate mixed-media shield in progress — obsessive surface, botanical and strange.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/960f2dad-8b68-4dca-9c1c-4dd196ed7ffa_rw_1920.jpg?h=1874d95b143cdb56f36578794cd1b6e9" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Rag Bone Bomb (In Progress)</div>
+          <div class="shelf-card-year">2014</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A monumental wing spreading across the canvas, gold light dissolving into field.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/7f1bac75-da85-4b0c-9bb1-711cbe809dea_rw_1920.jpg?h=6d444d0079c6d0228a27b5e16ce03563" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Angel Wing</div>
+          <div class="shelf-card-year">2014</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A standing figure, back turned, drawn with spare gestural confidence.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/338d4bb9-4b4f-43c7-ac48-6c77946e179d_rw_1920.jpg?h=2ffe7ea0e2496b6aa55c2a9a54a7d07a" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Figure Study</div>
+          <div class="shelf-card-year">2012</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A frog on dark ground — patient, weighted, rendered with quiet precision.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/4368c879-ada4-40d9-b8dd-22db0dabb08c_rw_1920.jpg?h=a558e92f491861ec8ff98fae25411acc" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Frog Study</div>
+          <div class="shelf-card-year">2021</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A reclining male figure in graphite, studied and still.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/a92e7966-7db9-4128-a3af-0a46ab361fcb_rw_1920.jpg?h=88aa04f0e9034784ef229b9bda42d316" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Figure Study</div>
+          <div class="shelf-card-year">2017</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A preparatory study for Never Cry Jack — pencil on blue paper, spare and restless.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/2486f937-3d9f-4a2c-b4ff-494e3908453b_rw_1920.jpg?h=bb088a7f55f5c879a5a18edff5401e09" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Never Cry Jack Study</div>
+          <div class="shelf-card-year">2021</div>
+        </div>
+      </a>
+
+      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A watercolor stain blooming across the page — color without argument.">
+        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/5f92ea5d-ae56-491b-8a90-2755987fd0f2_rw_1920.jpg?h=7de7ef389b12bf45157d5ba554322ae7" alt="Works of Art by Kit Anderson">
+        <div class="shelf-card-body">
+          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-title">Watercolor Stain</div>
+          <div class="shelf-card-year">2023</div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
 
-<!-- 05 VOICE -->
-<section id="voice">
-  <div class="eyebrow">05 — Voice &amp; Messaging</div>
-  <h2 class="sec-title">HOW KIT<br>SPEAKS</h2>
-  <p class="sec-intro">The voice is the work. Deadpan without being cold. Serious about the art, not about himself. Fake celebrity endorsements deployed with complete conviction. The Oxford comma always in place. Never explains the joke.</p>
-
-  <div class="voice-grid fi">
-    <div class="vc">
-      <div class="vc-title">SERIOUS</div>
-      <span class="vc-sub">About the work, not himself</span>
-      <div class="vc-trait"><span class="vc-trait-t">The art, the books, and the films are treated with genuine craft and complete earnestness</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">Never self-deprecating about quality — only about the premise</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">Credentials stated plainly: Gold Medal. Art Director. Cult movie. No hedging.</span></div>
-    </div>
-    <div class="vc">
-      <div class="vc-title">DEADPAN</div>
-      <span class="vc-sub">Committed to the bit, always</span>
-      <div class="vc-trait"><span class="vc-trait-t">The joke is never announced — it's in the structure, the fine print, the asterisk</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">Fake quotes from dead celebrities delivered without winking at the camera</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">"Nothing is real" is both a punchline and a genuine artistic statement. Both are true.</span></div>
-    </div>
-    <div class="vc">
-      <div class="vc-title">DIRECT</div>
-      <span class="vc-sub">Short sentences. No filler.</span>
-      <div class="vc-trait"><span class="vc-trait-t">Statements, not explanations. Declarations, not pitches.</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">The bio doesn't say "aspiring" or "passionate about." It says what he did and when.</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">Comfortable with fragments. Comfortable with silence.</span></div>
-    </div>
-    <div class="vc">
-      <div class="vc-title">PLURAL</div>
-      <span class="vc-sub">Many things at once, unapologetically</span>
-      <div class="vc-trait"><span class="vc-trait-t">Does not choose between novelist, filmmaker, visual artist, skateboarder, Porsche driver</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">The plurality is the brand — "private media kitchen" holds it all</span></div>
-      <div class="vc-trait"><span class="vc-trait-t">No hierarchy between disciplines. A novella and a Porsche road video get equal billing.</span></div>
+<!-- ABOUT STRIP -->
+<section class="about-strip" id="about">
+  <div class="about-label-col reveal">
+    <div class="section-label">About</div>
+    <div class="about-tagline">
+      <em>Author, Artist, and</em>
+      Amateur<br>Stuntman
     </div>
   </div>
+  <div class="reveal reveal-delay-1">
 
+    <div class="about-para-header">The Myth, The Man, The Media Kitchen</div>
+    <p class="about-body">
+      <strong>Kit Anderson</strong> is an Author, Artist, and Amateur Stuntman operating a private media kitchen in Truckee, California. He has been writing, making Art, and snowboarding and skateboarding all his life — pursuits he treats with equal regard. Often referred to as a "bullshit artist," he is actually a contemporary artist who exploits his natural surroundings as the wellspring for his work and the source of his materials. His Art explores the themes of awe and wonder.
+    </p>
 
-  <div class="eyebrow" style="margin-top:3rem;">House style</div>
-  <div class="house-style fi">
+    <div class="about-para-header">A Decorated Career Nobody Asked For</div>
+    <p class="about-body">
+      Kit first gained recognition as a director and producer of the action sports cult hit <strong>Gapers Gone Wild</strong> (2004). His second film as producer, the punk rock <strong>Mathematician's Transdimensional Odyssey of Doom</strong> (2009), won a Gold Medal for Excellence from the Park City Film Music Festival. He was Phantogram's first roadie, touring with the band in their van and rigging the visual projections for each show. In 2011, he was Art Director for the inaugural Napa Valley Film Festival.
+    </p>
 
-    <div class="hs-row">
-      <div class="hs-label">Art / Artist</div>
-      <div class="hs-rule">Always capitalized. Art, Artist, Artwork. Not art, artist, artwork. This is intentional and non-negotiable — it signals that Kit treats making as a serious discipline, not a hobby.</div>
-    </div>
+    <div class="about-para-header">He Has Been Making Art Since Before He Was Born.</div>
+    <p class="about-body">
+      He began writing on walls in 1979 and began making street Art in 1992, writing graffiti and painting walls in Washington D.C. and Baltimore, Maryland. In 2014, he apprenticed with Louisville sculptor Guy Tedesco. <strong>2025 Artist of the Year</strong>, Adweek's Fake News Awards. Kit Anderson has no exhibition history.
+    </p>
 
-    <div class="hs-row">
-      <div class="hs-label">Movies vs. film</div>
-      <div class="hs-rule">Never "film." Always movies (for features), videos (for YouTube and short-form), or motion pictures (formal contexts). "Film" is not Kit's word.</div>
-    </div>
-
-    <div class="hs-row">
-      <div class="hs-label">Oxford comma</div>
-      <div class="hs-rule">Always. "Author, Artist, and Amateur Stuntman" — that comma before "and" is load-bearing. Never omit it.</div>
-    </div>
-
-    <div class="hs-row">
-      <div class="hs-label">Full name</div>
-      <div class="hs-rule">Always "Kit Anderson" in full in formal contexts. Never "Kit" alone, never "K. Anderson," never "Anderson." The full name is the brand.</div>
-    </div>
-
-    <div class="hs-row">
-      <div class="hs-label">Sentence case</div>
-      <div class="hs-rule">Running copy is always sentence case — first word and proper nouns only. Not title case. "A decorated career nobody asked for." not "A Decorated Career Nobody Asked For."</div>
-    </div>
-
-    <div class="hs-row">
-      <div class="hs-label">Pronouns</div>
-      <div class="hs-rule">He/him. Always. Not she, not they.</div>
-    </div>
-
-    <div class="hs-row">
-      <div class="hs-label">Nothing is real.</div>
-      <div class="hs-rule">The period is part of it. "Nothing is real." — not "Nothing is real" without the full stop. The punctuation is intentional.</div>
-    </div>
-
-    <div class="hs-row">
-      <div class="hs-label">Truckee, California</div>
-      <div class="hs-rule">Not "near Lake Tahoe." Not "the Sierra Nevada." Not "Northern California." Truckee, California. Always specific.</div>
-    </div>
-
-    <div class="hs-row">
-      <div class="hs-label">Anderson — never broken</div>
-      <div class="hs-rule">"Anderson" must always appear whole on a single line. "Kit" may stand alone on a line above, but "Anderson" never wraps, never breaks, never splits across a line end. In display type, headlines, captions, anywhere. If the layout forces a break on "Anderson," fix the layout.</div>
-    </div>
-
-  </div>
-
-  <div class="eyebrow" style="margin-top:3rem;">Voice in action</div>
-  <div class="fi">
-    <div class="copy-ex">
-      <div class="copy-hdr"><span class="copy-ctx">Bio — short form</span><span class="copy-tag">Use this</span></div>
-      <div class="copy-body">Kit Anderson is an Author, Artist, and Amateur Stuntman operating a private media kitchen in Truckee, California. He has been writing, making Art, and snowboarding and skateboarding all his life — pursuits he treats with equal regard. His Art explores the themes of awe and wonder. Nothing is real.</div>
-    </div>
-    <div class="copy-ex">
-      <div class="copy-hdr"><span class="copy-ctx">New work announcement</span><span class="copy-tag">Use this</span></div>
-      <div class="copy-body">Bandnamery is an Art project by Kit Anderson that features 100 ersatz album covers for bands that do not exist. Band names are captured from real world conversations and kept in a database maintained by Kit, then used to create parody artworks. Fake bands. Not fake news.</div>
-    </div>
-    <div class="copy-ex">
-      <div class="copy-hdr"><span class="copy-ctx">Fake endorsement — recurring device</span><span class="copy-tag">Use this</span></div>
-      <div class="copy-body">"Kit Anderson is the greatest living Artist. Facts, bud." — Andy Warhol</div>
-    </div>
-    <div class="copy-ex">
-      <div class="copy-hdr"><span class="copy-ctx">Legal fine print — Jerk Calhoun / Mayor style</span><span class="copy-tag">Use this</span></div>
-      <div class="copy-body">* Kit does not own a car dealership. Details TBD. Reno has not been consulted on this. Eagles are powerful and majestic. Like Kit.</div>
-    </div>
-    <div class="copy-ex">
-      <div class="copy-hdr"><span class="copy-ctx">Messaging — thekitanderson.com</span><span class="copy-tag">Use this</span></div>
-      <div class="copy-body">Advocate for God, guns, grass, and gasoline.</div>
-    </div>
-    <div class="copy-ex">
-      <div class="copy-hdr"><span class="copy-ctx">What Kit Anderson does not sound like</span><span class="copy-tag copy-tag-r">Never this</span></div>
-      <div class="copy-body bad">"I'm a multi-disciplinary creative based in the Sierra Nevada region, passionate about storytelling across mediums. Let's connect and collaborate on something amazing! 🎨✨🔥"</div>
+    <div class="about-facts">
+      <div class="about-fact">
+        Based
+        <span>Truckee, California</span>
+      </div>
+      <div class="about-fact">
+        Pursuits
+        <span>Writing, Art, Snowboarding, Skating</span>
+      </div>
+      <div class="about-fact">
+        Street Art
+        <span>DC & Baltimore, from 1992</span>
+      </div>
+      <div class="about-fact">
+        Education
+        <span>Houghton University, Graphic Design</span>
+      </div>
+      <div class="about-fact">
+        Sculpture
+        <span>Apprentice to Guy Tedesco, Louisville, 2014</span>
+      </div>
+      <div class="about-fact">
+        Million Family March
+        <span>Art Director, 2001</span>
+      </div>
+      <div class="about-fact">
+        Film Festival
+        <span>Gold Medal, Park City, 2009</span>
+      </div>
+      <div class="about-fact">
+        Award
+        <span>Artist of the Year, 2025</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 06 SITES -->
-<section id="sites">
-  <div class="eyebrow">06 — Site Network</div>
-  <h2 class="sec-title">THE SIX<br>DOMAINS</h2>
-  <p class="sec-intro">Six sites. One man. Each a distinct channel — same DNA, different tone. They link to each other, reinforce each other, and collectively saturate the search results for "Kit Anderson."</p>
+<!-- QUOTE BAND -->
+<div class="quote-band reveal">
+  <span class="quote-mark">"</span>
+  <p class="quote-text">Kit Anderson is the greatest living Artist. Facts, bud.</p>
+  <p class="quote-attr">— Andy Warhol</p>
+</div>
 
-  <div class="sites fi">
-    <div class="site-row">
-      <div class="site-domain"><div class="site-name">THEKITANDERSON.COM</div><div class="site-status s-live">● Live · Vercel</div></div>
-      <div class="site-bar" style="background:var(--gold);"></div>
-      <div class="site-info"><div class="site-title">THE MASTER HUB</div><div class="site-desc">Books. Movies. Art. The full scope in one place. Primary SEO target for "Kit Anderson." Links out to all other properties. The front page of the Kit Anderson internet.</div><div class="site-tone">Tone: Editorial · Cinematic · Authoritative</div></div>
-    </div>
-    <div class="site-row">
-      <div class="site-domain"><div class="site-name">KITANDERSON.ART</div><div class="site-status s-migrate">◐ Migrate · Squarespace</div></div>
-      <div class="site-bar" style="background:var(--steel);"></div>
-      <div class="site-info"><div class="site-title">FINE ART PRACTICE</div><div class="site-desc">Drawings, paintings, sculpture, mixed media. Figurative work exploring awe and wonder.  — the deliberate inversion of the master mantra. Minimal, image-first.</div><div class="site-tone">Tone: Quiet · Serious · Contemplative</div></div>
-    </div>
-    <div class="site-row">
-      <div class="site-domain"><div class="site-name">READMOREKIT.COM</div><div class="site-status s-migrate">◐ Migrate · Squarespace</div></div>
-      <div class="site-bar" style="background:var(--gold);"></div>
-      <div class="site-info"><div class="site-title">BOOKS &amp; WRITING</div><div class="site-desc">Novels, novellas, art books. Outsider fiction, crime, rural outlaws. Three novels, three novellas, Bandnamery (2026), Scans From My Sketchbooks (2025). On sale everywhere books are sold.</div><div class="site-tone">Tone: Deadpan · Literary · Outsider</div></div>
-    </div>
-    <div class="site-row">
-      <div class="site-domain"><div class="site-name">KITANDERSON.TV</div><div class="site-status s-live">● Live · Vercel</div></div>
-      <div class="site-bar" style="background:var(--red);"></div>
-      <div class="site-info"><div class="site-title">JERK CALHOUN — MOVIES &amp; VIDEO</div><div class="site-desc">Home of Jerk Calhoun: The Most Cop Ever in Babylon Bay. Satirical action comedy, written and directed by Kit. Also: Gapers Gone Wild, Mathematician's Transdimensional Odyssey. Porsche road trips and more on YouTube.</div><div class="site-tone">Tone: Absurdist · Cinematic · Deadpan comedy</div></div>
-    </div>
-    <div class="site-row">
-      <div class="site-domain"><div class="site-name">KITANDERSON.DEV</div><div class="site-status s-live">● Live · Vercel</div></div>
-      <div class="site-bar" style="background:var(--crt);"></div>
-      <div class="site-info"><div class="site-title">THE TERMINAL — DEV HUB</div><div class="site-desc">Terminal-aesthetic landing page. A `whoami` that answers "Kit Anderson." Links the whole network. "Always under construction." The nerd flank of the internet takeover.</div><div class="site-tone">Tone: Dry · Minimal · Technical · Self-aware</div></div>
-    </div>
-    <div class="site-row">
-      <div class="site-domain"><div class="site-name">MAYORKITANDERSON.COM</div><div class="site-status s-live">● Live · Vercel</div></div>
-      <div class="site-bar" style="background:#4a90d9;"></div>
-      <div class="site-info"><div class="site-title">MAYOR OF LAKE TAHOE</div><div class="site-desc">Parody campaign for Mayor of Lake Tahoe. Platform: free Porsches, mandatory murals, eagle proliferation, tourists redirected to Reno. Endorsed by Andy Warhol, Steve Jobs, Hillary Clinton. Maximum commitment to the bit.</div><div class="site-tone">Tone: Absurdist satire · American political parody</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 WIKIPEDIA -->
-<section id="wikipedia">
-  <div class="eyebrow">07 — The North Star</div>
-  <h2 class="sec-title">WIN THE<br>WIKIPEDIA<br>PAGE</h2>
-  <p class="sec-intro">Current holding line: "Kit Anderson Does Not Have a Wikipedia Page. This Is Better." That's the interim position. The real goal is to make it no longer true. The six-site network is the SEO infrastructure that gets him there.</p>
-
-  <div class="wiki fi">
-    <div class="wiki-n">0</div>
+<!-- EXTERNAL LINKS BAR -->
+<div class="links-bar reveal">
+  <a class="link-block" href="https://readmorekit.com" target="_blank">
     <div>
-      <div class="wiki-title">WIKIPEDIA PAGES CURRENTLY HELD</div>
-      <p class="wiki-body">Wikipedia requires notability — coverage in reliable, independent, secondary sources. Every site is a SEO node. Every node is a link. Every link is a signal.<br><br><strong>What the network is building toward:</strong></p>
-      <div class="wiki-item"><span class="wiki-num">01</span><span class="wiki-item-t"><strong>Owning the SERP.</strong> When you search "Kit Anderson," every result on page one should be Kit Anderson. Six domains make this possible.</span></div>
-      <div class="wiki-item"><span class="wiki-num">02</span><span class="wiki-item-t"><strong>IMDb as an anchor.</strong> Kit already has an IMDb page (nm3556873). Film credits are among the strongest notability signals Wikipedia accepts.</span></div>
-      <div class="wiki-item"><span class="wiki-num">03</span><span class="wiki-item-t"><strong>Published books via Ingram.</strong> Multiple titles in wide distribution. Each one is a citable, verifiable fact.</span></div>
-      <div class="wiki-item"><span class="wiki-num">04</span><span class="wiki-item-t"><strong>Awards and credits.</strong> Gold Medal, Park City Film Music Festival. Art Director, inaugural Napa Valley Film Festival. Art Director, Million Family March. All Wikipedia-friendly facts.</span></div>
-      <div class="wiki-item"><span class="wiki-num">05</span><span class="wiki-item-t"><strong>Press coverage — the missing piece.</strong> The Mayor campaign and Jerk Calhoun are designed to be press-friendly — absurdist, self-contained, quotable. That's how you get the articles that make the Wikipedia page possible.</span></div>
+      <span class="link-block-label">Books</span>
+      <span class="link-block-name">Read More Kit</span>
     </div>
-  </div>
-</section>
+    <span class="link-block-arrow">↗</span>
+  </a>
+  <a class="link-block" href="https://www.imdb.com/name/nm3556873/" target="_blank">
+    <div>
+      <span class="link-block-label">Movies</span>
+      <span class="link-block-name">IMDb</span>
+    </div>
+    <span class="link-block-arrow">↗</span>
+  </a>
+  <a class="link-block" href="https://kitanderson.art" target="_blank">
+    <div>
+      <span class="link-block-label">Art</span>
+      <span class="link-block-name">kitanderson.art</span>
+    </div>
+    <span class="link-block-arrow">↗</span>
+  </a>
+  <a class="link-block" href="https://www.youtube.com/@kitanderson" target="_blank">
+    <div>
+      <span class="link-block-label">Video</span>
+      <span class="link-block-name">YouTube</span>
+    </div>
+    <span class="link-block-arrow">↗</span>
+  </a>
+</div>
 
+<!-- FOOTER -->
 <footer>
-  <a href="https://thekitanderson.com" class="ft-link">← thekitanderson.com</a>
-  <div class="ft-mark">Kit Anderson · Brand Guide · V1.0 · 2026</div>
-  <div class="ft-mantra">"Nothing is real."</div>
+  <div class="footer-name">Kit Anderson &nbsp;·&nbsp; Author, Artist, and Amateur Stuntman</div>
+  <div class="footer-right">Nothing Is Real</div>
 </footer>
 
 <script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
-
-  const secs = document.querySelectorAll('section[id]');
-  const lnks = document.querySelectorAll('.nav-links a');
-
-  const sObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        lnks.forEach(l => l.classList.remove('active'));
-        const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-        if (a) a.classList.add('active');
+  // Intersection observer for reveal animations
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
-  }, { rootMargin: '-40% 0px -50% 0px' });
+  }, { threshold: 0.12 });
 
-  secs.forEach(s => sObs.observe(s));
+  reveals.forEach(el => observer.observe(el));
 
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
+  // Quote rotator — cycle through Kit's fake testimonials
+  const quotes = [
+    { text: "Kit Anderson is the greatest living Artist. Facts, bud.", attr: "— Andy Warhol" },
+    { text: "If I could draw like Kit, then I wouldn't be dead.", attr: "— Steve Jobs" },
+    { text: "I can't read, so a picture book is a godsend.", attr: "— Hillary Clinton" },
+    { text: "Kit is a degenerate jerk face. He's an agent of chaos.", attr: "— Anderson Cooper" },
+    { text: "He's really good at Tetris, like way better than Mick Jagger.", attr: "— Richard Branson" },
+  ];
+
+  let qi = 0;
+  const qText = document.querySelector('.quote-text');
+  const qAttr = document.querySelector('.quote-attr');
+
+  setInterval(() => {
+    qi = (qi + 1) % quotes.length;
+    qText.style.opacity = '0';
+    qAttr.style.opacity = '0';
+    setTimeout(() => {
+      qText.textContent = quotes[qi].text;
+      qAttr.textContent = quotes[qi].attr;
+      qText.style.transition = 'opacity 0.6s';
+      qAttr.style.transition = 'opacity 0.6s';
+      qText.style.opacity = '1';
+      qAttr.style.opacity = '1';
+    }, 400);
+  }, 4500);
 </script>
 
 </body>
