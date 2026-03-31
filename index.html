@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kit Anderson — Author, Artist, and Amateur Stuntman</title>
-<meta name="description" content="Kit Anderson is an Author, Artist, and Amateur Stuntman operating a private media kitchen in Truckee, California. Books, movies, and Art. Nothing is real.">
+<title>Kit Anderson — Author, Artist, and Amateur Stuntman | Truckee, California</title>
+<meta name="description" content="Kit Anderson is an Author, Artist, and Amateur Stuntman from Truckee, California. Novelist, moviemaker, and visual artist. Author of Never Cry Jack, Georgia Lee, The Hard Sleep, and Bandnamery. Director of Gapers Gone Wild. Gold Medal winner, Park City Film Music Festival. Nothing is real.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thekitanderson.com/">
 <meta property="og:type" content="profile">
@@ -651,6 +651,9 @@
     height: 140px;
     object-position: center;
   }
+
+  .work-rule {
+    position: absolute;
     bottom: 0;
     left: 0;
     height: 2px;
@@ -989,6 +992,218 @@
     background: rgba(240,235,224,0.04);
   }
 
+  /* ── SHELF ── */
+  .shelf-section {
+    padding: 5rem 0 0;
+    border-top: 1px solid var(--gray);
+  }
+
+  .shelf-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 3rem 1.5rem;
+  }
+
+  .shelf-title {
+    font-family: "abolition", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .shelf-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .shelf-link:hover { color: var(--white); }
+
+  .shelf-track-wrap {
+    position: relative;
+  }
+
+  .shelf-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 0 3rem 2.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .shelf-track::-webkit-scrollbar { display: none; }
+
+  .shelf-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 2.5rem;
+    width: 5rem;
+    background: linear-gradient(to right, transparent, var(--black));
+    pointer-events: none;
+  }
+
+  .shelf-card {
+    flex-shrink: 0;
+    width: 140px;
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.25s;
+    position: relative;
+  }
+
+  .shelf-card:hover { transform: scale(1.05); }
+
+  .shelf-card-img {
+    width: 140px;
+    height: 210px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border: 1px solid #222;
+    filter: brightness(0.9);
+    transition: filter 0.3s, border-color 0.3s;
+  }
+
+  .shelf-card:hover .shelf-card-img {
+    filter: brightness(1.05);
+    border-color: var(--gold);
+  }
+
+  .shelf-card-img-wide {
+    height: 90px;
+    object-position: center center;
+  }
+
+  .shelf-card-body {
+    padding: 0.6rem 0 0;
+  }
+
+  .shelf-card-cat {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.48rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .shelf-card-cat-books { color: var(--gold); }
+  .shelf-card-cat-movies { color: var(--red); }
+  .shelf-card-cat-art { color: #6a8aaa; }
+  .shelf-card-cat-video { color: #888; }
+
+  .shelf-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: 0.15rem;
+  }
+
+  .shelf-card-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    color: var(--light-gray);
+    letter-spacing: 0.1em;
+  }
+
+  .shelf-card-video {
+    width: 220px;
+  }
+
+  .shelf-card-video .shelf-card-img {
+    width: 220px;
+    height: 124px;
+    object-position: center;
+  }
+
+  .shelf-card-video-wrap {
+    position: relative;
+  }
+
+  .shelf-card-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    background: rgba(10,10,10,0.35);
+  }
+
+  .shelf-card-video:hover .shelf-card-play { opacity: 1; }
+
+  .shelf-play-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shelf-play-btn::after {
+    content: '';
+    border-style: solid;
+    border-width: 6px 0 6px 12px;
+    border-color: transparent transparent transparent white;
+    margin-left: 2px;
+  }
+
+  .shelf-kicker {
+    border-top: 1px solid var(--gray);
+    margin-top: 1rem;
+  }
+
+  .shelf-card::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.97) 60%, transparent 100%);
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.68rem;
+    font-style: italic;
+    line-height: 1.45;
+    padding: 2rem 0.6rem 0.7rem;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .shelf-card:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── ABOUT HEADERS ── */
+  .about-para-header {
+    font-family: "abolition", sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+    margin-top: 2.5rem;
+  }
+
+  .about-para-header:first-child { margin-top: 0; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1.2rem 1.5rem; }
@@ -1017,12 +1232,34 @@
   }
 </style>
 <link rel="stylesheet" href="https://use.typekit.net/fjh1vfx.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kit Anderson",
+  "url": "https://thekitanderson.com",
+  "description": "Author, Artist, and Amateur Stuntman operating a private media kitchen in Truckee, California.",
+  "jobTitle": "Author, Artist, and Amateur Stuntman",
+  "address": {"@type": "PostalAddress", "addressLocality": "Truckee", "addressRegion": "CA", "addressCountry": "US"},
+  "sameAs": [
+    "https://www.imdb.com/name/nm3556873/",
+    "https://readmorekit.com",
+    "https://kitanderson.art",
+    "https://kitanderson.tv",
+    "https://kitanderson.dev",
+    "https://mayorkitanderson.com",
+    "https://www.amazon.com/stores/author/B00C0VR8CK",
+    "https://www.youtube.com/@kitanderson"
+  ]
+}
+</script>
+<meta name="keywords" content="Kit Anderson, author, artist, amateur stuntman, Truckee California, novelist, Never Cry Jack, Georgia Lee, The Hard Sleep, Bandnamery, Gapers Gone Wild, Jerk Calhoun, private media kitchen">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Kit Anderson</a>
+  <a href="#" class="nav-logo"><img src="/Logo_Kit_Anderson_whiteground.png" alt="Kit Anderson" style="height:36px;width:auto;filter:invert(1);opacity:0.9;"></a>
   <ul class="nav-links">
     <li><a href="#books">Books</a></li>
     <li><a href="#movies">Movies</a></li>
@@ -1038,7 +1275,7 @@
   <div class="hero-img-gradient"></div>
   <div class="hero-k" aria-hidden="true">K</div>
 
-  <div class="hero-eyebrow">Author, Artist, and Amateur Stuntman &nbsp;·&nbsp; Truckee, California</div>
+  <div class="hero-eyebrow" style="white-space:nowrap;">Author, Artist, and Amateur Stuntman &nbsp;·&nbsp; Truckee, California</div>
   <h1 class="hero-name">
     KIT<br>ANDERSON
   </h1>
@@ -1159,234 +1396,10 @@
   </div>
 </div>
 
-<!-- SHELF STYLES (injected inline before shelves) -->
-<style>
-  /* ── SHELF (Netflix-style) ── */
-  .shelf-section {
-    padding: 5rem 0 0;
-    border-top: 1px solid var(--gray);
-  }
-
-  .shelf-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    padding: 0 3rem 1.5rem;
-  }
-
-  .shelf-title {
-    font-family: "abolition", sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 0.08em;
-    color: var(--white);
-  }
-
-  .shelf-link {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .shelf-link:hover { color: var(--white); }
-
-  .shelf-track-wrap {
-    position: relative;
-  }
-
-  .shelf-track {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 0 3rem 2.5rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .shelf-track::-webkit-scrollbar { display: none; }
-
-  /* fade edges */
-  .shelf-track-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 2.5rem;
-    width: 5rem;
-    background: linear-gradient(to right, transparent, var(--black));
-    pointer-events: none;
-  }
-
-  /* ── SHELF CARD ── */
-  .shelf-card {
-    flex-shrink: 0;
-    width: 140px;
-    scroll-snap-align: start;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: transform 0.25s;
-  }
-
-  .shelf-card:hover { transform: scale(1.05); }
-
-  .shelf-card-img {
-    width: 140px;
-    height: 210px;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-    border: 1px solid #222;
-    filter: brightness(0.9);
-    transition: filter 0.3s, border-color 0.3s;
-  }
-
-  .shelf-card:hover .shelf-card-img {
-    filter: brightness(1.05);
-    border-color: var(--gold);
-  }
-
-  .shelf-card-img-wide {
-    height: 90px;
-    object-position: center center;
-  }
-
-  .shelf-card-body {
-    padding: 0.6rem 0 0;
-  }
-
-  .shelf-card-cat {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.48rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 0.2rem;
-  }
-
-  .shelf-card-cat-books { color: var(--gold); }
-  .shelf-card-cat-movies { color: var(--red); }
-  .shelf-card-cat-art { color: #6a8aaa; }
-  .shelf-card-cat-video { color: #888; }
-
-  .shelf-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--white);
-    margin-bottom: 0.15rem;
-  }
-
-  .shelf-card-year {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.5rem;
-    color: var(--light-gray);
-    letter-spacing: 0.1em;
-  }
-
-  /* ── VIDEO CARD (16:9) ── */
-  .shelf-card-video {
-    width: 220px;
-  }
-
-  .shelf-card-video .shelf-card-img {
-    width: 220px;
-    height: 124px;
-    object-position: center;
-    position: relative;
-  }
-
-  .shelf-card-video-wrap {
-    position: relative;
-  }
-
-  .shelf-card-play {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s;
-    background: rgba(10,10,10,0.35);
-  }
-
-  .shelf-card-video:hover .shelf-card-play { opacity: 1; }
-
-  .shelf-play-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .shelf-play-btn::after {
-    content: '';
-    border-style: solid;
-    border-width: 6px 0 6px 12px;
-    border-color: transparent transparent transparent white;
-    margin-left: 2px;
-  }
-
-  /* ── SHELF KICKER ── */
-  .shelf-kicker {
-    border-top: 1px solid var(--gray);
-    margin-top: 1rem;
-  }
-
-  /* ── SHELF CARD TOOLTIP ── */
-  .shelf-card {
-    position: relative;
-  }
-
-  .shelf-card::after {
-    content: attr(data-description);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.97) 60%, transparent 100%);
-    color: var(--cream);
-    font-family: 'Playfair Display', serif;
-    font-size: 0.68rem;
-    font-style: italic;
-    line-height: 1.45;
-    padding: 2rem 0.6rem 0.7rem;
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  .shelf-card:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── ABOUT HEADERS ── */
-  .about-para-header {
-    font-family: "abolition", sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-    margin-top: 2.5rem;
-  }
-
-  .about-para-header:first-child { margin-top: 0; }
-</style>
-
 <!-- BOOKS SHELF -->
 <section class="shelf-section reveal" id="books">
   <div class="shelf-header">
-    <span class="shelf-title">Books</span>
+    <h2 class="shelf-title">Books</h2>
     <a class="shelf-link" href="https://www.amazon.com/stores/author/B00C0VR8CK" target="_blank">All titles on Amazon ↗</a>
   </div>
   <div class="shelf-track-wrap">
@@ -1471,7 +1484,7 @@
 <!-- MOVIES SECTION -->
 <section class="shelf-section reveal" id="movies">
   <div class="shelf-header">
-    <span class="shelf-title">Movies</span>
+    <h2 class="shelf-title">Movies</h2>
     <a class="shelf-link" href="https://www.imdb.com/name/nm3556873/" target="_blank">IMDb ↗</a>
   </div>
   <div class="shelf-track-wrap">
@@ -1587,7 +1600,7 @@
 <!-- ART SHELF -->
 <section class="shelf-section reveal" id="art">
   <div class="shelf-header">
-    <span class="shelf-title">Art</span>
+    <h2 class="shelf-title">Art</h2>
     <a class="shelf-link" href="https://kitanderson.art" target="_blank">kitanderson.art ↗</a>
   </div>
   <div class="shelf-track-wrap">
@@ -1711,22 +1724,22 @@
     <div class="section-label">About</div>
     <div class="about-tagline">
       <em>Author, Artist, and</em>
-      Amateur<br>Stuntman
+      Amateur Stuntman
     </div>
   </div>
   <div class="reveal reveal-delay-1">
 
-    <div class="about-para-header">The Myth, The Man, The Media Kitchen</div>
+    <h2 class="about-para-header">The Myth, The Man, The Media Kitchen</h2>
     <p class="about-body">
       <strong>Kit Anderson</strong> is an Author, Artist, and Amateur Stuntman operating a private media kitchen in Truckee, California. He has been writing, making Art, and snowboarding and skateboarding all his life — pursuits he treats with equal regard. Often referred to as a "bullshit artist," he is actually a contemporary artist who exploits his natural surroundings as the wellspring for his work and the source of his materials. His Art explores the themes of awe and wonder.
     </p>
 
-    <div class="about-para-header">A Decorated Career Nobody Asked For</div>
+    <h2 class="about-para-header">A Decorated Career Nobody Asked For</h2>
     <p class="about-body">
-      Kit first gained recognition as a director and producer of the action sports cult hit <strong>Gapers Gone Wild</strong> (2004). His second film as producer, the punk rock <strong>Mathematician's Transdimensional Odyssey of Doom</strong> (2009), won a Gold Medal for Excellence from the Park City Film Music Festival. He was Phantogram's first roadie, touring with the band in their van and rigging the visual projections for each show. In 2011, he was Art Director for the inaugural Napa Valley Film Festival.
+      Kit first gained recognition as a director and producer of the action sports cult hit <strong>Gapers Gone Wild</strong> (2004). His second movie as producer, the punk rock <strong>Mathematician's Transdimensional Odyssey of Doom</strong> (2009), won a Gold Medal for Excellence from the Park City Film Music Festival. He was Phantogram's first roadie, touring with the band in their van and rigging the visual projections for each show. In 2011, he was Art Director for the inaugural Napa Valley Film Festival.
     </p>
 
-    <div class="about-para-header">He Has Been Making Art Since Before He Was Born.</div>
+    <h2 class="about-para-header">He Has Been Making Art Since Before He Was Born.</h2>
     <p class="about-body">
       He began writing on walls in 1979 and began making street Art in 1992, writing graffiti and painting walls in Washington D.C. and Baltimore, Maryland. In 2014, he apprenticed with Louisville sculptor Guy Tedesco. <strong>2025 Artist of the Year</strong>, Adweek's Fake News Awards. Kit Anderson has no exhibition history.
     </p>
@@ -1809,8 +1822,17 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-name">Kit Anderson &nbsp;·&nbsp; Author, Artist, and Amateur Stuntman</div>
-  <div class="footer-right">Nothing Is Real</div>
+  <div class="footer-name">
+    <img src="/Logo_Kit_Anderson_whiteground.png" alt="Kit Anderson" style="height:28px;width:auto;filter:invert(1);opacity:0.7;display:block;margin-bottom:0.75rem;">
+    Kit Anderson &nbsp;·&nbsp; Author, Artist, and Amateur Stuntman
+  </div>
+  <div class="footer-right">
+    <a href="https://readmorekit.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:block;margin-bottom:0.3rem;">readmorekit.com ↗</a>
+    <a href="https://kitanderson.art" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:block;margin-bottom:0.3rem;">kitanderson.art ↗</a>
+    <a href="https://kitanderson.tv" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:block;margin-bottom:0.3rem;">kitanderson.tv ↗</a>
+    <a href="https://kitanderson.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:block;margin-bottom:0.3rem;">kitanderson.dev ↗</a>
+    <a href="https://mayorkitanderson.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:block;">mayorkitanderson.com ↗</a>
+  </div>
 </footer>
 
 <script>
