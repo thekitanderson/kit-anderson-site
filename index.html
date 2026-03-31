@@ -20,7 +20,9 @@
 <meta name="twitter:image" content="https://thekitanderson.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/fjh1vfx.css">
+<link rel="stylesheet" href="/shelf.css">
 <style>
   :root {
     --black: #0a0a0a;
@@ -30,10 +32,12 @@
     --gold: #b8962e;
     --gray: #3a3835;
     --light-gray: #7a7570;
+    --studio-steel: #6a8aaa;
+    --crt-green: #39d353;
+    --ash: #7a7570;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -58,15 +62,12 @@
   /* ── NAV ── */
   nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 3rem;
-    mix-blend-mode: normal;
   }
 
   nav::after {
@@ -86,11 +87,7 @@
     opacity: 0.9;
   }
 
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
   .nav-links a {
     font-family: 'Space Mono', monospace;
@@ -100,6 +97,7 @@
     color: var(--light-gray);
     text-decoration: none;
     transition: color 0.2s;
+    text-align: left;
   }
 
   .nav-links a:hover { color: var(--white); }
@@ -115,17 +113,12 @@
     overflow: hidden;
   }
 
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--black);
-  }
+  .hero-bg { position: absolute; inset: 0; background: var(--black); }
 
   .hero-img {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     object-position: center 30%;
     opacity: 0.45;
@@ -141,7 +134,6 @@
     z-index: 1;
   }
 
-  /* Large decorative K */
   .hero-k {
     position: absolute;
     right: -0.05em;
@@ -154,7 +146,6 @@
     -webkit-text-stroke: 1px rgba(240,235,224,0.04);
     pointer-events: none;
     user-select: none;
-    letter-spacing: -0.02em;
   }
 
   .hero-eyebrow {
@@ -168,6 +159,7 @@
     animation: fadeUp 0.8s 0.2s forwards;
     position: relative;
     z-index: 2;
+    text-align: left;
   }
 
   .hero-name {
@@ -180,11 +172,7 @@
     animation: fadeUp 0.9s 0.4s forwards;
     position: relative;
     z-index: 2;
-  }
-
-  .hero-name span {
-    display: block;
-    color: var(--cream);
+    text-align: left;
   }
 
   .hero-rule {
@@ -215,19 +203,12 @@
     line-height: 1.65;
     color: var(--light-gray);
     font-style: italic;
+    text-align: left;
   }
 
-  .hero-desc strong {
-    color: var(--white);
-    font-style: normal;
-    font-weight: 700;
-  }
+  .hero-desc strong { color: var(--white); font-style: normal; font-weight: 700; }
 
-  .hero-categories {
-    display: flex;
-    gap: 0.4rem;
-    flex-shrink: 0;
-  }
+  .hero-categories { display: flex; gap: 0.4rem; flex-shrink: 0; }
 
   .hero-cat {
     font-family: 'Space Mono', monospace;
@@ -241,6 +222,7 @@
     text-decoration: none;
     transition: all 0.2s;
     display: inline-block;
+    text-align: left;
   }
 
   .hero-cat:hover {
@@ -260,14 +242,10 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    text-align: left;
   }
 
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gray);
-  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray); }
 
   /* ── THREE PORTALS ── */
   .portals {
@@ -285,7 +263,6 @@
     text-decoration: none;
     display: block;
     min-height: 85vh;
-    transition: flex 0.5s ease;
   }
 
   .portal:last-child { border-right: none; }
@@ -314,10 +291,7 @@
       linear-gradient(170deg, #090a11 0%, #0a0a0a 100%);
   }
 
-  .portal:hover .portal-bg {
-    opacity: 1;
-    transform: scale(1.02);
-  }
+  .portal:hover .portal-bg { opacity: 1; transform: scale(1.02); }
 
   .portal-content {
     position: relative;
@@ -336,6 +310,7 @@
     letter-spacing: 0.3em;
     color: var(--gray);
     transition: color 0.3s;
+    text-align: left;
   }
 
   .portal:hover .portal-number { color: var(--light-gray); }
@@ -348,13 +323,7 @@
     padding: 3rem 0;
   }
 
-  .portal-icon {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.4;
-    transition: opacity 0.3s;
-  }
-
+  .portal-icon { font-size: 1.5rem; margin-bottom: 1.5rem; opacity: 0.4; transition: opacity 0.3s; }
   .portal:hover .portal-icon { opacity: 0.8; }
 
   .portal-title {
@@ -365,28 +334,19 @@
     color: var(--white);
     transition: transform 0.4s ease;
     display: block;
+    text-align: left;
   }
 
-  .portal:hover .portal-title {
-    transform: translateX(6px);
-  }
-
+  .portal:hover .portal-title { transform: translateX(6px); }
   .portal-books .portal-title { color: var(--cream); }
   .portal-movies .portal-title { color: #f5ede8; }
   .portal-art .portal-title { color: #e8ecf0; }
 
-  .portal-accent {
-    width: 2rem;
-    height: 3px;
-    margin: 1.5rem 0;
-    transition: width 0.4s ease;
-  }
-
+  .portal-accent { width: 2rem; height: 3px; margin: 1.5rem 0; transition: width 0.4s ease; }
   .portal:hover .portal-accent { width: 4rem; }
-
   .portal-books .portal-accent { background: var(--gold); }
   .portal-movies .portal-accent { background: var(--red); }
-  .portal-art .portal-accent { background: #6a8aaa; }
+  .portal-art .portal-accent { background: var(--studio-steel); }
 
   .portal-desc {
     font-size: 0.85rem;
@@ -397,18 +357,12 @@
     opacity: 0;
     transform: translateY(8px);
     transition: opacity 0.4s 0.1s, transform 0.4s 0.1s;
+    text-align: left;
   }
 
-  .portal:hover .portal-desc {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .portal:hover .portal-desc { opacity: 1; transform: translateY(0); }
 
-  .portal-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  .portal-bottom { display: flex; align-items: center; justify-content: space-between; }
 
   .portal-cta {
     font-family: 'Space Mono', monospace;
@@ -419,14 +373,10 @@
     opacity: 0;
     transform: translateX(-8px);
     transition: opacity 0.3s 0.1s, transform 0.3s 0.1s, color 0.2s;
+    text-align: left;
   }
 
-  .portal:hover .portal-cta {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .portal-cta:hover { color: var(--white); }
+  .portal:hover .portal-cta { opacity: 1; transform: translateX(0); }
 
   .portal-arrow {
     width: 2rem;
@@ -439,20 +389,45 @@
   .portal-arrow::after {
     content: '';
     position: absolute;
-    right: 0;
-    top: -3px;
+    right: 0; top: -3px;
     border: 3px solid transparent;
     border-left: 5px solid var(--gray);
     transition: border-color 0.3s;
   }
 
-  .portal:hover .portal-arrow {
-    width: 3rem;
-    background: var(--white);
+  .portal:hover .portal-arrow { width: 3rem; background: var(--white); }
+  .portal:hover .portal-arrow::after { border-left-color: var(--white); }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    overflow: hidden;
+    padding: 1.2rem 0;
+    background: var(--black);
   }
 
-  .portal:hover .portal-arrow::after {
-    border-left-color: var(--white);
+  .marquee-track {
+    display: flex;
+    animation: marquee 22s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    font-family: "abolition", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    padding: 0 2.5rem;
+    color: var(--gray);
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+  .marquee-dot { color: var(--gold); padding: 0 0.5rem; }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   /* ── ABOUT STRIP ── */
@@ -473,6 +448,7 @@
     line-height: 0.9;
     color: var(--white);
     margin-bottom: 3rem;
+    text-align: left;
   }
 
   .about-tagline em {
@@ -490,12 +466,22 @@
     line-height: 1.8;
     color: var(--light-gray);
     margin-bottom: 2rem;
+    text-align: left;
   }
 
-  .about-body strong {
-    color: var(--white);
-    font-weight: 700;
+  .about-body strong { color: var(--white); font-weight: 700; }
+
+  .about-para-header {
+    font-family: "abolition", sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+    margin-top: 2.5rem;
+    text-align: left;
   }
+
+  .about-para-header:first-child { margin-top: 0; }
 
   .about-facts {
     display: grid;
@@ -514,6 +500,7 @@
     text-transform: uppercase;
     padding: 0.6rem 0;
     border-bottom: 1px solid rgba(58,56,53,0.5);
+    text-align: left;
   }
 
   .about-fact span {
@@ -522,149 +509,6 @@
     margin-top: 0.2rem;
     font-size: 0.7rem;
   }
-
-  /* ── MARQUEE ── */
-  .marquee-wrap {
-    border-top: 1px solid var(--gray);
-    border-bottom: 1px solid var(--gray);
-    overflow: hidden;
-    padding: 1.2rem 0;
-    background: var(--black);
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 0;
-    animation: marquee 22s linear infinite;
-    white-space: nowrap;
-  }
-
-  .marquee-item {
-    font-family: "abolition", sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    padding: 0 2.5rem;
-    color: var(--gray);
-    flex-shrink: 0;
-  }
-
-  .marquee-dot {
-    color: var(--gold);
-    padding: 0 0.5rem;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* ── SELECTED WORKS ── */
-  .works {
-    padding: 7rem 3rem;
-    border-top: 1px solid var(--gray);
-  }
-
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--gray);
-    margin-top: 3rem;
-  }
-
-  .work-item {
-    background: var(--black);
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-    color: inherit;
-  }
-
-  .work-item-body {
-    padding: 1.8rem 2.5rem 2.5rem;
-  }
-
-  .work-item:hover { background: #111; }
-
-  .work-cat {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-
-  .work-cat-books { color: var(--gold); }
-  .work-cat-movies { color: var(--red); }
-  .work-cat-art { color: #6a8aaa; }
-
-  .work-title {
-    font-family: "abolition", sans-serif;
-    font-size: 2.4rem;
-    line-height: 1;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    margin-bottom: 0.8rem;
-    transition: transform 0.3s;
-  }
-
-  .work-item:hover .work-title { transform: translateX(4px); }
-
-  .work-year {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--gray);
-    letter-spacing: 0.15em;
-    margin-bottom: 1.5rem;
-  }
-
-  .work-blurb {
-    font-size: 0.85rem;
-    line-height: 1.65;
-    color: var(--light-gray);
-    font-style: italic;
-  }
-
-  .work-thumb-wrap {
-    padding: 1.5rem 1.5rem 0;
-  }
-
-  .work-thumb {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-    filter: grayscale(15%);
-    transition: filter 0.4s;
-  }
-
-  .work-item:hover .work-thumb {
-    filter: grayscale(0%);
-  }
-
-  .work-thumb-wide {
-    height: 140px;
-    object-position: center;
-  }
-
-  .work-rule {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    transition: width 0.4s ease;
-  }
-
-  .work-item:hover .work-rule { width: 100%; }
-
-  .work-cat-books ~ .work-rule,
-  .work-item:hover .work-rule-books { background: var(--gold); }
 
   /* ── QUOTE BAND ── */
   .quote-band {
@@ -702,7 +546,7 @@
     color: var(--light-gray);
   }
 
-  /* ── LINKS FOOTER ── */
+  /* ── LINKS BAR ── */
   .links-bar {
     border-top: 1px solid var(--gray);
     display: flex;
@@ -732,6 +576,7 @@
     color: var(--light-gray);
     display: block;
     margin-bottom: 0.4rem;
+    text-align: left;
   }
 
   .link-block-name {
@@ -739,6 +584,7 @@
     font-size: 1.3rem;
     letter-spacing: 0.05em;
     color: var(--white);
+    text-align: left;
   }
 
   .link-block-arrow {
@@ -747,10 +593,7 @@
     transition: transform 0.3s, color 0.3s;
   }
 
-  .link-block:hover .link-block-arrow {
-    transform: translate(4px, -4px);
-    color: var(--white);
-  }
+  .link-block:hover .link-block-arrow { transform: translate(4px, -4px); color: var(--white); }
 
   /* ── FOOTER ── */
   footer {
@@ -766,6 +609,7 @@
     font-size: 0.9rem;
     letter-spacing: 0.2em;
     color: var(--gray);
+    text-align: left;
   }
 
   .footer-right {
@@ -774,31 +618,25 @@
     letter-spacing: 0.2em;
     color: var(--gray);
     text-transform: uppercase;
+    text-align: left;
   }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── INTERSECTION OBSERVER REVEALS ── */
   .reveal {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+  .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
 
-  /* ── SCROLL INDICATOR ── */
+  /* ── SCROLL HINT ── */
   .scroll-hint {
     position: absolute;
     bottom: 2rem;
@@ -829,380 +667,8 @@
 
   @keyframes scrollLine {
     0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
-    50% { opacity: 1; transform: scaleY(1); }
+    50%       { opacity: 1; transform: scaleY(1); }
   }
-
-  /* ── YOUTUBE SECTION ── */
-  .youtube {
-    padding: 7rem 3rem;
-    border-top: 1px solid var(--gray);
-  }
-
-  .youtube-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-bottom: 3rem;
-    gap: 2rem;
-  }
-
-  .youtube-meta {
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  .youtube-handle {
-    font-family: "abolition", sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    text-decoration: none;
-    display: block;
-    transition: color 0.2s;
-  }
-
-  .youtube-handle:hover { color: var(--red); }
-
-  .youtube-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-    margin-top: 0.3rem;
-    display: block;
-  }
-
-  .youtube-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--gray);
-  }
-
-  .yt-item {
-    background: var(--black);
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    overflow: hidden;
-    position: relative;
-    transition: background 0.3s;
-  }
-
-  .yt-item:hover { background: #111; }
-
-  .yt-thumb-wrap {
-    position: relative;
-    overflow: hidden;
-    margin: 1.2rem 1.2rem 0;
-    background: #111;
-  }
-
-  .yt-thumb {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(20%) brightness(0.85);
-    transition: filter 0.4s;
-  }
-
-  .yt-item:hover .yt-thumb {
-    filter: grayscale(0%) brightness(1);
-  }
-
-  .yt-play {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-    background: rgba(10,10,10,0.3);
-  }
-
-  .yt-item:hover .yt-play { opacity: 1; }
-
-  .yt-play-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .yt-play-icon::after {
-    content: '';
-    border-style: solid;
-    border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent var(--white);
-    margin-left: 3px;
-  }
-
-  .yt-info {
-    padding: 1.2rem 1.5rem 1.8rem;
-  }
-
-  .yt-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
-    line-height: 1.45;
-    color: var(--white);
-    margin-bottom: 0.6rem;
-    font-weight: 700;
-    transition: color 0.2s;
-  }
-
-  .yt-item:hover .yt-title { color: var(--cream); }
-
-  .yt-duration {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.15em;
-    color: var(--gray);
-    text-transform: uppercase;
-  }
-
-  .youtube-cta {
-    margin-top: 3rem;
-    text-align: center;
-  }
-
-  .youtube-cta a {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-    text-decoration: none;
-    border: 1px solid var(--gray);
-    padding: 1rem 2.5rem;
-    display: inline-block;
-    transition: all 0.2s;
-  }
-
-  .youtube-cta a:hover {
-    border-color: var(--white);
-    color: var(--white);
-    background: rgba(240,235,224,0.04);
-  }
-
-  /* ── SHELF ── */
-  .shelf-section {
-    padding: 5rem 0 0;
-    border-top: 1px solid var(--gray);
-  }
-
-  .shelf-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    padding: 0 3rem 1.5rem;
-  }
-
-  .shelf-title {
-    font-family: "abolition", sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 0.08em;
-    color: var(--white);
-  }
-
-  .shelf-link {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .shelf-link:hover { color: var(--white); }
-
-  .shelf-track-wrap {
-    position: relative;
-  }
-
-  .shelf-track {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 0 3rem 2.5rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .shelf-track::-webkit-scrollbar { display: none; }
-
-  .shelf-track-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 2.5rem;
-    width: 5rem;
-    background: linear-gradient(to right, transparent, var(--black));
-    pointer-events: none;
-  }
-
-  .shelf-card {
-    flex-shrink: 0;
-    width: 140px;
-    scroll-snap-align: start;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: transform 0.25s;
-    position: relative;
-  }
-
-  .shelf-card:hover { transform: scale(1.05); }
-
-  .shelf-card-img {
-    width: 140px;
-    height: 210px;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-    border: 1px solid #222;
-    filter: brightness(0.9);
-    transition: filter 0.3s, border-color 0.3s;
-  }
-
-  .shelf-card:hover .shelf-card-img {
-    filter: brightness(1.05);
-    border-color: var(--gold);
-  }
-
-  .shelf-card-img-wide {
-    height: 90px;
-    object-position: center center;
-  }
-
-  .shelf-card-body {
-    padding: 0.6rem 0 0;
-  }
-
-  .shelf-card-cat {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.48rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 0.2rem;
-  }
-
-  .shelf-card-cat-books { color: var(--gold); }
-  .shelf-card-cat-movies { color: var(--red); }
-  .shelf-card-cat-art { color: #6a8aaa; }
-  .shelf-card-cat-video { color: #888; }
-
-  .shelf-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--white);
-    margin-bottom: 0.15rem;
-  }
-
-  .shelf-card-year {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.5rem;
-    color: var(--light-gray);
-    letter-spacing: 0.1em;
-  }
-
-  .shelf-card-video {
-    width: 220px;
-  }
-
-  .shelf-card-video .shelf-card-img {
-    width: 220px;
-    height: 124px;
-    object-position: center;
-  }
-
-  .shelf-card-video-wrap {
-    position: relative;
-  }
-
-  .shelf-card-play {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s;
-    background: rgba(10,10,10,0.35);
-  }
-
-  .shelf-card-video:hover .shelf-card-play { opacity: 1; }
-
-  .shelf-play-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .shelf-play-btn::after {
-    content: '';
-    border-style: solid;
-    border-width: 6px 0 6px 12px;
-    border-color: transparent transparent transparent white;
-    margin-left: 2px;
-  }
-
-  .shelf-kicker {
-    border-top: 1px solid var(--gray);
-    margin-top: 1rem;
-  }
-
-  .shelf-card::after {
-    content: attr(data-description);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.97) 60%, transparent 100%);
-    color: var(--cream);
-    font-family: 'Playfair Display', serif;
-    font-size: 0.68rem;
-    font-style: italic;
-    line-height: 1.45;
-    padding: 2rem 0.6rem 0.7rem;
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  .shelf-card:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── ABOUT HEADERS ── */
-  .about-para-header {
-    font-family: "abolition", sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-    margin-top: 2.5rem;
-  }
-
-  .about-para-header:first-child { margin-top: 0; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -1214,24 +680,14 @@
     .portal { min-height: 60vh; border-right: none; border-bottom: 1px solid var(--gray); }
     .portal:last-child { border-bottom: none; }
     .about-strip { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
-    .works-grid { grid-template-columns: 1fr; }
     .links-bar { flex-direction: column; }
     .link-block { border-right: none; border-bottom: 1px solid var(--gray); }
     .link-block:last-child { border-bottom: none; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
     .about-facts { grid-template-columns: 1fr; }
-    .youtube { padding: 4rem 1.5rem; }
-    .youtube-grid { grid-template-columns: 1fr; }
-    .youtube-header { flex-direction: column; align-items: flex-start; }
-    .youtube-meta { text-align: left; }
-    .works { padding: 4rem 1.5rem; }
     .quote-band { padding: 3rem 1.5rem; }
-    .shelf-section { padding: 3rem 0 0; }
-    .shelf-header { padding: 0 1.5rem 1.2rem; }
-    .shelf-track { padding: 0 1.5rem 2rem; }
   }
 </style>
-<link rel="stylesheet" href="https://use.typekit.net/fjh1vfx.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1274,11 +730,8 @@
   <img class="hero-img" src="https://images.squarespace-cdn.com/content/v1/623dae4e26da6109ddd0aa89/027b5787-0445-44a6-a230-f0ba9a54908c/Porsche+Trip+-+Day+1.00_00_00_00.Still001.jpg" alt="Kit Anderson with his Porsche">
   <div class="hero-img-gradient"></div>
   <div class="hero-k" aria-hidden="true">K</div>
-
   <div class="hero-eyebrow" style="white-space:nowrap;">Author, Artist, and Amateur Stuntman &nbsp;·&nbsp; Truckee, California</div>
-  <h1 class="hero-name">
-    KIT<br>ANDERSON
-  </h1>
+  <h1 class="hero-name">KIT<br>ANDERSON</h1>
   <div class="hero-rule"></div>
   <div class="hero-bottom">
     <p class="hero-desc">
@@ -1293,7 +746,6 @@
       <a href="#art" class="hero-cat">Art</a>
     </div>
   </div>
-
   <div class="scroll-hint" aria-hidden="true">
     <span class="scroll-hint-text">Scroll</span>
     <div class="scroll-hint-line"></div>
@@ -1304,7 +756,6 @@
 <section id="portals">
   <div class="portals">
 
-    <!-- BOOKS -->
     <a class="portal portal-books" href="https://readmorekit.com" target="_blank">
       <div class="portal-bg"></div>
       <div class="portal-content">
@@ -1322,7 +773,6 @@
       </div>
     </a>
 
-    <!-- MOVIES -->
     <a class="portal portal-movies" href="https://www.imdb.com/name/nm3556873/" target="_blank">
       <div class="portal-bg"></div>
       <div class="portal-content">
@@ -1331,7 +781,7 @@
           <div class="portal-icon">🎬</div>
           <span class="portal-title">Movies</span>
           <div class="portal-accent"></div>
-          <p class="portal-desc">Director, producer, cinematographer. Action sports cult films and punk rock documentaries. Gold Medal winner, Park City Film Music Festival.</p>
+          <p class="portal-desc">Director, producer, cinematographer. Action sports cult movies and punk rock documentaries. Gold Medal winner, Park City Film Music Festival.</p>
         </div>
         <div class="portal-bottom">
           <span class="portal-cta">IMDb ↗</span>
@@ -1340,7 +790,6 @@
       </div>
     </a>
 
-    <!-- ART -->
     <a class="portal portal-art" href="https://kitanderson.art" target="_blank">
       <div class="portal-bg"></div>
       <div class="portal-content">
@@ -1378,7 +827,6 @@
     <span class="marquee-item"><span class="marquee-dot">·</span></span>
     <span class="marquee-item">Private Media Kitchen</span>
     <span class="marquee-item"><span class="marquee-dot">·</span></span>
-    <!-- Set 2 (duplicate for seamless loop) -->
     <span class="marquee-item">Author</span>
     <span class="marquee-item"><span class="marquee-dot">·</span></span>
     <span class="marquee-item">Artist</span>
@@ -1405,75 +853,99 @@
   <div class="shelf-track-wrap">
     <div class="shelf-track">
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLTJW2B" target="_blank" data-description="A survivor's story spanning 1996–2001 about a young woman rebuilding her life after tragedy.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71uoOmFufmL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Never Cry Jack">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/dp/B0DBLTJW2B" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/71uoOmFufmL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Never Cry Jack">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A survivor's story spanning 1996–2001 about a young woman rebuilding her life after tragedy.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
+          <div class="shelf-card-cat shelf-cat-books">Novel</div>
           <div class="shelf-card-title">Never Cry Jack</div>
-          <div class="shelf-card-year">2008</div>
+          <div class="shelf-card-meta">2008</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLSY3QK" target="_blank" data-description="Three rural kids, a stolen car, and a coming-of-age friendship in 1990s America.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/81PlIeSvw1L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Georgia Lee">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/dp/B0DBLSY3QK" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/81PlIeSvw1L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Georgia Lee">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">Three rural kids, a stolen car, and a coming-of-age friendship in 1990s America.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
+          <div class="shelf-card-cat shelf-cat-books">Novel</div>
           <div class="shelf-card-title">Georgia Lee</div>
-          <div class="shelf-card-year">2015</div>
+          <div class="shelf-card-meta">2024</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0DBLRLXKS" target="_blank" data-description="A combat veteran finds uneasy peace on a remote jungle beach, until it doesn't hold.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/81C5ML7GyaL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="The Hard Sleep">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/dp/B0DBLRLXKS" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/81C5ML7GyaL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="The Hard Sleep">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A combat veteran finds uneasy peace on a remote jungle beach, until it doesn't hold.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Novel</div>
+          <div class="shelf-card-cat shelf-cat-books">Novel</div>
           <div class="shelf-card-title">The Hard Sleep</div>
-          <div class="shelf-card-year">2016</div>
+          <div class="shelf-card-meta">2024</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/1798669269" target="_blank" data-description="A gang of jackass skiers decides to blow up a chairlift in the town of Rockwell.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/910YRxFiqlL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Hackenbush">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/dp/1798669269" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/910YRxFiqlL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Hackenbush">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A gang of jackass skiers decides to blow up a chairlift in the town of Rockwell.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
+          <div class="shelf-card-cat shelf-cat-books">Novella</div>
           <div class="shelf-card-title">Hackenbush</div>
-          <div class="shelf-card-year">2019</div>
+          <div class="shelf-card-meta">2019</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/1096591537" target="_blank" data-description="A fifteen-year-old farm kid from Western Maryland sinks a yacht.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/91o1TZCb3RL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Kemper & The West Coast Club">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/dp/1096591537" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/91o1TZCb3RL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Kemper & The West Egg Gun Club">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A fifteen-year-old farm kid from Western Maryland sinks a yacht.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
-          <div class="shelf-card-title">Kemper & The West Coast Club</div>
-          <div class="shelf-card-year">2019</div>
+          <div class="shelf-card-cat shelf-cat-books">Novella</div>
+          <div class="shelf-card-title">Kemper & The West Egg Gun Club</div>
+          <div class="shelf-card-meta">2019</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B08F6Y3M1T" target="_blank" data-description="A retired gambler who rigged the Super Bowl just wants to live on his boat in Lake Tahoe.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/919H4H49l8L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Dirty Davenport">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/dp/B08F6Y3M1T" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/919H4H49l8L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Dirty Davenport">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A retired gambler who rigged the Super Bowl just wants to live on his boat in Lake Tahoe.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Novella</div>
+          <div class="shelf-card-cat shelf-cat-books">Novella</div>
           <div class="shelf-card-title">Dirty Davenport</div>
-          <div class="shelf-card-year">2020</div>
+          <div class="shelf-card-meta">2020</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/dp/B0GR29MHLP" target="_blank" data-description="100 fake album covers for bands that don't exist, names captured from real conversations.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71klnkNDl7L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Bandnamery">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/dp/B0GR29MHLP" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/71klnkNDl7L._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Bandnamery">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">100 fake album covers for bands that don't exist, names captured from real conversations.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Art Book</div>
+          <div class="shelf-card-cat shelf-cat-books">Art Book</div>
           <div class="shelf-card-title">Bandnamery</div>
-          <div class="shelf-card-year">2026</div>
+          <div class="shelf-card-meta">2026</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.amazon.com/stores/author/B00C0VR8CK" target="_blank" data-description="A visual survey of Kit Anderson's sketchbook work spanning over a decade.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/I/71VFtwux1ZL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Select Works: Scans From My Sketchbooks">
+      <a class="shelf-card shelf-card-book" href="https://www.amazon.com/stores/author/B00C0VR8CK" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/I/71VFtwux1ZL._AC_CR0%2C0%2C0%2C0_SY315_.jpg" alt="Scans From My Sketchbooks">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A visual survey of Kit Anderson's sketchbook work spanning over a decade.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-books">Drawing Collection</div>
+          <div class="shelf-card-cat shelf-cat-books">Drawing Collection</div>
           <div class="shelf-card-title">Scans From My Sketchbooks</div>
-          <div class="shelf-card-year">2025</div>
+          <div class="shelf-card-meta">2025</div>
         </div>
       </a>
 
@@ -1481,7 +953,7 @@
   </div>
 </section>
 
-<!-- MOVIES SECTION -->
+<!-- MOVIES SHELF -->
 <section class="shelf-section reveal" id="movies">
   <div class="shelf-header">
     <h2 class="shelf-title">Movies</h2>
@@ -1490,21 +962,27 @@
   <div class="shelf-track-wrap">
     <div class="shelf-track">
 
-      <a class="shelf-card" href="https://www.imdb.com/title/tt12674290/" target="_blank" data-description="The Most Extreme Movie Ever Made. An action sports cult classic.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/M/MV5BMzgxMGFmNWYtMmJlYS00NjdkLTlmNzAtYWZiMjA4NjI2MmI2XkEyXkFqcGc@._V1_QL75_UY281_CR6,0,190,281_.jpg" alt="Gapers Gone Wild">
+      <a class="shelf-card shelf-card-book" href="https://www.imdb.com/title/tt12674290/" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/M/MV5BMzgxMGFmNWYtMmJlYS00NjdkLTlmNzAtYWZiMjA4NjI2MmI2XkEyXkFqcGc@._V1_QL75_UY281_CR6,0,190,281_.jpg" alt="Gapers Gone Wild">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">The Most Extreme Movie Ever Made. An action sports cult classic.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-movies">Director / Producer</div>
+          <div class="shelf-card-cat shelf-cat-movies">Director / Producer</div>
           <div class="shelf-card-title">Gapers Gone Wild</div>
-          <div class="shelf-card-year">2004</div>
+          <div class="shelf-card-meta">2004</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://www.imdb.com/title/tt1484081/" target="_blank" data-description="A punk rock documentary that won the Gold Medal at the Park City Film Music Festival.">
-        <img class="shelf-card-img" src="https://m.media-amazon.com/images/M/MV5BMTM0MjQ0ODMxN15BMl5BanBnXkFtZTcwMzMzNzY5Mg@@._V1_QL75_UX190_CR0,0,190,281_.jpg" alt="Mathematician's Transdimensional Odyssey of Doom">
+      <a class="shelf-card shelf-card-book" href="https://www.imdb.com/title/tt1484081/" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://m.media-amazon.com/images/M/MV5BMTM0MjQ0ODMxN15BMl5BanBnXkFtZTcwMzMzNzY5Mg@@._V1_QL75_UX190_CR0,0,190,281_.jpg" alt="Mathematician's Transdimensional Odyssey of Doom">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A punk rock documentary that won the Gold Medal at the Park City Film Music Festival.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-movies">Producer / Cinematographer</div>
+          <div class="shelf-card-cat shelf-cat-movies">Producer / Cinematographer</div>
           <div class="shelf-card-title">Mathematician's Transdimensional Odyssey of Doom</div>
-          <div class="shelf-card-year">2009</div>
+          <div class="shelf-card-meta">2009</div>
         </div>
       </a>
 
@@ -1521,74 +999,74 @@
       <div class="shelf-track">
 
         <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=Ozwj774AlJI" target="_blank">
-          <div class="shelf-card-video-wrap">
-            <img class="shelf-card-img" src="https://i.ytimg.com/vi/Ozwj774AlJI/hqdefault.jpg" alt="Rubicon Trail">
-            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          <div class="shelf-cover">
+            <img src="https://i.ytimg.com/vi/Ozwj774AlJI/hqdefault.jpg" alt="Rubicon Trail">
+            <div class="shelf-play"><div class="shelf-play-btn"></div></div>
           </div>
           <div class="shelf-card-body">
-            <div class="shelf-card-cat shelf-card-cat-video">38:16</div>
+            <div class="shelf-card-cat shelf-cat-video">38:16</div>
             <div class="shelf-card-title">Rubicon Trail, Down Big Sluice</div>
-            <div class="shelf-card-year">1.9K views</div>
+            <div class="shelf-card-meta">1.9K views</div>
           </div>
         </a>
 
         <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=UjReJ-lgMjg" target="_blank">
-          <div class="shelf-card-video-wrap">
-            <img class="shelf-card-img" src="https://i.ytimg.com/vi/UjReJ-lgMjg/hqdefault.jpg" alt="Phantogram First Show">
-            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          <div class="shelf-cover">
+            <img src="https://i.ytimg.com/vi/UjReJ-lgMjg/hqdefault.jpg" alt="Phantogram First Show">
+            <div class="shelf-play"><div class="shelf-play-btn"></div></div>
           </div>
           <div class="shelf-card-body">
-            <div class="shelf-card-cat shelf-card-cat-video">4:39</div>
+            <div class="shelf-card-cat shelf-cat-video">4:39</div>
             <div class="shelf-card-title">Phantogram's First Show "Let Me Go"</div>
-            <div class="shelf-card-year">121 views</div>
+            <div class="shelf-card-meta">121 views</div>
           </div>
         </a>
 
         <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=yrHdY9NfyH4" target="_blank">
-          <div class="shelf-card-video-wrap">
-            <img class="shelf-card-img" src="https://i.ytimg.com/vi/yrHdY9NfyH4/hqdefault.jpg" alt="Durango to Silverton">
-            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          <div class="shelf-cover">
+            <img src="https://i.ytimg.com/vi/yrHdY9NfyH4/hqdefault.jpg" alt="Durango to Silverton">
+            <div class="shelf-play"><div class="shelf-play-btn"></div></div>
           </div>
           <div class="shelf-card-body">
-            <div class="shelf-card-cat shelf-card-cat-video">26:02</div>
+            <div class="shelf-card-cat shelf-cat-video">26:02</div>
             <div class="shelf-card-title">Durango to Silverton at Dawn — Porsche 987.1</div>
-            <div class="shelf-card-year">44 views</div>
+            <div class="shelf-card-meta">44 views</div>
           </div>
         </a>
 
         <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=qYJjAz9QVWc" target="_blank">
-          <div class="shelf-card-video-wrap">
-            <img class="shelf-card-img" src="https://i.ytimg.com/vi/qYJjAz9QVWc/hqdefault.jpg" alt="Route 71 Colorado">
-            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          <div class="shelf-cover">
+            <img src="https://i.ytimg.com/vi/qYJjAz9QVWc/hqdefault.jpg" alt="Route 71 Colorado">
+            <div class="shelf-play"><div class="shelf-play-btn"></div></div>
           </div>
           <div class="shelf-card-body">
-            <div class="shelf-card-cat shelf-card-cat-video">6:03</div>
+            <div class="shelf-card-cat shelf-cat-video">6:03</div>
             <div class="shelf-card-title">Porsche 987.1 — Route 71, Colorado</div>
-            <div class="shelf-card-year">64 views</div>
+            <div class="shelf-card-meta">64 views</div>
           </div>
         </a>
 
         <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=R0OxD3h2_ic" target="_blank">
-          <div class="shelf-card-video-wrap">
-            <img class="shelf-card-img" src="https://i.ytimg.com/vi/R0OxD3h2_ic/hqdefault.jpg" alt="New Mexico Dashcam">
-            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          <div class="shelf-cover">
+            <img src="https://i.ytimg.com/vi/R0OxD3h2_ic/hqdefault.jpg" alt="New Mexico Dashcam">
+            <div class="shelf-play"><div class="shelf-play-btn"></div></div>
           </div>
           <div class="shelf-card-body">
-            <div class="shelf-card-cat shelf-card-cat-video">5:29</div>
+            <div class="shelf-card-cat shelf-cat-video">5:29</div>
             <div class="shelf-card-title">Porsche 987.1 — New Mexico</div>
-            <div class="shelf-card-year">23 views</div>
+            <div class="shelf-card-meta">23 views</div>
           </div>
         </a>
 
         <a class="shelf-card shelf-card-video" href="https://www.youtube.com/watch?v=Iu8D6ZgyThI" target="_blank">
-          <div class="shelf-card-video-wrap">
-            <img class="shelf-card-img" src="https://i.ytimg.com/vi/Iu8D6ZgyThI/hqdefault.jpg" alt="The Loneliest Highway">
-            <div class="shelf-card-play"><div class="shelf-play-btn"></div></div>
+          <div class="shelf-cover">
+            <img src="https://i.ytimg.com/vi/Iu8D6ZgyThI/hqdefault.jpg" alt="The Loneliest Highway">
+            <div class="shelf-play"><div class="shelf-play-btn"></div></div>
           </div>
           <div class="shelf-card-body">
-            <div class="shelf-card-cat shelf-card-cat-video">17:51</div>
+            <div class="shelf-card-cat shelf-cat-video">17:51</div>
             <div class="shelf-card-title">The Loneliest Highway in America</div>
-            <div class="shelf-card-year">28 views</div>
+            <div class="shelf-card-meta">28 views</div>
           </div>
         </a>
 
@@ -1606,111 +1084,111 @@
   <div class="shelf-track-wrap">
     <div class="shelf-track">
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A graphite self-portrait — unflinching, direct, unadorned.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/033b1c18-d2aa-41a0-943e-aa19ee452f3c_rw_1920.jpg?h=e3c95facbabb0c91d3a6cd08e4a60c1f" alt="Works of Art by Kit Anderson">
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/033b1c18-d2aa-41a0-943e-aa19ee452f3c_rw_1920.jpg?h=e3c95facbabb0c91d3a6cd08e4a60c1f" alt="Self-portrait">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A graphite self-portrait — unflinching, direct, unadorned.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Self-portrait</div>
-          <div class="shelf-card-year">2014</div>
+          <div class="shelf-card-meta">2014</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A candid view of the studio wall — skulls, drawings, and the archaeology of a working practice.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/e481a8e8-8964-4acd-940d-ea55dc5e53fc_rw_1920.jpg?h=da4aa72f448a199a1b09e2756df8fe7c" alt="Works of Art by Kit Anderson">
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/e481a8e8-8964-4acd-940d-ea55dc5e53fc_rw_1920.jpg?h=da4aa72f448a199a1b09e2756df8fe7c" alt="Studio Wall (Candid)">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A candid view of the studio wall — skulls, drawings, and the archaeology of a working practice.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Studio Wall (Candid)</div>
-          <div class="shelf-card-year">2023</div>
+          <div class="shelf-card-meta">2023</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A figure in motion, rendered in graphite with controlled economy.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/fa7028c8-6fb2-4752-847f-c1b9965bed01_rw_1920.jpg?h=17445c82b60573c2c9387360e272a889" alt="Works of Art by Kit Anderson">
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/fa7028c8-6fb2-4752-847f-c1b9965bed01_rw_1920.jpg?h=17445c82b60573c2c9387360e272a889" alt="Figure Study">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A figure in motion, rendered in graphite with controlled economy.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Figure Study</div>
-          <div class="shelf-card-year">2020</div>
+          <div class="shelf-card-meta">2020</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A portrait study in graphite — stark, luminous, quietly intense.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/6029bb41-d514-4b98-b964-e187a3ea241f_rw_1920.jpg?h=928807383ce9d26a2ea94d464cb6599d" alt="Works of Art by Kit Anderson">
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/6029bb41-d514-4b98-b964-e187a3ea241f_rw_1920.jpg?h=928807383ce9d26a2ea94d464cb6599d" alt="Portrait Study">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A portrait study in graphite — stark, luminous, quietly intense.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Portrait Study</div>
-          <div class="shelf-card-year">2017</div>
+          <div class="shelf-card-meta">2017</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A horse skull rendered on dark ground, equal parts specimen and relic.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/ee5ee645-d1f4-42fb-a85e-258d00d07ef5_rw_1920.jpg?h=866101006e6f06958d4fb1eb7a4bbf2e" alt="Works of Art by Kit Anderson">
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/ee5ee645-d1f4-42fb-a85e-258d00d07ef5_rw_1920.jpg?h=866101006e6f06958d4fb1eb7a4bbf2e" alt="Horse Skull Study">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A horse skull rendered on dark ground, equal parts specimen and relic.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Horse Skull Study</div>
-          <div class="shelf-card-year">2020</div>
+          <div class="shelf-card-meta">2020</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="An ornate mixed-media shield in progress — obsessive surface, botanical and strange.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/960f2dad-8b68-4dca-9c1c-4dd196ed7ffa_rw_1920.jpg?h=1874d95b143cdb56f36578794cd1b6e9" alt="Works of Art by Kit Anderson">
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/960f2dad-8b68-4dca-9c1c-4dd196ed7ffa_rw_1920.jpg?h=1874d95b143cdb56f36578794cd1b6e9" alt="Rag Bone Bomb">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">An ornate mixed-media shield in progress — obsessive surface, botanical and strange.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Rag Bone Bomb (In Progress)</div>
-          <div class="shelf-card-year">2014</div>
+          <div class="shelf-card-meta">2014</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A monumental wing spreading across the canvas, gold light dissolving into field.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/7f1bac75-da85-4b0c-9bb1-711cbe809dea_rw_1920.jpg?h=6d444d0079c6d0228a27b5e16ce03563" alt="Works of Art by Kit Anderson">
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/7f1bac75-da85-4b0c-9bb1-711cbe809dea_rw_1920.jpg?h=6d444d0079c6d0228a27b5e16ce03563" alt="Angel Wing">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A monumental wing spreading across the canvas, gold light dissolving into field.</span></div>
+        </div>
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Angel Wing</div>
-          <div class="shelf-card-year">2014</div>
+          <div class="shelf-card-meta">2014</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A standing figure, back turned, drawn with spare gestural confidence.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/338d4bb9-4b4f-43c7-ac48-6c77946e179d_rw_1920.jpg?h=2ffe7ea0e2496b6aa55c2a9a54a7d07a" alt="Works of Art by Kit Anderson">
-        <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
-          <div class="shelf-card-title">Figure Study</div>
-          <div class="shelf-card-year">2012</div>
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/4368c879-ada4-40d9-b8dd-22db0dabb08c_rw_1920.jpg?h=a558e92f491861ec8ff98fae25411acc" alt="Frog Study">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A frog on dark ground — patient, weighted, rendered with quiet precision.</span></div>
         </div>
-      </a>
-
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A frog on dark ground — patient, weighted, rendered with quiet precision.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/4368c879-ada4-40d9-b8dd-22db0dabb08c_rw_1920.jpg?h=a558e92f491861ec8ff98fae25411acc" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Frog Study</div>
-          <div class="shelf-card-year">2021</div>
+          <div class="shelf-card-meta">2021</div>
         </div>
       </a>
 
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A reclining male figure in graphite, studied and still.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/a92e7966-7db9-4128-a3af-0a46ab361fcb_rw_1920.jpg?h=88aa04f0e9034784ef229b9bda42d316" alt="Works of Art by Kit Anderson">
-        <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
-          <div class="shelf-card-title">Figure Study</div>
-          <div class="shelf-card-year">2017</div>
+      <a class="shelf-card shelf-card-art" href="https://kitanderson.art/drawings" target="_blank">
+        <div class="shelf-cover">
+          <img src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/5f92ea5d-ae56-491b-8a90-2755987fd0f2_rw_1920.jpg?h=7de7ef389b12bf45157d5ba554322ae7" alt="Watercolor Stain">
+          <div class="shelf-overlay"><span class="shelf-overlay-text">A watercolor stain blooming across the page — color without argument.</span></div>
         </div>
-      </a>
-
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A preparatory study for Never Cry Jack — pencil on blue paper, spare and restless.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/2486f937-3d9f-4a2c-b4ff-494e3908453b_rw_1920.jpg?h=bb088a7f55f5c879a5a18edff5401e09" alt="Works of Art by Kit Anderson">
         <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
-          <div class="shelf-card-title">Never Cry Jack Study</div>
-          <div class="shelf-card-year">2021</div>
-        </div>
-      </a>
-
-      <a class="shelf-card" href="https://kitanderson.art/drawings" target="_blank" data-description="A watercolor stain blooming across the page — color without argument.">
-        <img class="shelf-card-img" src="https://cdn.myportfolio.com/fd97bfe4-9cbb-4bf8-93f2-e219d07cd09d/5f92ea5d-ae56-491b-8a90-2755987fd0f2_rw_1920.jpg?h=7de7ef389b12bf45157d5ba554322ae7" alt="Works of Art by Kit Anderson">
-        <div class="shelf-card-body">
-          <div class="shelf-card-cat shelf-card-cat-art">Art</div>
+          <div class="shelf-card-cat shelf-cat-art">Art</div>
           <div class="shelf-card-title">Watercolor Stain</div>
-          <div class="shelf-card-year">2023</div>
+          <div class="shelf-card-meta">2023</div>
         </div>
       </a>
 
@@ -1728,55 +1206,27 @@
     </div>
   </div>
   <div class="reveal reveal-delay-1">
-
     <h2 class="about-para-header">The Myth, The Man, The Media Kitchen</h2>
     <p class="about-body">
       <strong>Kit Anderson</strong> is an Author, Artist, and Amateur Stuntman operating a private media kitchen in Truckee, California. He has been writing, making Art, and snowboarding and skateboarding all his life — pursuits he treats with equal regard. Often referred to as a "bullshit artist," he is actually a contemporary artist who exploits his natural surroundings as the wellspring for his work and the source of his materials. His Art explores the themes of awe and wonder.
     </p>
-
     <h2 class="about-para-header">A Decorated Career Nobody Asked For</h2>
     <p class="about-body">
       Kit first gained recognition as a director and producer of the action sports cult hit <strong>Gapers Gone Wild</strong> (2004). His second movie as producer, the punk rock <strong>Mathematician's Transdimensional Odyssey of Doom</strong> (2009), won a Gold Medal for Excellence from the Park City Film Music Festival. He was Phantogram's first roadie, touring with the band in their van and rigging the visual projections for each show. In 2011, he was Art Director for the inaugural Napa Valley Film Festival.
     </p>
-
     <h2 class="about-para-header">He Has Been Making Art Since Before He Was Born.</h2>
     <p class="about-body">
       He began writing on walls in 1979 and began making street Art in 1992, writing graffiti and painting walls in Washington D.C. and Baltimore, Maryland. In 2014, he apprenticed with Louisville sculptor Guy Tedesco. <strong>2025 Artist of the Year</strong>, Adweek's Fake News Awards. Kit Anderson has no exhibition history.
     </p>
-
     <div class="about-facts">
-      <div class="about-fact">
-        Based
-        <span>Truckee, California</span>
-      </div>
-      <div class="about-fact">
-        Pursuits
-        <span>Writing, Art, Snowboarding, Skating</span>
-      </div>
-      <div class="about-fact">
-        Street Art
-        <span>DC & Baltimore, from 1992</span>
-      </div>
-      <div class="about-fact">
-        Education
-        <span>Houghton University, Graphic Design</span>
-      </div>
-      <div class="about-fact">
-        Sculpture
-        <span>Apprentice to Guy Tedesco, Louisville, 2014</span>
-      </div>
-      <div class="about-fact">
-        Million Family March
-        <span>Art Director, 2001</span>
-      </div>
-      <div class="about-fact">
-        Film Festival
-        <span>Gold Medal, Park City, 2009</span>
-      </div>
-      <div class="about-fact">
-        Award
-        <span>Artist of the Year, 2025</span>
-      </div>
+      <div class="about-fact">Based <span>Truckee, California</span></div>
+      <div class="about-fact">Pursuits <span>Writing, Art, Snowboarding, Skating</span></div>
+      <div class="about-fact">Street Art <span>DC & Baltimore, from 1992</span></div>
+      <div class="about-fact">Education <span>Houghton University, Graphic Design</span></div>
+      <div class="about-fact">Sculpture <span>Apprentice to Guy Tedesco, Louisville, 2014</span></div>
+      <div class="about-fact">Million Family March <span>Art Director, 2001</span></div>
+      <div class="about-fact">Film Festival <span>Gold Medal, Park City, 2009</span></div>
+      <div class="about-fact">Award <span>Artist of the Year, 2025</span></div>
     </div>
   </div>
 </section>
@@ -1791,31 +1241,19 @@
 <!-- EXTERNAL LINKS BAR -->
 <div class="links-bar reveal">
   <a class="link-block" href="https://readmorekit.com" target="_blank">
-    <div>
-      <span class="link-block-label">Books</span>
-      <span class="link-block-name">Read More Kit</span>
-    </div>
+    <div><span class="link-block-label">Books</span><span class="link-block-name">Read More Kit</span></div>
     <span class="link-block-arrow">↗</span>
   </a>
   <a class="link-block" href="https://www.imdb.com/name/nm3556873/" target="_blank">
-    <div>
-      <span class="link-block-label">Movies</span>
-      <span class="link-block-name">IMDb</span>
-    </div>
+    <div><span class="link-block-label">Movies</span><span class="link-block-name">IMDb</span></div>
     <span class="link-block-arrow">↗</span>
   </a>
   <a class="link-block" href="https://kitanderson.art" target="_blank">
-    <div>
-      <span class="link-block-label">Art</span>
-      <span class="link-block-name">kitanderson.art</span>
-    </div>
+    <div><span class="link-block-label">Art</span><span class="link-block-name">kitanderson.art</span></div>
     <span class="link-block-arrow">↗</span>
   </a>
   <a class="link-block" href="https://www.youtube.com/@kitanderson" target="_blank">
-    <div>
-      <span class="link-block-label">Video</span>
-      <span class="link-block-name">YouTube</span>
-    </div>
+    <div><span class="link-block-label">Video</span><span class="link-block-name">YouTube</span></div>
     <span class="link-block-arrow">↗</span>
   </a>
 </div>
@@ -1835,20 +1273,18 @@
   </div>
 </footer>
 
+<script src="/shelf.js"></script>
 <script>
-  // Intersection observer for reveal animations
+  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.12 });
-
   reveals.forEach(el => observer.observe(el));
 
-  // Quote rotator — cycle through Kit's fake testimonials
+  // Quote rotator
   const quotes = [
     { text: "Kit Anderson is the greatest living Artist. Facts, bud.", attr: "— Andy Warhol" },
     { text: "If I could draw like Kit, then I wouldn't be dead.", attr: "— Steve Jobs" },

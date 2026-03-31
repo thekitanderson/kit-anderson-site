@@ -1,0 +1,339 @@
+/* ─────────────────────────────────────────────
+   SHELF.CSS — Kit Anderson Network Component
+   Reusable Netflix/Spotify-style scrolling shelf
+   v1.0 · 2026
+   ───────────────────────────────────────────── */
+
+/* ── SHELF SECTION WRAPPER ── */
+.shelf-section {
+  padding: 4rem 0 0;
+  border-top: 1px solid var(--gray, #3a3835);
+}
+
+/* ── SHELF HEADER ── */
+.shelf-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 3rem 1.5rem;
+  gap: 1rem;
+}
+
+.shelf-title {
+  font-family: "abolition", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white, #f0ebe0);
+  text-align: left;
+}
+
+.shelf-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--light-gray, #7a7570);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.shelf-link:hover { color: var(--white, #f0ebe0); }
+
+/* ── TRACK WRAPPER (handles arrows + fade) ── */
+.shelf-track-wrap {
+  position: relative;
+}
+
+/* Right fade edge */
+.shelf-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 2.5rem;
+  width: 6rem;
+  background: linear-gradient(to right, transparent, var(--black, #0a0a0a));
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s;
+}
+
+/* Left fade edge — only visible when scrolled */
+.shelf-track-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 2.5rem;
+  width: 6rem;
+  background: linear-gradient(to left, transparent, var(--black, #0a0a0a));
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.shelf-track-wrap.scrolled-left::before { opacity: 1; }
+.shelf-track-wrap.scrolled-right::after { opacity: 0; }
+
+/* ── SCROLL TRACK ── */
+.shelf-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 6px 3rem 2.5rem;
+  margin: -6px 0 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+.shelf-track::-webkit-scrollbar { display: none; }
+
+/* ── ARROW BUTTONS ── */
+.shelf-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 1.25rem));
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--gray, #3a3835);
+  background: rgba(10, 10, 10, 0.85);
+  color: var(--white, #f0ebe0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, border-color 0.2s, background 0.2s;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.shelf-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.shelf-arrow-prev { left: 0.75rem; }
+.shelf-arrow-next { right: 0.75rem; }
+
+.shelf-track-wrap:hover .shelf-arrow { opacity: 1; }
+.shelf-arrow:hover {
+  border-color: var(--white, #f0ebe0);
+  background: rgba(240, 235, 224, 0.1);
+}
+
+.shelf-arrow:disabled,
+.shelf-arrow[aria-disabled="true"] {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* ── SHELF CARD — BASE ── */
+.shelf-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.shelf-card:hover { transform: translateY(-4px); }
+.shelf-card:active { transform: translateY(-2px) scale(0.98); }
+
+/* ── COVER IMAGE WRAPPER ── */
+.shelf-cover {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+/* Gold border on hover */
+.shelf-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  transition: border-color 0.22s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.shelf-card:hover .shelf-cover::after {
+  border-color: var(--gold, #b8962e);
+}
+
+/* Cover image — respects source aspect ratio */
+.shelf-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.3s ease;
+}
+
+.shelf-card:hover .shelf-cover img {
+  transform: scale(1.04);
+}
+
+/* ── CARD SIZES ── */
+
+/* Books / Art — portrait, source ratio */
+.shelf-card-book {
+  width: 130px;
+}
+
+/* Art — slightly wider for landscape works */
+.shelf-card-art {
+  width: 160px;
+}
+
+/* Video — 16:9 widescreen */
+.shelf-card-video {
+  width: 240px;
+}
+
+.shelf-card-video .shelf-cover img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+/* ── DESCRIPTION OVERLAY ── */
+.shelf-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+  background: linear-gradient(to top, rgba(10,10,10,0.94) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shelf-card:hover .shelf-overlay { opacity: 1; }
+
+.shelf-overlay-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 0.62rem;
+  line-height: 1.5;
+  color: var(--cream, #e8e0cc);
+  text-align: left;
+}
+
+/* ── CARD BODY (below image) ── */
+.shelf-card-body {
+  padding: 0.5rem 0 0;
+}
+
+.shelf-card-cat {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.44rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+/* Category colors */
+.shelf-cat-books  { color: var(--gold,         #b8962e); }
+.shelf-cat-movies { color: var(--red,          #c8341a); }
+.shelf-cat-art    { color: var(--studio-steel, #6a8aaa); }
+.shelf-cat-video  { color: var(--ash,          #7a7570); }
+.shelf-cat-dev    { color: var(--crt-green,    #39d353); }
+
+.shelf-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--white, #f0ebe0);
+  margin-bottom: 0.15rem;
+  text-align: left;
+}
+
+.shelf-card-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.46rem;
+  color: var(--light-gray, #7a7570);
+  letter-spacing: 0.1em;
+  text-align: left;
+}
+
+/* ── VIDEO PLAY BUTTON ── */
+.shelf-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  background: rgba(10,10,10,0.3);
+  z-index: 2;
+}
+
+.shelf-card-video:hover .shelf-play { opacity: 1; }
+
+.shelf-play-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--white, #f0ebe0);
+  background: rgba(10,10,10,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.shelf-play-btn::after {
+  content: '';
+  border-style: solid;
+  border-width: 6px 0 6px 11px;
+  border-color: transparent transparent transparent var(--white, #f0ebe0);
+  margin-left: 3px;
+}
+
+/* ── SHELF DIVIDER (for YouTube kicker etc.) ── */
+.shelf-kicker {
+  border-top: 1px solid var(--gray, #3a3835);
+  margin-top: 0.5rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .shelf-section { padding: 2.5rem 0 0; }
+  .shelf-header { padding: 0 1.5rem 1.2rem; }
+  .shelf-track { padding: 6px 1.5rem 2rem; margin: -6px 0 0; }
+  .shelf-arrow { display: none; }
+  .shelf-track-wrap::before,
+  .shelf-track-wrap::after { width: 3rem; }
+  .shelf-card-book  { width: 110px; }
+  .shelf-card-art   { width: 140px; }
+  .shelf-card-video { width: 200px; }
+}
