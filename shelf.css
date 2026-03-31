@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────
    SHELF.CSS — Kit Anderson Network Component
    Reusable Netflix/Spotify-style scrolling shelf
-   v1.0 · 2026
+   v1.1 · 2026
    ───────────────────────────────────────────── */
 
 /* ── SHELF SECTION WRAPPER ── */
@@ -43,7 +43,7 @@
 
 .shelf-link:hover { color: var(--white, #f0ebe0); }
 
-/* ── TRACK WRAPPER (handles arrows + fade) ── */
+/* ── TRACK WRAPPER ── */
 .shelf-track-wrap {
   position: relative;
 }
@@ -98,7 +98,7 @@
 
 .shelf-track::-webkit-scrollbar { display: none; }
 
-/* ── ARROW BUTTONS ── */
+/* ── ARROW BUTTONS (injected by shelf.js) ── */
 .shelf-arrow {
   position: absolute;
   top: 50%;
@@ -135,6 +135,7 @@
 .shelf-arrow-next { right: 0.75rem; }
 
 .shelf-track-wrap:hover .shelf-arrow { opacity: 1; }
+
 .shelf-arrow:hover {
   border-color: var(--white, #f0ebe0);
   background: rgba(240, 235, 224, 0.1);
@@ -160,14 +161,15 @@
 .shelf-card:hover { transform: translateY(-4px); }
 .shelf-card:active { transform: translateY(-2px) scale(0.98); }
 
-/* ── COVER IMAGE WRAPPER ── */
+/* ── COVER WRAPPER ── */
 .shelf-cover {
   position: relative;
   overflow: hidden;
   display: block;
+  background: transparent;
 }
 
-/* Gold border on hover */
+/* Outline overlay — transparent until type-specific rule fires */
 .shelf-cover::after {
   content: '';
   position: absolute;
@@ -178,44 +180,34 @@
   z-index: 3;
 }
 
-.shelf-card:hover .shelf-cover::after {
-  border-color: var(--gold, #b8962e);
-}
+/* ── TYPE-SPECIFIC HOVER OUTLINES ── */
+.shelf-card-book:hover  .shelf-cover::after { border-color: var(--gold,         #b8962e); }
+.shelf-card-art:hover   .shelf-cover::after { border-color: var(--studio-steel, #6a8aaa); }
+.shelf-card-video:hover .shelf-cover::after { border-color: var(--ash,          #7a7570); }
 
-/* Cover image — respects source aspect ratio */
+/* Movies — scoped to #movies section so poster cards get Kit Red */
+#movies .shelf-card:hover .shelf-cover::after { border-color: var(--red, #c8341a); }
+
+/* ── COVER IMAGE — native aspect ratio, top-left aligned, no background ── */
 .shelf-cover img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.3s ease;
+  object-position: top left;
+  background: transparent;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.shelf-card:hover .shelf-cover img {
-  transform: scale(1.04);
-}
+.shelf-card:hover .shelf-cover img { transform: scale(1.04); }
 
 /* ── CARD SIZES ── */
-
-/* Books / Art — portrait, source ratio */
-.shelf-card-book {
-  width: 130px;
-}
-
-/* Art — slightly wider for landscape works */
-.shelf-card-art {
-  width: 160px;
-}
-
-/* Video — 16:9 widescreen */
-.shelf-card-video {
-  width: 240px;
-}
+.shelf-card-book  { width: 130px; }
+.shelf-card-art   { width: 160px; }
+.shelf-card-video { width: 240px; }
 
 .shelf-card-video .shelf-cover img {
   aspect-ratio: 16 / 9;
-  object-fit: cover;
   height: auto;
   width: 100%;
 }
@@ -245,9 +237,10 @@
   text-align: left;
 }
 
-/* ── CARD BODY (below image) ── */
+/* ── CARD BODY ── */
 .shelf-card-body {
   padding: 0.5rem 0 0;
+  background: transparent;
 }
 
 .shelf-card-cat {
@@ -259,7 +252,7 @@
   text-align: left;
 }
 
-/* Category colors */
+/* ── CATEGORY LABEL COLORS ── */
 .shelf-cat-books  { color: var(--gold,         #b8962e); }
 .shelf-cat-movies { color: var(--red,          #c8341a); }
 .shelf-cat-art    { color: var(--studio-steel, #6a8aaa); }
@@ -319,7 +312,7 @@
   margin-left: 3px;
 }
 
-/* ── SHELF DIVIDER (for YouTube kicker etc.) ── */
+/* ── SHELF KICKER ── */
 .shelf-kicker {
   border-top: 1px solid var(--gray, #3a3835);
   margin-top: 0.5rem;
