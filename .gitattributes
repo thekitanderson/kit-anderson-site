@@ -1,0 +1,17 @@
+# Treat all files as binary to prevent git from mangling encoding
+* text=auto
+
+# Force HTML/CSS/JS to be stored as UTF-8, no CRLF conversion
+*.html text eol=lf charset=utf-8
+*.css  text eol=lf charset=utf-8
+*.js   text eol=lf charset=utf-8
+*.json text eol=lf charset=utf-8
+*.md   text eol=lf charset=utf-8
+
+# Binary files — never touch
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
