@@ -15,6 +15,11 @@
   <meta name="twitter:title" content="Kit Anderson — Press">
   <meta name="twitter:description" content="Kit Anderson, Author, Artist, and Amateur Stuntman, operating a private media kitchen in Truckee, California. Six domains. One man. Nothing is real.">
 
+  <link rel="stylesheet" href="https://use.typekit.net/fjh1vfx.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,98 +50,246 @@
 
   <style>
     :root {
-      --ground: #F0EBE0;
-      --ink: #111111;
+      --deep-black:   #0A0A0A;
+      --off-black:    #111110;
+      --warm-white:   #F0EBE0;
+      --cream:        #E8E0CC;
+      --gold:         #B8962E;
+      --charcoal:     #3A3835;
+      --ash:          #7A7570;
     }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--ground);
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
+      background: var(--deep-black);
+      color: var(--cream);
       -webkit-font-smoothing: antialiased;
       text-align: left;
     }
-    main {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 4rem 2rem 4rem;
-      max-width: 36rem;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
+
+    body {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
       font-weight: 400;
-      letter-spacing: -0.01em;
-      margin: 0 0 1.5rem;
-      line-height: 1.05;
-    }
-    p {
       font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 6rem;
+      text-align: left;
+    }
+
+    /* Eyebrows / labels — Space Mono */
+    .eyebrow {
+      font-family: 'Space Mono', ui-monospace, monospace;
+      font-style: normal;
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 1.25rem;
+    }
+
+    /* Display headline — Abolition */
+    h1 {
+      font-family: "abolition", "Impact", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.005em;
+      color: var(--warm-white);
+      font-size: clamp(3.25rem, 11vw, 6.5rem);
+      line-height: 0.92;
+      margin: 0 0 2.5rem;
+    }
+    h1 .lede {
+      display: block;
+    }
+
+    /* Subheads / pull quotes — Prohibition */
+    h2 {
+      font-family: "prohibition", "Impact", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.04em;
+      color: var(--warm-white);
+      font-size: 1.25rem;
+      margin: 3rem 0 1.25rem;
+    }
+
+    p.pitch {
+      color: var(--warm-white);
+      font-size: 1.1875rem;
       line-height: 1.55;
-      margin: 0 0 1rem;
+      margin: 0 0 2rem;
     }
+
     a {
-      color: var(--ink);
+      color: var(--gold);
       text-decoration: underline;
-      text-underline-offset: 0.15em;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
     }
-    a:hover { text-decoration: none; }
+    a:hover { color: var(--warm-white); }
+
+    hr.rule {
+      border: 0;
+      border-top: 1px solid var(--charcoal);
+      margin: 3rem 0 0;
+    }
+
+    /* Network list */
     ul.network {
       list-style: none;
       padding: 0;
       margin: 0 0 2rem;
     }
     ul.network li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--charcoal);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+    ul.network li:last-child { border-bottom: 0; }
+    ul.network .domain {
+      font-family: "prohibition", "Impact", sans-serif;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
       font-size: 1.0625rem;
-      line-height: 1.55;
+      color: var(--warm-white);
+    }
+    ul.network .domain a { color: var(--warm-white); text-decoration: none; }
+    ul.network .domain a:hover { color: var(--gold); }
+    ul.network .descriptor {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--cream);
+      line-height: 1.5;
+    }
+
+    /* Contact block */
+    .contact {
+      margin: 0 0 2.5rem;
+    }
+    .contact .label {
+      font-family: 'Space Mono', ui-monospace, monospace;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.65rem;
+      color: var(--ash);
+      margin: 0 0 0.75rem;
+    }
+    .contact .office {
+      font-family: "prohibition", "Impact", sans-serif;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 1.125rem;
+      color: var(--warm-white);
       margin: 0 0 0.5rem;
     }
-    .contact {
-      margin-top: 2rem;
-      font-size: 1.0625rem;
-      line-height: 1.55;
+    .contact .email {
+      font-family: 'Space Mono', ui-monospace, monospace;
+      font-style: normal;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: var(--gold);
     }
+
+    /* CTA — campaign sticker */
     .cta {
       display: inline-block;
-      margin-top: 2.5rem;
-      padding: 0.75rem 1.25rem;
-      border: 1px solid var(--ink);
-      font-size: 1rem;
+      margin: 2rem 0 0;
+      padding: 0.95rem 1.4rem;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      font-family: "prohibition", "Impact", sans-serif;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
       text-decoration: none;
-      letter-spacing: 0.02em;
     }
-    .cta:hover { background: var(--ink); color: var(--ground); }
+    .cta:hover {
+      background: var(--gold);
+      color: var(--deep-black);
+    }
+
     footer {
-      margin-top: 3rem;
-      font-size: 0.875rem;
-      opacity: 0.7;
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--charcoal);
+      font-family: 'Space Mono', ui-monospace, monospace;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.65rem;
+      color: var(--ash);
     }
+
     .nowrap { white-space: nowrap; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Kit&nbsp;<span class="nowrap">Anderson</span></h1>
+    <p class="eyebrow">Press · thekitanderson.com</p>
 
-    <p>Truckee, California. Kit <span class="nowrap">Anderson</span>, Author, Artist, and Amateur Stuntman, operating a private media kitchen. As Mayor of Lake Tahoe promises free Porsches, mandatory murals, eagle proliferation, and tourists redirected to Reno. Endorsed by Andy Warhol, Steve Jobs, and Hillary Clinton. Eight books at <a href="https://readmorekit.com/">readmorekit.com</a>. Catalogue raisonné at <a href="https://kitanderson.art/">kitanderson.art</a>. Rallies a 1911 Model T. Phantogram's first roadie. Gold Medal-winning producer. 2025 Adweek Fake News Award winner. Six domains. One man. No Wikipedia page. This is better. Nothing is real.</p>
+    <h1>
+      <span class="lede">Kit</span>
+      <span class="lede nowrap">Anderson</span>
+    </h1>
 
+    <p class="pitch">Truckee, California. Kit <span class="nowrap">Anderson</span>, Author, Artist, and Amateur Stuntman, operating a private media kitchen. As Mayor of Lake Tahoe promises free Porsches, mandatory murals, eagle proliferation, and tourists redirected to Reno. Endorsed by Andy Warhol, Steve Jobs, and Hillary Clinton. Eight books at <a href="https://readmorekit.com/">readmorekit.com</a>. Catalogue raisonné at <a href="https://kitanderson.art/">kitanderson.art</a>. Rallies a 1911 Model T. Phantogram's first roadie. Gold Medal-winning producer. 2025 Adweek Fake News Award winner. Six domains. One man. No Wikipedia page. This is better. Nothing is real.</p>
+
+    <hr class="rule">
+    <h2>Network</h2>
     <ul class="network">
-      <li><a href="https://mayorkitanderson.com/">mayorkitanderson.com</a> — campaign for Mayor of Lake Tahoe, free Porsches platform</li>
-      <li><a href="https://kitanderson.tv/">kitanderson.tv</a> — drives, rallies, the Model T, the Porsche</li>
-      <li><a href="https://kitanderson.art/">kitanderson.art</a> — catalogue raisonné</li>
-      <li><a href="https://readmorekit.com/">readmorekit.com</a> — the eight-book catalogue</li>
-      <li><a href="https://kitanderson.dev/">kitanderson.dev</a> — the media kitchen</li>
-      <li><a href="https://thekitanderson.com/">thekitanderson.com</a> — the hub</li>
+      <li>
+        <span class="domain"><a href="https://mayorkitanderson.com/">mayorkitanderson.com</a></span>
+        <span class="descriptor">Campaign for Mayor of Lake Tahoe. Free Porsches for everyone.</span>
+      </li>
+      <li>
+        <span class="domain"><a href="https://kitanderson.tv/">kitanderson.tv</a></span>
+        <span class="descriptor">Drives, rallies, the Model T, and the Porsche.</span>
+      </li>
+      <li>
+        <span class="domain"><a href="https://kitanderson.art/">kitanderson.art</a></span>
+        <span class="descriptor">Catalogue raisonné.</span>
+      </li>
+      <li>
+        <span class="domain"><a href="https://readmorekit.com/">readmorekit.com</a></span>
+        <span class="descriptor">Eight-book catalogue.</span>
+      </li>
+      <li>
+        <span class="domain"><a href="https://kitanderson.dev/">kitanderson.dev</a></span>
+        <span class="descriptor">Media kitchen.</span>
+      </li>
+      <li>
+        <span class="domain"><a href="https://thekitanderson.com/">thekitanderson.com</a></span>
+        <span class="descriptor">The hub.</span>
+      </li>
     </ul>
 
-    <p class="contact">
-      Office of the Mayor of Lake Tahoe, Press Desk<br>
-      <a href="mailto:press@mayorkitanderson.com">press@mayorkitanderson.com</a>
-    </p>
+    <hr class="rule">
+    <h2>Press</h2>
+    <div class="contact">
+      <p class="office">Office of the Mayor of Lake Tahoe, Press Desk</p>
+      <p class="email"><a href="mailto:press@mayorkitanderson.com">press@mayorkitanderson.com</a></p>
+    </div>
 
     <a class="cta" href="https://mayorkitanderson.com/">Vote Kit for Mayor of Lake Tahoe →</a>
 
